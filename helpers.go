@@ -85,3 +85,7 @@ func getQueriesWithSimpleComment(comment string) ([]string, error) {
 
 	return queries, nil
 }
+
+func printDevider() {
+	fmt.Println("====================================")
+}

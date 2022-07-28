@@ -11,47 +11,45 @@ import (
 func main() {
 	queries, err := getQueries()
 	if err != nil {
-		fmt.Errorf("fail %s", err)
+		fmt.Printf("fail %s", err)
 		return
 	}
 
+	printDevider()
 	for _, q := range queries {
 		normalizedQuery, bindVars, err := sqlparser.Parse2(q)
 		if err != nil {
-			fmt.Printf("%q", err)
+			fmt.Printf("%s", err)
 			continue
 		}
 		fmt.Println("Original query:")
 		fmt.Println(q)
-		fmt.Println("====================================")
-		fmt.Println("Normalized query")
-		fmt.Printf("%+v", normalizedQuery.Comments)
-		fmt.Println("====================================")
-		fmt.Println("Bind vars")
+
+		fmt.Println("Normalized query:")
+		pretty.Println(sqlparser.String(normalizedQuery))
+		printDevider()
+		fmt.Println("Bind vars:")
 		pretty.Println(bindVars)
-		fmt.Println("====================================")
-		fmt.Println("Literals")
+		printDevider()
+		fmt.Println("Literals:")
 		pretty.Println(GetLiterals(normalizedQuery))
-		fmt.Println("====================================")
+		printDevider()
 		bv := make(map[string]*query.BindVariable)
 		err = sqlparser.Normalize(normalizedQuery, sqlparser.NewReservedVars("", bindVars), bv)
 		if err != nil {
-			fmt.Printf("%q", err)
+			fmt.Printf("%s", err)
 		}
-		//pretty.Println(normalizedQuery)
-		fmt.Println("====================================")
+		printDevider()
+		fmt.Println("Bind vars:")
 		pretty.Println(sqlparser.GetBindvars(normalizedQuery))
-		fmt.Println("====================================")
+		printDevider()
+		fmt.Println("Tables:")
 		pretty.Println(GetTables(normalizedQuery))
-		fmt.Println("====================================")
-		pretty.Println(sqlparser.String(normalizedQuery))
-		fmt.Println("====================================")
-		q := sqlparser.NewParsedQuery(normalizedQuery)
-		pretty.Println(q.GenerateQuery(bv, map[string]sqlparser.Encodable{}))
-		//pretty.Println(sqlparser.ExtractMysqlComment(sql))
-		fmt.Println("====================================")
-
-		break
+		printDevider()
+		parsedQuery := sqlparser.NewParsedQuery(normalizedQuery)
+		pretty.Println(parsedQuery.GenerateQuery(bv, map[string]sqlparser.Encodable{}))
+		pretty.Println(sqlparser.ExtractMysqlComment(q))
+		printDevider()
 	}
 }
 

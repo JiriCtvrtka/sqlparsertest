@@ -1,4 +1,4 @@
-module github.com/percona/sqlparser
+module github.com/percona/sqlparsertest
 
 go 1.18
 

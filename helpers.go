@@ -9,6 +9,16 @@ import (
 	"time"
 )
 
+type output struct {
+	Query           string
+	NormalizedQuery string
+	BindVars        string
+	Literals        string
+	Tables          string
+	Comments        string
+	Parsed          string
+}
+
 func getQueries() ([]string, error) {
 	var res []string
 
@@ -86,6 +96,33 @@ func getQueriesWithSimpleComment(comment string) ([]string, error) {
 	return queries, nil
 }
 
-func printDevider() {
+func title(name string) {
+	devider()
+	fmt.Printf("%s\n", strings.ToUpper(name))
+	devider()
+}
+
+func devider() {
 	fmt.Println("====================================")
+}
+
+func saveToFile(path string, lines []string) {
+	f, err := os.Create(path)
+	if err != nil {
+		devider()
+		fmt.Print(err)
+		devider()
+		return
+	}
+	defer f.Close()
+
+	for _, line := range lines {
+		_, err := f.WriteString(line + "\n")
+		if err != nil {
+			devider()
+			fmt.Print(err)
+			devider()
+			return
+		}
+	}
 }

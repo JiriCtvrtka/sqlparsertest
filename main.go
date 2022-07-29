@@ -1,56 +1,95 @@
 package main
 
 import (
+	"encoding/json"
 	"fmt"
 
-	"github.com/kr/pretty"
 	"vitess.io/vitess/go/vt/proto/query"
 	"vitess.io/vitess/go/vt/sqlparser"
 )
 
 func main() {
+	var errors []string
+	var success []string
+
 	queries, err := getQueries()
 	if err != nil {
 		fmt.Printf("fail %s", err)
 		return
 	}
 
-	printDevider()
 	for _, q := range queries {
 		normalizedQuery, bindVars, err := sqlparser.Parse2(q)
 		if err != nil {
-			fmt.Printf("%s", err)
+			errors = append(errors, fmt.Sprintf("Original query: %s, error: %s\n", q, err.Error()))
 			continue
 		}
-		fmt.Println("Original query:")
-		fmt.Println(q)
 
-		fmt.Println("Normalized query:")
-		pretty.Println(sqlparser.String(normalizedQuery))
-		printDevider()
-		fmt.Println("Bind vars:")
-		pretty.Println(bindVars)
-		printDevider()
-		fmt.Println("Literals:")
-		pretty.Println(GetLiterals(normalizedQuery))
-		printDevider()
 		bv := make(map[string]*query.BindVariable)
 		err = sqlparser.Normalize(normalizedQuery, sqlparser.NewReservedVars("", bindVars), bv)
 		if err != nil {
-			fmt.Printf("%s", err)
+			errors = append(errors, fmt.Sprintf("Original query: %s, error: %s\n", q, err.Error()))
+			continue
 		}
-		printDevider()
-		fmt.Println("Bind vars:")
-		pretty.Println(sqlparser.GetBindvars(normalizedQuery))
-		printDevider()
-		fmt.Println("Tables:")
-		pretty.Println(GetTables(normalizedQuery))
-		printDevider()
 		parsedQuery := sqlparser.NewParsedQuery(normalizedQuery)
-		pretty.Println(parsedQuery.GenerateQuery(bv, map[string]sqlparser.Encodable{}))
-		pretty.Println(sqlparser.ExtractMysqlComment(q))
-		printDevider()
+
+		normalizedQueryJSON, err := json.Marshal(normalizedQuery)
+		if err != nil {
+			errors = append(errors, fmt.Sprintf("Original query: %s, error: %s\n", q, err.Error()))
+			continue
+		}
+
+		parsedQueryJSON, err := json.Marshal(parsedQuery)
+		if err != nil {
+			errors = append(errors, fmt.Sprintf("Original query: %s, error: %s\n", q, err.Error()))
+			continue
+		}
+
+		bindVarsJSON, err := json.Marshal(sqlparser.GetBindvars(normalizedQuery))
+		if err != nil {
+			errors = append(errors, fmt.Sprintf("Original query: %s, error: %s\n", q, err.Error()))
+			continue
+		}
+
+		literalsJSON, err := json.Marshal(GetLiterals(normalizedQuery))
+		if err != nil {
+			errors = append(errors, fmt.Sprintf("Original query: %s, error: %s\n", q, err.Error()))
+			continue
+		}
+
+		tablesJSON, err := json.Marshal(GetTables(normalizedQuery))
+		if err != nil {
+			errors = append(errors, fmt.Sprintf("Original query: %s, error: %s\n", q, err.Error()))
+			continue
+		}
+
+		comment, _ := sqlparser.ExtractMysqlComment(q)
+		commentsJSON, err := json.Marshal(comment)
+		if err != nil {
+			errors = append(errors, fmt.Sprintf("Original query: %s, error: %s\n", q, err.Error()))
+			continue
+		}
+
+		o := output{
+			Query:           fmt.Sprintf("%+s\n", q),
+			NormalizedQuery: fmt.Sprintf("%+s\n", string(normalizedQueryJSON)),
+			BindVars:        fmt.Sprintf("%+s\n", string(bindVarsJSON)),
+			Literals:        fmt.Sprintf("%+s\n", string(literalsJSON)),
+			Tables:          fmt.Sprintf("%+s\n", string(tablesJSON)),
+			Comments:        fmt.Sprintf("%+s\n", string(commentsJSON)),
+			Parsed:          fmt.Sprintf("%+s\n", string(parsedQueryJSON)),
+		}
+		success = append(success, fmt.Sprintf("%+v\n", o))
 	}
+
+	title("final results")
+	fmt.Printf("Total queries: %d\n", len(queries))
+	fmt.Printf("Queries with error: %d\n", len(errors))
+	fmt.Printf("OK queries: %d\n", len(success))
+	devider()
+
+	saveToFile("errors.txt", errors)
+	saveToFile("success.txt", success)
 }
 
 // GetLiterals returns a map of the bind vars referenced in the statement.

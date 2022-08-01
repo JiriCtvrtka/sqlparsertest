@@ -1,4 +1,4 @@
-CREATE TABLE employee;
+CREATE TABLE employee();
 ALTER TABLE table_name ADD COLUMN col_name;
 ALTER TABLE table_name RENAME COLUMN col_name TO new_col_name;
 DROP TABLE IF EXISTS table_name;

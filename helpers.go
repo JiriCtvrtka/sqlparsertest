@@ -9,20 +9,71 @@ import (
 	"time"
 )
 
-type output struct {
-	Query           string
-	NormalizedQuery string
-	BindVars        string
-	Literals        string
-	Tables          string
-	Comments        string
-	Parsed          string
+type config struct {
+	InputFile string
+	Parser    string
+	Comment   string
 }
 
-func getQueries() ([]string, error) {
+var parsers = []string{"vitessmysql"}
+
+func help() {
+	fmt.Println("Please define input file by flag --input PATH/NAME")
+	fmt.Printf("Please define parser by flag --parser OPTION, options: %+v\n", parsers)
+	fmt.Println("You can add comment to every query at random place by flag --comment VALUE")
+}
+
+func checkArgValue(args []string, index int, flag string) {
+	if len(args) < index+1 {
+		fmt.Printf("Value for flag %s is missing\n", flag)
+		os.Exit(1)
+	}
+}
+
+func contains(s []string, e string) bool {
+	for _, a := range s {
+		if a == e {
+			return true
+		}
+	}
+	return false
+}
+
+func proceedFlags(args []string) *config {
+	cfg := new(config)
+
+	for k, v := range args {
+		if v[0:2] != "--" {
+			continue
+		}
+
+		switch v {
+		case "--input":
+			checkArgValue(args, k+1, v)
+			cfg.InputFile = args[k+1]
+		case "--parser":
+			checkArgValue(args, k+1, v)
+			p := args[k+1]
+			if !contains(parsers, p) {
+				fmt.Printf("Unsupported parser %s, choose one of %+v\n", p, parsers)
+				os.Exit(1)
+			}
+
+			cfg.Parser = p
+		case "--comment":
+			checkArgValue(args, k+1, v)
+			cfg.Comment = args[k+1]
+		default:
+		}
+	}
+
+	return cfg
+}
+
+func getQueries(inputFile string) ([]string, error) {
 	var res []string
 
-	file, err := os.Open("queries.txt")
+	file, err := os.Open(inputFile)
 	if err != nil {
 		return nil, err
 	}
@@ -72,8 +123,8 @@ func addCommentToRandomWord(str, comment string) string {
 	return strings.Join(res, " ")
 }
 
-func getQueriesWithComment(comment string) ([]string, error) {
-	queries, err := getQueries()
+func getQueriesWithComment(inputFile, comment string) ([]string, error) {
+	queries, err := getQueries(inputFile)
 	if err != nil {
 		return nil, err
 	}
@@ -84,8 +135,8 @@ func getQueriesWithComment(comment string) ([]string, error) {
 	return queries, nil
 }
 
-func getQueriesWithSimpleComment(comment string) ([]string, error) {
-	queries, err := getQueries()
+func getQueriesWithSimpleComment(inputFile, comment string) ([]string, error) {
+	queries, err := getQueries(inputFile)
 	if err != nil {
 		return nil, err
 	}

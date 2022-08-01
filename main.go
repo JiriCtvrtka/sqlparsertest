@@ -56,6 +56,6 @@ func main() {
 
 	success = append([]string{header}, success...)
 	errors = append([]string{header}, errors...)
-	saveToFile("errors.txt", errors)
 	saveToFile("success.txt", success)
+	saveToFile("errors.txt", errors)
 }

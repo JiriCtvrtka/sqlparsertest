@@ -4,6 +4,7 @@ import (
 	"fmt"
 	"os"
 
+	"github.com/percona/sqlparsertest/parsers/pgquery"
 	"github.com/percona/sqlparsertest/parsers/vitessmysql"
 )
 
@@ -32,11 +33,12 @@ func main() {
 	switch cfg.Parser {
 	case "vitessmysql":
 		parse = vitessmysql.Parse
+	case "pgquery":
+		parse = pgquery.Parse
 	default:
+		fmt.Println(cfg.Parser)
 		os.Exit(1)
 	}
-
-	header := fmt.Sprintf("Collected with values: Input file: %s, Parser: %s, Comment: %s\n", cfg.InputFile, cfg.Parser, cfg.Comment)
 
 	for _, q := range queries {
 		res, err := parse(q)
@@ -54,6 +56,7 @@ func main() {
 	fmt.Printf("OK queries: %d\n", len(success))
 	devider()
 
+	header := fmt.Sprintf("Collected with values: Input file: %s, Parser: %s, Comment: %s\n", cfg.InputFile, cfg.Parser, cfg.Comment)
 	success = append([]string{header}, success...)
 	errors = append([]string{header}, errors...)
 	saveToFile("success.txt", success)

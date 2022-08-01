@@ -2,7 +2,6 @@ package vitessmysql
 
 import (
 	"encoding/json"
-	"fmt"
 
 	"vitess.io/vitess/go/vt/proto/query"
 	"vitess.io/vitess/go/vt/sqlparser"
@@ -63,16 +62,21 @@ func Parse(q string) (string, error) {
 	}
 
 	o := output{
-		Query:           fmt.Sprintf("%+s\n", q),
-		NormalizedQuery: fmt.Sprintf("%+s\n", string(normalizedQueryJSON)),
-		BindVars:        fmt.Sprintf("%+s\n", string(bindVarsJSON)),
-		Literals:        fmt.Sprintf("%+s\n", string(literalsJSON)),
-		Tables:          fmt.Sprintf("%+s\n", string(tablesJSON)),
-		Comments:        fmt.Sprintf("%+s\n", string(commentsJSON)),
-		Parsed:          fmt.Sprintf("%+s\n", string(parsedQueryJSON)),
+		Query:           q,
+		NormalizedQuery: string(normalizedQueryJSON),
+		BindVars:        string(bindVarsJSON),
+		Literals:        string(literalsJSON),
+		Tables:          string(tablesJSON),
+		Comments:        string(commentsJSON),
+		Parsed:          string(parsedQueryJSON),
 	}
 
-	return fmt.Sprintf("%+v\n", o), nil
+	res, err := json.MarshalIndent(o, "", "  ")
+	if err != nil {
+		return "", err
+	}
+
+	return string(res), nil
 }
 
 // GetLiterals returns a map of the bind vars referenced in the statement.

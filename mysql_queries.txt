@@ -36,5 +36,3 @@ SELECT * FROM order RIGHT JOIN customer ON order.cust_id = customer.cust_id;
 SELECT * FROM order FULL OUTER JOIN customer ON order.cust_id = customer.cust_id;
 SELECT Name, SUM(Value) AS "SUM(VALUE)", SUM(Value) / totals.total AS "% of Total" FROM table1, (SELECT Name, SUM(Value) AS total FROM table1 GROUP BY Name) AS totals WHERE table1.Name = totals.Name AND Year BETWEEN 2000 AND 2001 GROUP BY Name;
 INSERT INTO /* controller='index',db_driver='django.db.backends.postgresql', framework='django%3A2.2.1',route='%5Epolls/%24', traceparent='00-5bd66ef5095369c7b0d1f8f4bd33716a-c532cb4098ac3dd2-01', tracestate='congo%3Dt61rcWkgMzE%2Crojo%3D00f067aa0ba902b7' */ polls_question (question_text, pub_date) VALUES ('What is this?', '2019-05-28T18:54:50.767481+00:00')
-//PG related
-INSERT INTO users (firstname, lastname) VALUES ('Joe', 'Cool') RETURNING id;

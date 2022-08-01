@@ -15,7 +15,7 @@ type config struct {
 	Comment   string
 }
 
-var parsers = []string{"vitessmysql"}
+var parsers = []string{"vitessmysql", "pgquery"}
 
 func help() {
 	fmt.Println("Please define input file by flag --input PATH/NAME")

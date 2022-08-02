@@ -1,0 +1,7 @@
+Total: 39
+Success: 39
+Errors: 0
+Input file: queries/pg_queries.txt
+Parser: pgquery
+Comment: 
+

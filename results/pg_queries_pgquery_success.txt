@@ -1,0 +1,5244 @@
+Total: 39
+Success: 39
+Errors: 0
+Input file: queries/pg_queries.txt
+Parser: pgquery
+Comment: 
+
+{
+  "Query": "CREATE TABLE employee();",
+  "Output": [
+    {
+      "RawStmt": {
+        "stmt": {
+          "CreateStmt": {
+            "relation": {
+              "RangeVar": {
+                "catalogname": null,
+                "schemaname": null,
+                "relname": "employee",
+                "inh": true,
+                "relpersistence": 112,
+                "alias": null,
+                "location": 13
+              }
+            },
+            "tableElts": {
+              "List": {
+                "items": null
+              }
+            },
+            "inhRelations": {
+              "List": {
+                "items": null
+              }
+            },
+            "partbound": null,
+            "partspec": null,
+            "ofTypename": null,
+            "constraints": {
+              "List": {
+                "items": null
+              }
+            },
+            "options": {
+              "List": {
+                "items": null
+              }
+            },
+            "oncommit": 0,
+            "tablespacename": null,
+            "if_not_exists": false
+          }
+        },
+        "stmt_location": 0,
+        "stmt_len": 23
+      }
+    }
+  ]
+}
+{
+  "Query": "ALTER TABLE order_details ADD order_date date, ADD quantity integer;",
+  "Output": [
+    {
+      "RawStmt": {
+        "stmt": {
+          "AlterTableStmt": {
+            "relation": {
+              "RangeVar": {
+                "catalogname": null,
+                "schemaname": null,
+                "relname": "order_details",
+                "inh": true,
+                "relpersistence": 112,
+                "alias": null,
+                "location": 12
+              }
+            },
+            "cmds": {
+              "List": {
+                "items": [
+                  {
+                    "AlterTableCmd": {
+                      "subtype": 0,
+                      "name": null,
+                      "newowner": null,
+                      "def": {
+                        "ColumnDef": {
+                          "colname": "order_date",
+                          "typeName": {
+                            "TypeName": {
+                              "names": {
+                                "List": {
+                                  "items": [
+                                    {
+                                      "String": {
+                                        "str": "date"
+                                      }
+                                    }
+                                  ]
+                                }
+                              },
+                              "typeOid": 0,
+                              "setof": false,
+                              "pct_type": false,
+                              "typmods": {
+                                "List": {
+                                  "items": null
+                                }
+                              },
+                              "typemod": -1,
+                              "arrayBounds": {
+                                "List": {
+                                  "items": null
+                                }
+                              },
+                              "location": 41
+                            }
+                          },
+                          "inhcount": 0,
+                          "is_local": true,
+                          "is_not_null": false,
+                          "is_from_type": false,
+                          "is_from_parent": false,
+                          "storage": 0,
+                          "raw_default": null,
+                          "cooked_default": null,
+                          "identity": 0,
+                          "collClause": null,
+                          "collOid": 0,
+                          "constraints": {
+                            "List": {
+                              "items": null
+                            }
+                          },
+                          "fdwoptions": {
+                            "List": {
+                              "items": null
+                            }
+                          },
+                          "location": 30
+                        }
+                      },
+                      "behavior": 0,
+                      "missing_ok": false
+                    }
+                  },
+                  {
+                    "AlterTableCmd": {
+                      "subtype": 0,
+                      "name": null,
+                      "newowner": null,
+                      "def": {
+                        "ColumnDef": {
+                          "colname": "quantity",
+                          "typeName": {
+                            "TypeName": {
+                              "names": {
+                                "List": {
+                                  "items": [
+                                    {
+                                      "String": {
+                                        "str": "pg_catalog"
+                                      }
+                                    },
+                                    {
+                                      "String": {
+                                        "str": "int4"
+                                      }
+                                    }
+                                  ]
+                                }
+                              },
+                              "typeOid": 0,
+                              "setof": false,
+                              "pct_type": false,
+                              "typmods": {
+                                "List": {
+                                  "items": null
+                                }
+                              },
+                              "typemod": -1,
+                              "arrayBounds": {
+                                "List": {
+                                  "items": null
+                                }
+                              },
+                              "location": 60
+                            }
+                          },
+                          "inhcount": 0,
+                          "is_local": true,
+                          "is_not_null": false,
+                          "is_from_type": false,
+                          "is_from_parent": false,
+                          "storage": 0,
+                          "raw_default": null,
+                          "cooked_default": null,
+                          "identity": 0,
+                          "collClause": null,
+                          "collOid": 0,
+                          "constraints": {
+                            "List": {
+                              "items": null
+                            }
+                          },
+                          "fdwoptions": {
+                            "List": {
+                              "items": null
+                            }
+                          },
+                          "location": 51
+                        }
+                      },
+                      "behavior": 0,
+                      "missing_ok": false
+                    }
+                  }
+                ]
+              }
+            },
+            "relkind": 37,
+            "missing_ok": false
+          }
+        },
+        "stmt_location": 0,
+        "stmt_len": 67
+      }
+    }
+  ]
+}
+{
+  "Query": "ALTER TABLE order_details RENAME COLUMN notes TO order_notes;",
+  "Output": [
+    {
+      "RawStmt": {
+        "stmt": {
+          "RenameStmt": {
+            "renameType": 6,
+            "relationType": 37,
+            "relation": {
+              "RangeVar": {
+                "catalogname": null,
+                "schemaname": null,
+                "relname": "order_details",
+                "inh": true,
+                "relpersistence": 112,
+                "alias": null,
+                "location": 12
+              }
+            },
+            "object": null,
+            "subname": "notes",
+            "newname": "order_notes",
+            "behavior": 0,
+            "missing_ok": false
+          }
+        },
+        "stmt_location": 0,
+        "stmt_len": 60
+      }
+    }
+  ]
+}
+{
+  "Query": "DROP TABLE IF EXISTS table_name;",
+  "Output": [
+    {
+      "RawStmt": {
+        "stmt": {
+          "DropStmt": {
+            "objects": {
+              "List": {
+                "items": [
+                  {
+                    "List": {
+                      "items": [
+                        {
+                          "String": {
+                            "str": "table_name"
+                          }
+                        }
+                      ]
+                    }
+                  }
+                ]
+              }
+            },
+            "removeType": 37,
+            "behavior": 0,
+            "missing_ok": true,
+            "concurrent": false
+          }
+        },
+        "stmt_location": 0,
+        "stmt_len": 31
+      }
+    }
+  ]
+}
+{
+  "Query": "TRUNCATE TABLE employee;",
+  "Output": [
+    {
+      "RawStmt": {
+        "stmt": {
+          "TruncateStmt": {
+            "relations": {
+              "List": {
+                "items": [
+                  {
+                    "RangeVar": {
+                      "catalogname": null,
+                      "schemaname": null,
+                      "relname": "employee",
+                      "inh": true,
+                      "relpersistence": 112,
+                      "alias": null,
+                      "location": 15
+                    }
+                  }
+                ]
+              }
+            },
+            "restart_seqs": false,
+            "behavior": 0
+          }
+        },
+        "stmt_location": 0,
+        "stmt_len": 23
+      }
+    }
+  ]
+}
+{
+  "Query": "INSERT into employee Values(101,'abcd');",
+  "Output": [
+    {
+      "RawStmt": {
+        "stmt": {
+          "InsertStmt": {
+            "relation": {
+              "RangeVar": {
+                "catalogname": null,
+                "schemaname": null,
+                "relname": "employee",
+                "inh": true,
+                "relpersistence": 112,
+                "alias": null,
+                "location": 12
+              }
+            },
+            "cols": {
+              "List": {
+                "items": null
+              }
+            },
+            "selectStmt": {
+              "SelectStmt": {
+                "distinctClause": {
+                  "List": {
+                    "items": null
+                  }
+                },
+                "intoClause": null,
+                "targetList": {
+                  "List": {
+                    "items": null
+                  }
+                },
+                "fromClause": {
+                  "List": {
+                    "items": null
+                  }
+                },
+                "whereClause": null,
+                "groupClause": {
+                  "List": {
+                    "items": null
+                  }
+                },
+                "havingClause": null,
+                "windowClause": {
+                  "List": {
+                    "items": null
+                  }
+                },
+                "valuesLists": [
+                  [
+                    {
+                      "A_Const": {
+                        "val": {
+                          "Integer": {
+                            "ival": 101
+                          }
+                        },
+                        "location": 28
+                      }
+                    },
+                    {
+                      "A_Const": {
+                        "val": {
+                          "String": {
+                            "str": "abcd"
+                          }
+                        },
+                        "location": 32
+                      }
+                    }
+                  ]
+                ],
+                "sortClause": {
+                  "List": {
+                    "items": null
+                  }
+                },
+                "limitOffset": null,
+                "limitCount": null,
+                "lockingClause": {
+                  "List": {
+                    "items": null
+                  }
+                },
+                "withClause": null,
+                "op": 0,
+                "all": false,
+                "larg": null,
+                "rarg": null
+              }
+            },
+            "onConflictClause": null,
+            "returningList": {
+              "List": {
+                "items": null
+              }
+            },
+            "withClause": null,
+            "override": 0
+          }
+        },
+        "stmt_location": 0,
+        "stmt_len": 39
+      }
+    }
+  ]
+}
+{
+  "Query": "DROP TABLE employee;",
+  "Output": [
+    {
+      "RawStmt": {
+        "stmt": {
+          "DropStmt": {
+            "objects": {
+              "List": {
+                "items": [
+                  {
+                    "List": {
+                      "items": [
+                        {
+                          "String": {
+                            "str": "employee"
+                          }
+                        }
+                      ]
+                    }
+                  }
+                ]
+              }
+            },
+            "removeType": 37,
+            "behavior": 0,
+            "missing_ok": false,
+            "concurrent": false
+          }
+        },
+        "stmt_location": 0,
+        "stmt_len": 19
+      }
+    }
+  ]
+}
+{
+  "Query": "UPDATE employee SET col1 = new_col WHERE condition;",
+  "Output": [
+    {
+      "RawStmt": {
+        "stmt": {
+          "UpdateStmt": {
+            "relation": {
+              "RangeVar": {
+                "catalogname": null,
+                "schemaname": null,
+                "relname": "employee",
+                "inh": true,
+                "relpersistence": 112,
+                "alias": null,
+                "location": 7
+              }
+            },
+            "targetList": {
+              "List": {
+                "items": [
+                  {
+                    "ResTarget": {
+                      "name": "col1",
+                      "indirection": {
+                        "List": {
+                          "items": null
+                        }
+                      },
+                      "val": {
+                        "ColumnRef": {
+                          "fields": {
+                            "List": {
+                              "items": [
+                                {
+                                  "String": {
+                                    "str": "new_col"
+                                  }
+                                }
+                              ]
+                            }
+                          },
+                          "location": 27
+                        }
+                      },
+                      "location": 20
+                    }
+                  }
+                ]
+              }
+            },
+            "whereClause": {
+              "ColumnRef": {
+                "fields": {
+                  "List": {
+                    "items": [
+                      {
+                        "String": {
+                          "str": "condition"
+                        }
+                      }
+                    ]
+                  }
+                },
+                "location": 41
+              }
+            },
+            "fromClause": {
+              "List": {
+                "items": null
+              }
+            },
+            "returningList": {
+              "List": {
+                "items": null
+              }
+            },
+            "withClause": null
+          }
+        },
+        "stmt_location": 0,
+        "stmt_len": 50
+      }
+    }
+  ]
+}
+{
+  "Query": "GRANT ALL ON candidates TO alice4;",
+  "Output": [
+    {
+      "RawStmt": {
+        "stmt": {
+          "GrantStmt": {
+            "is_grant": true,
+            "targtype": 0,
+            "objtype": 1,
+            "objects": {
+              "List": {
+                "items": [
+                  {
+                    "RangeVar": {
+                      "catalogname": null,
+                      "schemaname": null,
+                      "relname": "candidates",
+                      "inh": true,
+                      "relpersistence": 112,
+                      "alias": null,
+                      "location": 13
+                    }
+                  }
+                ]
+              }
+            },
+            "privileges": {
+              "List": {
+                "items": null
+              }
+            },
+            "grantees": {
+              "List": {
+                "items": [
+                  {
+                    "RoleSpec": {
+                      "roletype": 0,
+                      "rolename": "alice4",
+                      "location": 27
+                    }
+                  }
+                ]
+              }
+            },
+            "grant_option": false,
+            "behavior": 0
+          }
+        },
+        "stmt_location": 0,
+        "stmt_len": 33
+      }
+    }
+  ]
+}
+{
+  "Query": "REVOKE ALL PRIVILEGES ON kinds FROM manuel;",
+  "Output": [
+    {
+      "RawStmt": {
+        "stmt": {
+          "GrantStmt": {
+            "is_grant": false,
+            "targtype": 0,
+            "objtype": 1,
+            "objects": {
+              "List": {
+                "items": [
+                  {
+                    "RangeVar": {
+                      "catalogname": null,
+                      "schemaname": null,
+                      "relname": "kinds",
+                      "inh": true,
+                      "relpersistence": 112,
+                      "alias": null,
+                      "location": 25
+                    }
+                  }
+                ]
+              }
+            },
+            "privileges": {
+              "List": {
+                "items": null
+              }
+            },
+            "grantees": {
+              "List": {
+                "items": [
+                  {
+                    "RoleSpec": {
+                      "roletype": 0,
+                      "rolename": "manuel",
+                      "location": 36
+                    }
+                  }
+                ]
+              }
+            },
+            "grant_option": false,
+            "behavior": 0
+          }
+        },
+        "stmt_location": 0,
+        "stmt_len": 42
+      }
+    }
+  ]
+}
+{
+  "Query": "ROLLBACK;",
+  "Output": [
+    {
+      "RawStmt": {
+        "stmt": {
+          "TransactionStmt": {
+            "kind": 3,
+            "options": {
+              "List": {
+                "items": null
+              }
+            },
+            "gid": null
+          }
+        },
+        "stmt_location": 0,
+        "stmt_len": 8
+      }
+    }
+  ]
+}
+{
+  "Query": "COMMIT;",
+  "Output": [
+    {
+      "RawStmt": {
+        "stmt": {
+          "TransactionStmt": {
+            "kind": 2,
+            "options": {
+              "List": {
+                "items": null
+              }
+            },
+            "gid": null
+          }
+        },
+        "stmt_location": 0,
+        "stmt_len": 6
+      }
+    }
+  ]
+}
+{
+  "Query": "SELECT * FROM tbl;",
+  "Output": [
+    {
+      "RawStmt": {
+        "stmt": {
+          "SelectStmt": {
+            "distinctClause": {
+              "List": {
+                "items": null
+              }
+            },
+            "intoClause": null,
+            "targetList": {
+              "List": {
+                "items": [
+                  {
+                    "ResTarget": {
+                      "name": null,
+                      "indirection": {
+                        "List": {
+                          "items": null
+                        }
+                      },
+                      "val": {
+                        "ColumnRef": {
+                          "fields": {
+                            "List": {
+                              "items": [
+                                {
+                                  "A_Star": {}
+                                }
+                              ]
+                            }
+                          },
+                          "location": 7
+                        }
+                      },
+                      "location": 7
+                    }
+                  }
+                ]
+              }
+            },
+            "fromClause": {
+              "List": {
+                "items": [
+                  {
+                    "RangeVar": {
+                      "catalogname": null,
+                      "schemaname": null,
+                      "relname": "tbl",
+                      "inh": true,
+                      "relpersistence": 112,
+                      "alias": null,
+                      "location": 14
+                    }
+                  }
+                ]
+              }
+            },
+            "whereClause": null,
+            "groupClause": {
+              "List": {
+                "items": null
+              }
+            },
+            "havingClause": null,
+            "windowClause": {
+              "List": {
+                "items": null
+              }
+            },
+            "valuesLists": null,
+            "sortClause": {
+              "List": {
+                "items": null
+              }
+            },
+            "limitOffset": null,
+            "limitCount": null,
+            "lockingClause": {
+              "List": {
+                "items": null
+              }
+            },
+            "withClause": null,
+            "op": 0,
+            "all": false,
+            "larg": null,
+            "rarg": null
+          }
+        },
+        "stmt_location": 0,
+        "stmt_len": 17
+      }
+    }
+  ]
+}
+{
+  "Query": "SELECT DISTINCT col_name FROM tbl;",
+  "Output": [
+    {
+      "RawStmt": {
+        "stmt": {
+          "SelectStmt": {
+            "distinctClause": {
+              "List": {
+                "items": [
+                  null
+                ]
+              }
+            },
+            "intoClause": null,
+            "targetList": {
+              "List": {
+                "items": [
+                  {
+                    "ResTarget": {
+                      "name": null,
+                      "indirection": {
+                        "List": {
+                          "items": null
+                        }
+                      },
+                      "val": {
+                        "ColumnRef": {
+                          "fields": {
+                            "List": {
+                              "items": [
+                                {
+                                  "String": {
+                                    "str": "col_name"
+                                  }
+                                }
+                              ]
+                            }
+                          },
+                          "location": 16
+                        }
+                      },
+                      "location": 16
+                    }
+                  }
+                ]
+              }
+            },
+            "fromClause": {
+              "List": {
+                "items": [
+                  {
+                    "RangeVar": {
+                      "catalogname": null,
+                      "schemaname": null,
+                      "relname": "tbl",
+                      "inh": true,
+                      "relpersistence": 112,
+                      "alias": null,
+                      "location": 30
+                    }
+                  }
+                ]
+              }
+            },
+            "whereClause": null,
+            "groupClause": {
+              "List": {
+                "items": null
+              }
+            },
+            "havingClause": null,
+            "windowClause": {
+              "List": {
+                "items": null
+              }
+            },
+            "valuesLists": null,
+            "sortClause": {
+              "List": {
+                "items": null
+              }
+            },
+            "limitOffset": null,
+            "limitCount": null,
+            "lockingClause": {
+              "List": {
+                "items": null
+              }
+            },
+            "withClause": null,
+            "op": 0,
+            "all": false,
+            "larg": null,
+            "rarg": null
+          }
+        },
+        "stmt_location": 0,
+        "stmt_len": 33
+      }
+    }
+  ]
+}
+{
+  "Query": "SELECT employee_id FROM employee WHERE name = 'stella';",
+  "Output": [
+    {
+      "RawStmt": {
+        "stmt": {
+          "SelectStmt": {
+            "distinctClause": {
+              "List": {
+                "items": null
+              }
+            },
+            "intoClause": null,
+            "targetList": {
+              "List": {
+                "items": [
+                  {
+                    "ResTarget": {
+                      "name": null,
+                      "indirection": {
+                        "List": {
+                          "items": null
+                        }
+                      },
+                      "val": {
+                        "ColumnRef": {
+                          "fields": {
+                            "List": {
+                              "items": [
+                                {
+                                  "String": {
+                                    "str": "employee_id"
+                                  }
+                                }
+                              ]
+                            }
+                          },
+                          "location": 7
+                        }
+                      },
+                      "location": 7
+                    }
+                  }
+                ]
+              }
+            },
+            "fromClause": {
+              "List": {
+                "items": [
+                  {
+                    "RangeVar": {
+                      "catalogname": null,
+                      "schemaname": null,
+                      "relname": "employee",
+                      "inh": true,
+                      "relpersistence": 112,
+                      "alias": null,
+                      "location": 24
+                    }
+                  }
+                ]
+              }
+            },
+            "whereClause": {
+              "A_Expr": {
+                "kind": 0,
+                "name": {
+                  "List": {
+                    "items": [
+                      {
+                        "String": {
+                          "str": "="
+                        }
+                      }
+                    ]
+                  }
+                },
+                "lexpr": {
+                  "ColumnRef": {
+                    "fields": {
+                      "List": {
+                        "items": [
+                          {
+                            "String": {
+                              "str": "name"
+                            }
+                          }
+                        ]
+                      }
+                    },
+                    "location": 39
+                  }
+                },
+                "rexpr": {
+                  "A_Const": {
+                    "val": {
+                      "String": {
+                        "str": "stella"
+                      }
+                    },
+                    "location": 46
+                  }
+                },
+                "location": 44
+              }
+            },
+            "groupClause": {
+              "List": {
+                "items": null
+              }
+            },
+            "havingClause": null,
+            "windowClause": {
+              "List": {
+                "items": null
+              }
+            },
+            "valuesLists": null,
+            "sortClause": {
+              "List": {
+                "items": null
+              }
+            },
+            "limitOffset": null,
+            "limitCount": null,
+            "lockingClause": {
+              "List": {
+                "items": null
+              }
+            },
+            "withClause": null,
+            "op": 0,
+            "all": false,
+            "larg": null,
+            "rarg": null
+          }
+        },
+        "stmt_location": 0,
+        "stmt_len": 54
+      }
+    }
+  ]
+}
+{
+  "Query": "SELECT COUNT(*) FROM employee;",
+  "Output": [
+    {
+      "RawStmt": {
+        "stmt": {
+          "SelectStmt": {
+            "distinctClause": {
+              "List": {
+                "items": null
+              }
+            },
+            "intoClause": null,
+            "targetList": {
+              "List": {
+                "items": [
+                  {
+                    "ResTarget": {
+                      "name": null,
+                      "indirection": {
+                        "List": {
+                          "items": null
+                        }
+                      },
+                      "val": {
+                        "FuncCall": {
+                          "funcname": {
+                            "List": {
+                              "items": [
+                                {
+                                  "String": {
+                                    "str": "count"
+                                  }
+                                }
+                              ]
+                            }
+                          },
+                          "args": {
+                            "List": {
+                              "items": null
+                            }
+                          },
+                          "agg_order": {
+                            "List": {
+                              "items": null
+                            }
+                          },
+                          "agg_filter": null,
+                          "agg_within_group": false,
+                          "agg_star": true,
+                          "agg_distinct": false,
+                          "func_variadic": false,
+                          "over": null,
+                          "location": 7
+                        }
+                      },
+                      "location": 7
+                    }
+                  }
+                ]
+              }
+            },
+            "fromClause": {
+              "List": {
+                "items": [
+                  {
+                    "RangeVar": {
+                      "catalogname": null,
+                      "schemaname": null,
+                      "relname": "employee",
+                      "inh": true,
+                      "relpersistence": 112,
+                      "alias": null,
+                      "location": 21
+                    }
+                  }
+                ]
+              }
+            },
+            "whereClause": null,
+            "groupClause": {
+              "List": {
+                "items": null
+              }
+            },
+            "havingClause": null,
+            "windowClause": {
+              "List": {
+                "items": null
+              }
+            },
+            "valuesLists": null,
+            "sortClause": {
+              "List": {
+                "items": null
+              }
+            },
+            "limitOffset": null,
+            "limitCount": null,
+            "lockingClause": {
+              "List": {
+                "items": null
+              }
+            },
+            "withClause": null,
+            "op": 0,
+            "all": false,
+            "larg": null,
+            "rarg": null
+          }
+        },
+        "stmt_location": 0,
+        "stmt_len": 29
+      }
+    }
+  ]
+}
+{
+  "Query": "SELECT first_name FROM student ORDER BY marks desc;",
+  "Output": [
+    {
+      "RawStmt": {
+        "stmt": {
+          "SelectStmt": {
+            "distinctClause": {
+              "List": {
+                "items": null
+              }
+            },
+            "intoClause": null,
+            "targetList": {
+              "List": {
+                "items": [
+                  {
+                    "ResTarget": {
+                      "name": null,
+                      "indirection": {
+                        "List": {
+                          "items": null
+                        }
+                      },
+                      "val": {
+                        "ColumnRef": {
+                          "fields": {
+                            "List": {
+                              "items": [
+                                {
+                                  "String": {
+                                    "str": "first_name"
+                                  }
+                                }
+                              ]
+                            }
+                          },
+                          "location": 7
+                        }
+                      },
+                      "location": 7
+                    }
+                  }
+                ]
+              }
+            },
+            "fromClause": {
+              "List": {
+                "items": [
+                  {
+                    "RangeVar": {
+                      "catalogname": null,
+                      "schemaname": null,
+                      "relname": "student",
+                      "inh": true,
+                      "relpersistence": 112,
+                      "alias": null,
+                      "location": 23
+                    }
+                  }
+                ]
+              }
+            },
+            "whereClause": null,
+            "groupClause": {
+              "List": {
+                "items": null
+              }
+            },
+            "havingClause": null,
+            "windowClause": {
+              "List": {
+                "items": null
+              }
+            },
+            "valuesLists": null,
+            "sortClause": {
+              "List": {
+                "items": [
+                  {
+                    "SortBy": {
+                      "node": {
+                        "ColumnRef": {
+                          "fields": {
+                            "List": {
+                              "items": [
+                                {
+                                  "String": {
+                                    "str": "marks"
+                                  }
+                                }
+                              ]
+                            }
+                          },
+                          "location": 40
+                        }
+                      },
+                      "sortby_dir": 2,
+                      "sortby_nulls": 0,
+                      "useOp": {
+                        "List": {
+                          "items": null
+                        }
+                      },
+                      "location": -1
+                    }
+                  }
+                ]
+              }
+            },
+            "limitOffset": null,
+            "limitCount": null,
+            "lockingClause": {
+              "List": {
+                "items": null
+              }
+            },
+            "withClause": null,
+            "op": 0,
+            "all": false,
+            "larg": null,
+            "rarg": null
+          }
+        },
+        "stmt_location": 0,
+        "stmt_len": 50
+      }
+    }
+  ]
+}
+{
+  "Query": "SELECT first_name FROM student ORDER BY marks desc LIMIT 5;",
+  "Output": [
+    {
+      "RawStmt": {
+        "stmt": {
+          "SelectStmt": {
+            "distinctClause": {
+              "List": {
+                "items": null
+              }
+            },
+            "intoClause": null,
+            "targetList": {
+              "List": {
+                "items": [
+                  {
+                    "ResTarget": {
+                      "name": null,
+                      "indirection": {
+                        "List": {
+                          "items": null
+                        }
+                      },
+                      "val": {
+                        "ColumnRef": {
+                          "fields": {
+                            "List": {
+                              "items": [
+                                {
+                                  "String": {
+                                    "str": "first_name"
+                                  }
+                                }
+                              ]
+                            }
+                          },
+                          "location": 7
+                        }
+                      },
+                      "location": 7
+                    }
+                  }
+                ]
+              }
+            },
+            "fromClause": {
+              "List": {
+                "items": [
+                  {
+                    "RangeVar": {
+                      "catalogname": null,
+                      "schemaname": null,
+                      "relname": "student",
+                      "inh": true,
+                      "relpersistence": 112,
+                      "alias": null,
+                      "location": 23
+                    }
+                  }
+                ]
+              }
+            },
+            "whereClause": null,
+            "groupClause": {
+              "List": {
+                "items": null
+              }
+            },
+            "havingClause": null,
+            "windowClause": {
+              "List": {
+                "items": null
+              }
+            },
+            "valuesLists": null,
+            "sortClause": {
+              "List": {
+                "items": [
+                  {
+                    "SortBy": {
+                      "node": {
+                        "ColumnRef": {
+                          "fields": {
+                            "List": {
+                              "items": [
+                                {
+                                  "String": {
+                                    "str": "marks"
+                                  }
+                                }
+                              ]
+                            }
+                          },
+                          "location": 40
+                        }
+                      },
+                      "sortby_dir": 2,
+                      "sortby_nulls": 0,
+                      "useOp": {
+                        "List": {
+                          "items": null
+                        }
+                      },
+                      "location": -1
+                    }
+                  }
+                ]
+              }
+            },
+            "limitOffset": null,
+            "limitCount": {
+              "A_Const": {
+                "val": {
+                  "Integer": {
+                    "ival": 5
+                  }
+                },
+                "location": 57
+              }
+            },
+            "lockingClause": {
+              "List": {
+                "items": null
+              }
+            },
+            "withClause": null,
+            "op": 0,
+            "all": false,
+            "larg": null,
+            "rarg": null
+          }
+        },
+        "stmt_location": 0,
+        "stmt_len": 58
+      }
+    }
+  ]
+}
+{
+  "Query": "SELECT employee_id FROM employee WHERE name = 'stella' AND city = 'Bangalore';",
+  "Output": [
+    {
+      "RawStmt": {
+        "stmt": {
+          "SelectStmt": {
+            "distinctClause": {
+              "List": {
+                "items": null
+              }
+            },
+            "intoClause": null,
+            "targetList": {
+              "List": {
+                "items": [
+                  {
+                    "ResTarget": {
+                      "name": null,
+                      "indirection": {
+                        "List": {
+                          "items": null
+                        }
+                      },
+                      "val": {
+                        "ColumnRef": {
+                          "fields": {
+                            "List": {
+                              "items": [
+                                {
+                                  "String": {
+                                    "str": "employee_id"
+                                  }
+                                }
+                              ]
+                            }
+                          },
+                          "location": 7
+                        }
+                      },
+                      "location": 7
+                    }
+                  }
+                ]
+              }
+            },
+            "fromClause": {
+              "List": {
+                "items": [
+                  {
+                    "RangeVar": {
+                      "catalogname": null,
+                      "schemaname": null,
+                      "relname": "employee",
+                      "inh": true,
+                      "relpersistence": 112,
+                      "alias": null,
+                      "location": 24
+                    }
+                  }
+                ]
+              }
+            },
+            "whereClause": {
+              "BoolExpr": {
+                "xpr": null,
+                "boolop": 0,
+                "args": {
+                  "List": {
+                    "items": [
+                      {
+                        "A_Expr": {
+                          "kind": 0,
+                          "name": {
+                            "List": {
+                              "items": [
+                                {
+                                  "String": {
+                                    "str": "="
+                                  }
+                                }
+                              ]
+                            }
+                          },
+                          "lexpr": {
+                            "ColumnRef": {
+                              "fields": {
+                                "List": {
+                                  "items": [
+                                    {
+                                      "String": {
+                                        "str": "name"
+                                      }
+                                    }
+                                  ]
+                                }
+                              },
+                              "location": 39
+                            }
+                          },
+                          "rexpr": {
+                            "A_Const": {
+                              "val": {
+                                "String": {
+                                  "str": "stella"
+                                }
+                              },
+                              "location": 46
+                            }
+                          },
+                          "location": 44
+                        }
+                      },
+                      {
+                        "A_Expr": {
+                          "kind": 0,
+                          "name": {
+                            "List": {
+                              "items": [
+                                {
+                                  "String": {
+                                    "str": "="
+                                  }
+                                }
+                              ]
+                            }
+                          },
+                          "lexpr": {
+                            "ColumnRef": {
+                              "fields": {
+                                "List": {
+                                  "items": [
+                                    {
+                                      "String": {
+                                        "str": "city"
+                                      }
+                                    }
+                                  ]
+                                }
+                              },
+                              "location": 59
+                            }
+                          },
+                          "rexpr": {
+                            "A_Const": {
+                              "val": {
+                                "String": {
+                                  "str": "Bangalore"
+                                }
+                              },
+                              "location": 66
+                            }
+                          },
+                          "location": 64
+                        }
+                      }
+                    ]
+                  }
+                },
+                "location": 55
+              }
+            },
+            "groupClause": {
+              "List": {
+                "items": null
+              }
+            },
+            "havingClause": null,
+            "windowClause": {
+              "List": {
+                "items": null
+              }
+            },
+            "valuesLists": null,
+            "sortClause": {
+              "List": {
+                "items": null
+              }
+            },
+            "limitOffset": null,
+            "limitCount": null,
+            "lockingClause": {
+              "List": {
+                "items": null
+              }
+            },
+            "withClause": null,
+            "op": 0,
+            "all": false,
+            "larg": null,
+            "rarg": null
+          }
+        },
+        "stmt_location": 0,
+        "stmt_len": 77
+      }
+    }
+  ]
+}
+{
+  "Query": "SELECT employee_id FROM employee WHERE department = 'IT' OR city = 'Bangalore';",
+  "Output": [
+    {
+      "RawStmt": {
+        "stmt": {
+          "SelectStmt": {
+            "distinctClause": {
+              "List": {
+                "items": null
+              }
+            },
+            "intoClause": null,
+            "targetList": {
+              "List": {
+                "items": [
+                  {
+                    "ResTarget": {
+                      "name": null,
+                      "indirection": {
+                        "List": {
+                          "items": null
+                        }
+                      },
+                      "val": {
+                        "ColumnRef": {
+                          "fields": {
+                            "List": {
+                              "items": [
+                                {
+                                  "String": {
+                                    "str": "employee_id"
+                                  }
+                                }
+                              ]
+                            }
+                          },
+                          "location": 7
+                        }
+                      },
+                      "location": 7
+                    }
+                  }
+                ]
+              }
+            },
+            "fromClause": {
+              "List": {
+                "items": [
+                  {
+                    "RangeVar": {
+                      "catalogname": null,
+                      "schemaname": null,
+                      "relname": "employee",
+                      "inh": true,
+                      "relpersistence": 112,
+                      "alias": null,
+                      "location": 24
+                    }
+                  }
+                ]
+              }
+            },
+            "whereClause": {
+              "BoolExpr": {
+                "xpr": null,
+                "boolop": 1,
+                "args": {
+                  "List": {
+                    "items": [
+                      {
+                        "A_Expr": {
+                          "kind": 0,
+                          "name": {
+                            "List": {
+                              "items": [
+                                {
+                                  "String": {
+                                    "str": "="
+                                  }
+                                }
+                              ]
+                            }
+                          },
+                          "lexpr": {
+                            "ColumnRef": {
+                              "fields": {
+                                "List": {
+                                  "items": [
+                                    {
+                                      "String": {
+                                        "str": "department"
+                                      }
+                                    }
+                                  ]
+                                }
+                              },
+                              "location": 39
+                            }
+                          },
+                          "rexpr": {
+                            "A_Const": {
+                              "val": {
+                                "String": {
+                                  "str": "IT"
+                                }
+                              },
+                              "location": 52
+                            }
+                          },
+                          "location": 50
+                        }
+                      },
+                      {
+                        "A_Expr": {
+                          "kind": 0,
+                          "name": {
+                            "List": {
+                              "items": [
+                                {
+                                  "String": {
+                                    "str": "="
+                                  }
+                                }
+                              ]
+                            }
+                          },
+                          "lexpr": {
+                            "ColumnRef": {
+                              "fields": {
+                                "List": {
+                                  "items": [
+                                    {
+                                      "String": {
+                                        "str": "city"
+                                      }
+                                    }
+                                  ]
+                                }
+                              },
+                              "location": 60
+                            }
+                          },
+                          "rexpr": {
+                            "A_Const": {
+                              "val": {
+                                "String": {
+                                  "str": "Bangalore"
+                                }
+                              },
+                              "location": 67
+                            }
+                          },
+                          "location": 65
+                        }
+                      }
+                    ]
+                  }
+                },
+                "location": 57
+              }
+            },
+            "groupClause": {
+              "List": {
+                "items": null
+              }
+            },
+            "havingClause": null,
+            "windowClause": {
+              "List": {
+                "items": null
+              }
+            },
+            "valuesLists": null,
+            "sortClause": {
+              "List": {
+                "items": null
+              }
+            },
+            "limitOffset": null,
+            "limitCount": null,
+            "lockingClause": {
+              "List": {
+                "items": null
+              }
+            },
+            "withClause": null,
+            "op": 0,
+            "all": false,
+            "larg": null,
+            "rarg": null
+          }
+        },
+        "stmt_location": 0,
+        "stmt_len": 78
+      }
+    }
+  ]
+}
+{
+  "Query": "SELECT employee_id FROM employee WHERE emp_id NOT BETWEEN 1 AND 10;",
+  "Output": [
+    {
+      "RawStmt": {
+        "stmt": {
+          "SelectStmt": {
+            "distinctClause": {
+              "List": {
+                "items": null
+              }
+            },
+            "intoClause": null,
+            "targetList": {
+              "List": {
+                "items": [
+                  {
+                    "ResTarget": {
+                      "name": null,
+                      "indirection": {
+                        "List": {
+                          "items": null
+                        }
+                      },
+                      "val": {
+                        "ColumnRef": {
+                          "fields": {
+                            "List": {
+                              "items": [
+                                {
+                                  "String": {
+                                    "str": "employee_id"
+                                  }
+                                }
+                              ]
+                            }
+                          },
+                          "location": 7
+                        }
+                      },
+                      "location": 7
+                    }
+                  }
+                ]
+              }
+            },
+            "fromClause": {
+              "List": {
+                "items": [
+                  {
+                    "RangeVar": {
+                      "catalogname": null,
+                      "schemaname": null,
+                      "relname": "employee",
+                      "inh": true,
+                      "relpersistence": 112,
+                      "alias": null,
+                      "location": 24
+                    }
+                  }
+                ]
+              }
+            },
+            "whereClause": {
+              "A_Expr": {
+                "kind": 12,
+                "name": {
+                  "List": {
+                    "items": [
+                      {
+                        "String": {
+                          "str": "NOT BETWEEN"
+                        }
+                      }
+                    ]
+                  }
+                },
+                "lexpr": {
+                  "ColumnRef": {
+                    "fields": {
+                      "List": {
+                        "items": [
+                          {
+                            "String": {
+                              "str": "emp_id"
+                            }
+                          }
+                        ]
+                      }
+                    },
+                    "location": 39
+                  }
+                },
+                "rexpr": {
+                  "List": {
+                    "items": [
+                      {
+                        "A_Const": {
+                          "val": {
+                            "Integer": {
+                              "ival": 1
+                            }
+                          },
+                          "location": 58
+                        }
+                      },
+                      {
+                        "A_Const": {
+                          "val": {
+                            "Integer": {
+                              "ival": 10
+                            }
+                          },
+                          "location": 64
+                        }
+                      }
+                    ]
+                  }
+                },
+                "location": 46
+              }
+            },
+            "groupClause": {
+              "List": {
+                "items": null
+              }
+            },
+            "havingClause": null,
+            "windowClause": {
+              "List": {
+                "items": null
+              }
+            },
+            "valuesLists": null,
+            "sortClause": {
+              "List": {
+                "items": null
+              }
+            },
+            "limitOffset": null,
+            "limitCount": null,
+            "lockingClause": {
+              "List": {
+                "items": null
+              }
+            },
+            "withClause": null,
+            "op": 0,
+            "all": false,
+            "larg": null,
+            "rarg": null
+          }
+        },
+        "stmt_location": 0,
+        "stmt_len": 66
+      }
+    }
+  ]
+}
+{
+  "Query": "SELECT emp_id FROM employee WHERE emp_id BETWEEN 1 AND 10;",
+  "Output": [
+    {
+      "RawStmt": {
+        "stmt": {
+          "SelectStmt": {
+            "distinctClause": {
+              "List": {
+                "items": null
+              }
+            },
+            "intoClause": null,
+            "targetList": {
+              "List": {
+                "items": [
+                  {
+                    "ResTarget": {
+                      "name": null,
+                      "indirection": {
+                        "List": {
+                          "items": null
+                        }
+                      },
+                      "val": {
+                        "ColumnRef": {
+                          "fields": {
+                            "List": {
+                              "items": [
+                                {
+                                  "String": {
+                                    "str": "emp_id"
+                                  }
+                                }
+                              ]
+                            }
+                          },
+                          "location": 7
+                        }
+                      },
+                      "location": 7
+                    }
+                  }
+                ]
+              }
+            },
+            "fromClause": {
+              "List": {
+                "items": [
+                  {
+                    "RangeVar": {
+                      "catalogname": null,
+                      "schemaname": null,
+                      "relname": "employee",
+                      "inh": true,
+                      "relpersistence": 112,
+                      "alias": null,
+                      "location": 19
+                    }
+                  }
+                ]
+              }
+            },
+            "whereClause": {
+              "A_Expr": {
+                "kind": 11,
+                "name": {
+                  "List": {
+                    "items": [
+                      {
+                        "String": {
+                          "str": "BETWEEN"
+                        }
+                      }
+                    ]
+                  }
+                },
+                "lexpr": {
+                  "ColumnRef": {
+                    "fields": {
+                      "List": {
+                        "items": [
+                          {
+                            "String": {
+                              "str": "emp_id"
+                            }
+                          }
+                        ]
+                      }
+                    },
+                    "location": 34
+                  }
+                },
+                "rexpr": {
+                  "List": {
+                    "items": [
+                      {
+                        "A_Const": {
+                          "val": {
+                            "Integer": {
+                              "ival": 1
+                            }
+                          },
+                          "location": 49
+                        }
+                      },
+                      {
+                        "A_Const": {
+                          "val": {
+                            "Integer": {
+                              "ival": 10
+                            }
+                          },
+                          "location": 55
+                        }
+                      }
+                    ]
+                  }
+                },
+                "location": 41
+              }
+            },
+            "groupClause": {
+              "List": {
+                "items": null
+              }
+            },
+            "havingClause": null,
+            "windowClause": {
+              "List": {
+                "items": null
+              }
+            },
+            "valuesLists": null,
+            "sortClause": {
+              "List": {
+                "items": null
+              }
+            },
+            "limitOffset": null,
+            "limitCount": null,
+            "lockingClause": {
+              "List": {
+                "items": null
+              }
+            },
+            "withClause": null,
+            "op": 0,
+            "all": false,
+            "larg": null,
+            "rarg": null
+          }
+        },
+        "stmt_location": 0,
+        "stmt_len": 57
+      }
+    }
+  ]
+}
+{
+  "Query": "SELECT * FROM employee WHERE join_date BETWEEN '2007-01-01' AND '2008-01-01';",
+  "Output": [
+    {
+      "RawStmt": {
+        "stmt": {
+          "SelectStmt": {
+            "distinctClause": {
+              "List": {
+                "items": null
+              }
+            },
+            "intoClause": null,
+            "targetList": {
+              "List": {
+                "items": [
+                  {
+                    "ResTarget": {
+                      "name": null,
+                      "indirection": {
+                        "List": {
+                          "items": null
+                        }
+                      },
+                      "val": {
+                        "ColumnRef": {
+                          "fields": {
+                            "List": {
+                              "items": [
+                                {
+                                  "A_Star": {}
+                                }
+                              ]
+                            }
+                          },
+                          "location": 7
+                        }
+                      },
+                      "location": 7
+                    }
+                  }
+                ]
+              }
+            },
+            "fromClause": {
+              "List": {
+                "items": [
+                  {
+                    "RangeVar": {
+                      "catalogname": null,
+                      "schemaname": null,
+                      "relname": "employee",
+                      "inh": true,
+                      "relpersistence": 112,
+                      "alias": null,
+                      "location": 14
+                    }
+                  }
+                ]
+              }
+            },
+            "whereClause": {
+              "A_Expr": {
+                "kind": 11,
+                "name": {
+                  "List": {
+                    "items": [
+                      {
+                        "String": {
+                          "str": "BETWEEN"
+                        }
+                      }
+                    ]
+                  }
+                },
+                "lexpr": {
+                  "ColumnRef": {
+                    "fields": {
+                      "List": {
+                        "items": [
+                          {
+                            "String": {
+                              "str": "join_date"
+                            }
+                          }
+                        ]
+                      }
+                    },
+                    "location": 29
+                  }
+                },
+                "rexpr": {
+                  "List": {
+                    "items": [
+                      {
+                        "A_Const": {
+                          "val": {
+                            "String": {
+                              "str": "2007-01-01"
+                            }
+                          },
+                          "location": 47
+                        }
+                      },
+                      {
+                        "A_Const": {
+                          "val": {
+                            "String": {
+                              "str": "2008-01-01"
+                            }
+                          },
+                          "location": 64
+                        }
+                      }
+                    ]
+                  }
+                },
+                "location": 39
+              }
+            },
+            "groupClause": {
+              "List": {
+                "items": null
+              }
+            },
+            "havingClause": null,
+            "windowClause": {
+              "List": {
+                "items": null
+              }
+            },
+            "valuesLists": null,
+            "sortClause": {
+              "List": {
+                "items": null
+              }
+            },
+            "limitOffset": null,
+            "limitCount": null,
+            "lockingClause": {
+              "List": {
+                "items": null
+              }
+            },
+            "withClause": null,
+            "op": 0,
+            "all": false,
+            "larg": null,
+            "rarg": null
+          }
+        },
+        "stmt_location": 0,
+        "stmt_len": 76
+      }
+    }
+  ]
+}
+{
+  "Query": "SELECT * FROM employee WHERE employee_id IN (1001,1004,1008,1012);",
+  "Output": [
+    {
+      "RawStmt": {
+        "stmt": {
+          "SelectStmt": {
+            "distinctClause": {
+              "List": {
+                "items": null
+              }
+            },
+            "intoClause": null,
+            "targetList": {
+              "List": {
+                "items": [
+                  {
+                    "ResTarget": {
+                      "name": null,
+                      "indirection": {
+                        "List": {
+                          "items": null
+                        }
+                      },
+                      "val": {
+                        "ColumnRef": {
+                          "fields": {
+                            "List": {
+                              "items": [
+                                {
+                                  "A_Star": {}
+                                }
+                              ]
+                            }
+                          },
+                          "location": 7
+                        }
+                      },
+                      "location": 7
+                    }
+                  }
+                ]
+              }
+            },
+            "fromClause": {
+              "List": {
+                "items": [
+                  {
+                    "RangeVar": {
+                      "catalogname": null,
+                      "schemaname": null,
+                      "relname": "employee",
+                      "inh": true,
+                      "relpersistence": 112,
+                      "alias": null,
+                      "location": 14
+                    }
+                  }
+                ]
+              }
+            },
+            "whereClause": {
+              "A_Expr": {
+                "kind": 7,
+                "name": {
+                  "List": {
+                    "items": [
+                      {
+                        "String": {
+                          "str": "="
+                        }
+                      }
+                    ]
+                  }
+                },
+                "lexpr": {
+                  "ColumnRef": {
+                    "fields": {
+                      "List": {
+                        "items": [
+                          {
+                            "String": {
+                              "str": "employee_id"
+                            }
+                          }
+                        ]
+                      }
+                    },
+                    "location": 29
+                  }
+                },
+                "rexpr": {
+                  "List": {
+                    "items": [
+                      {
+                        "A_Const": {
+                          "val": {
+                            "Integer": {
+                              "ival": 1001
+                            }
+                          },
+                          "location": 45
+                        }
+                      },
+                      {
+                        "A_Const": {
+                          "val": {
+                            "Integer": {
+                              "ival": 1004
+                            }
+                          },
+                          "location": 50
+                        }
+                      },
+                      {
+                        "A_Const": {
+                          "val": {
+                            "Integer": {
+                              "ival": 1008
+                            }
+                          },
+                          "location": 55
+                        }
+                      },
+                      {
+                        "A_Const": {
+                          "val": {
+                            "Integer": {
+                              "ival": 1012
+                            }
+                          },
+                          "location": 60
+                        }
+                      }
+                    ]
+                  }
+                },
+                "location": 41
+              }
+            },
+            "groupClause": {
+              "List": {
+                "items": null
+              }
+            },
+            "havingClause": null,
+            "windowClause": {
+              "List": {
+                "items": null
+              }
+            },
+            "valuesLists": null,
+            "sortClause": {
+              "List": {
+                "items": null
+              }
+            },
+            "limitOffset": null,
+            "limitCount": null,
+            "lockingClause": {
+              "List": {
+                "items": null
+              }
+            },
+            "withClause": null,
+            "op": 0,
+            "all": false,
+            "larg": null,
+            "rarg": null
+          }
+        },
+        "stmt_location": 0,
+        "stmt_len": 65
+      }
+    }
+  ]
+}
+{
+  "Query": "SELECT first_name FROM tbl WHERE first_name LIKE 'A%';",
+  "Output": [
+    {
+      "RawStmt": {
+        "stmt": {
+          "SelectStmt": {
+            "distinctClause": {
+              "List": {
+                "items": null
+              }
+            },
+            "intoClause": null,
+            "targetList": {
+              "List": {
+                "items": [
+                  {
+                    "ResTarget": {
+                      "name": null,
+                      "indirection": {
+                        "List": {
+                          "items": null
+                        }
+                      },
+                      "val": {
+                        "ColumnRef": {
+                          "fields": {
+                            "List": {
+                              "items": [
+                                {
+                                  "String": {
+                                    "str": "first_name"
+                                  }
+                                }
+                              ]
+                            }
+                          },
+                          "location": 7
+                        }
+                      },
+                      "location": 7
+                    }
+                  }
+                ]
+              }
+            },
+            "fromClause": {
+              "List": {
+                "items": [
+                  {
+                    "RangeVar": {
+                      "catalogname": null,
+                      "schemaname": null,
+                      "relname": "tbl",
+                      "inh": true,
+                      "relpersistence": 112,
+                      "alias": null,
+                      "location": 23
+                    }
+                  }
+                ]
+              }
+            },
+            "whereClause": {
+              "A_Expr": {
+                "kind": 8,
+                "name": {
+                  "List": {
+                    "items": [
+                      {
+                        "String": {
+                          "str": "~~"
+                        }
+                      }
+                    ]
+                  }
+                },
+                "lexpr": {
+                  "ColumnRef": {
+                    "fields": {
+                      "List": {
+                        "items": [
+                          {
+                            "String": {
+                              "str": "first_name"
+                            }
+                          }
+                        ]
+                      }
+                    },
+                    "location": 33
+                  }
+                },
+                "rexpr": {
+                  "A_Const": {
+                    "val": {
+                      "String": {
+                        "str": "A%"
+                      }
+                    },
+                    "location": 49
+                  }
+                },
+                "location": 44
+              }
+            },
+            "groupClause": {
+              "List": {
+                "items": null
+              }
+            },
+            "havingClause": null,
+            "windowClause": {
+              "List": {
+                "items": null
+              }
+            },
+            "valuesLists": null,
+            "sortClause": {
+              "List": {
+                "items": null
+              }
+            },
+            "limitOffset": null,
+            "limitCount": null,
+            "lockingClause": {
+              "List": {
+                "items": null
+              }
+            },
+            "withClause": null,
+            "op": 0,
+            "all": false,
+            "larg": null,
+            "rarg": null
+          }
+        },
+        "stmt_location": 0,
+        "stmt_len": 53
+      }
+    }
+  ]
+}
+{
+  "Query": "SELECT SUBSTRING(customer_name,1,5) FROM customer_table;",
+  "Output": [
+    {
+      "RawStmt": {
+        "stmt": {
+          "SelectStmt": {
+            "distinctClause": {
+              "List": {
+                "items": null
+              }
+            },
+            "intoClause": null,
+            "targetList": {
+              "List": {
+                "items": [
+                  {
+                    "ResTarget": {
+                      "name": null,
+                      "indirection": {
+                        "List": {
+                          "items": null
+                        }
+                      },
+                      "val": {
+                        "FuncCall": {
+                          "funcname": {
+                            "List": {
+                              "items": [
+                                {
+                                  "String": {
+                                    "str": "pg_catalog"
+                                  }
+                                },
+                                {
+                                  "String": {
+                                    "str": "substring"
+                                  }
+                                }
+                              ]
+                            }
+                          },
+                          "args": {
+                            "List": {
+                              "items": [
+                                {
+                                  "ColumnRef": {
+                                    "fields": {
+                                      "List": {
+                                        "items": [
+                                          {
+                                            "String": {
+                                              "str": "customer_name"
+                                            }
+                                          }
+                                        ]
+                                      }
+                                    },
+                                    "location": 17
+                                  }
+                                },
+                                {
+                                  "A_Const": {
+                                    "val": {
+                                      "Integer": {
+                                        "ival": 1
+                                      }
+                                    },
+                                    "location": 31
+                                  }
+                                },
+                                {
+                                  "A_Const": {
+                                    "val": {
+                                      "Integer": {
+                                        "ival": 5
+                                      }
+                                    },
+                                    "location": 33
+                                  }
+                                }
+                              ]
+                            }
+                          },
+                          "agg_order": {
+                            "List": {
+                              "items": null
+                            }
+                          },
+                          "agg_filter": null,
+                          "agg_within_group": false,
+                          "agg_star": false,
+                          "agg_distinct": false,
+                          "func_variadic": false,
+                          "over": null,
+                          "location": 7
+                        }
+                      },
+                      "location": 7
+                    }
+                  }
+                ]
+              }
+            },
+            "fromClause": {
+              "List": {
+                "items": [
+                  {
+                    "RangeVar": {
+                      "catalogname": null,
+                      "schemaname": null,
+                      "relname": "customer_table",
+                      "inh": true,
+                      "relpersistence": 112,
+                      "alias": null,
+                      "location": 41
+                    }
+                  }
+                ]
+              }
+            },
+            "whereClause": null,
+            "groupClause": {
+              "List": {
+                "items": null
+              }
+            },
+            "havingClause": null,
+            "windowClause": {
+              "List": {
+                "items": null
+              }
+            },
+            "valuesLists": null,
+            "sortClause": {
+              "List": {
+                "items": null
+              }
+            },
+            "limitOffset": null,
+            "limitCount": null,
+            "lockingClause": {
+              "List": {
+                "items": null
+              }
+            },
+            "withClause": null,
+            "op": 0,
+            "all": false,
+            "larg": null,
+            "rarg": null
+          }
+        },
+        "stmt_location": 0,
+        "stmt_len": 55
+      }
+    }
+  ]
+}
+{
+  "Query": "SELECT INSTR('independence', 'pen');",
+  "Output": [
+    {
+      "RawStmt": {
+        "stmt": {
+          "SelectStmt": {
+            "distinctClause": {
+              "List": {
+                "items": null
+              }
+            },
+            "intoClause": null,
+            "targetList": {
+              "List": {
+                "items": [
+                  {
+                    "ResTarget": {
+                      "name": null,
+                      "indirection": {
+                        "List": {
+                          "items": null
+                        }
+                      },
+                      "val": {
+                        "FuncCall": {
+                          "funcname": {
+                            "List": {
+                              "items": [
+                                {
+                                  "String": {
+                                    "str": "instr"
+                                  }
+                                }
+                              ]
+                            }
+                          },
+                          "args": {
+                            "List": {
+                              "items": [
+                                {
+                                  "A_Const": {
+                                    "val": {
+                                      "String": {
+                                        "str": "independence"
+                                      }
+                                    },
+                                    "location": 13
+                                  }
+                                },
+                                {
+                                  "A_Const": {
+                                    "val": {
+                                      "String": {
+                                        "str": "pen"
+                                      }
+                                    },
+                                    "location": 29
+                                  }
+                                }
+                              ]
+                            }
+                          },
+                          "agg_order": {
+                            "List": {
+                              "items": null
+                            }
+                          },
+                          "agg_filter": null,
+                          "agg_within_group": false,
+                          "agg_star": false,
+                          "agg_distinct": false,
+                          "func_variadic": false,
+                          "over": null,
+                          "location": 7
+                        }
+                      },
+                      "location": 7
+                    }
+                  }
+                ]
+              }
+            },
+            "fromClause": {
+              "List": {
+                "items": null
+              }
+            },
+            "whereClause": null,
+            "groupClause": {
+              "List": {
+                "items": null
+              }
+            },
+            "havingClause": null,
+            "windowClause": {
+              "List": {
+                "items": null
+              }
+            },
+            "valuesLists": null,
+            "sortClause": {
+              "List": {
+                "items": null
+              }
+            },
+            "limitOffset": null,
+            "limitCount": null,
+            "lockingClause": {
+              "List": {
+                "items": null
+              }
+            },
+            "withClause": null,
+            "op": 0,
+            "all": false,
+            "larg": null,
+            "rarg": null
+          }
+        },
+        "stmt_location": 0,
+        "stmt_len": 35
+      }
+    }
+  ]
+}
+{
+  "Query": "SELECT employee_id FROM employee GROUP BY department HAVING salary \u003e 100000;",
+  "Output": [
+    {
+      "RawStmt": {
+        "stmt": {
+          "SelectStmt": {
+            "distinctClause": {
+              "List": {
+                "items": null
+              }
+            },
+            "intoClause": null,
+            "targetList": {
+              "List": {
+                "items": [
+                  {
+                    "ResTarget": {
+                      "name": null,
+                      "indirection": {
+                        "List": {
+                          "items": null
+                        }
+                      },
+                      "val": {
+                        "ColumnRef": {
+                          "fields": {
+                            "List": {
+                              "items": [
+                                {
+                                  "String": {
+                                    "str": "employee_id"
+                                  }
+                                }
+                              ]
+                            }
+                          },
+                          "location": 7
+                        }
+                      },
+                      "location": 7
+                    }
+                  }
+                ]
+              }
+            },
+            "fromClause": {
+              "List": {
+                "items": [
+                  {
+                    "RangeVar": {
+                      "catalogname": null,
+                      "schemaname": null,
+                      "relname": "employee",
+                      "inh": true,
+                      "relpersistence": 112,
+                      "alias": null,
+                      "location": 24
+                    }
+                  }
+                ]
+              }
+            },
+            "whereClause": null,
+            "groupClause": {
+              "List": {
+                "items": [
+                  {
+                    "ColumnRef": {
+                      "fields": {
+                        "List": {
+                          "items": [
+                            {
+                              "String": {
+                                "str": "department"
+                              }
+                            }
+                          ]
+                        }
+                      },
+                      "location": 42
+                    }
+                  }
+                ]
+              }
+            },
+            "havingClause": {
+              "A_Expr": {
+                "kind": 0,
+                "name": {
+                  "List": {
+                    "items": [
+                      {
+                        "String": {
+                          "str": "\u003e"
+                        }
+                      }
+                    ]
+                  }
+                },
+                "lexpr": {
+                  "ColumnRef": {
+                    "fields": {
+                      "List": {
+                        "items": [
+                          {
+                            "String": {
+                              "str": "salary"
+                            }
+                          }
+                        ]
+                      }
+                    },
+                    "location": 60
+                  }
+                },
+                "rexpr": {
+                  "A_Const": {
+                    "val": {
+                      "Integer": {
+                        "ival": 100000
+                      }
+                    },
+                    "location": 69
+                  }
+                },
+                "location": 67
+              }
+            },
+            "windowClause": {
+              "List": {
+                "items": null
+              }
+            },
+            "valuesLists": null,
+            "sortClause": {
+              "List": {
+                "items": null
+              }
+            },
+            "limitOffset": null,
+            "limitCount": null,
+            "lockingClause": {
+              "List": {
+                "items": null
+              }
+            },
+            "withClause": null,
+            "op": 0,
+            "all": false,
+            "larg": null,
+            "rarg": null
+          }
+        },
+        "stmt_location": 0,
+        "stmt_len": 75
+      }
+    }
+  ]
+}
+{
+  "Query": "SELECT SUM(salary) FROM employee;",
+  "Output": [
+    {
+      "RawStmt": {
+        "stmt": {
+          "SelectStmt": {
+            "distinctClause": {
+              "List": {
+                "items": null
+              }
+            },
+            "intoClause": null,
+            "targetList": {
+              "List": {
+                "items": [
+                  {
+                    "ResTarget": {
+                      "name": null,
+                      "indirection": {
+                        "List": {
+                          "items": null
+                        }
+                      },
+                      "val": {
+                        "FuncCall": {
+                          "funcname": {
+                            "List": {
+                              "items": [
+                                {
+                                  "String": {
+                                    "str": "sum"
+                                  }
+                                }
+                              ]
+                            }
+                          },
+                          "args": {
+                            "List": {
+                              "items": [
+                                {
+                                  "ColumnRef": {
+                                    "fields": {
+                                      "List": {
+                                        "items": [
+                                          {
+                                            "String": {
+                                              "str": "salary"
+                                            }
+                                          }
+                                        ]
+                                      }
+                                    },
+                                    "location": 11
+                                  }
+                                }
+                              ]
+                            }
+                          },
+                          "agg_order": {
+                            "List": {
+                              "items": null
+                            }
+                          },
+                          "agg_filter": null,
+                          "agg_within_group": false,
+                          "agg_star": false,
+                          "agg_distinct": false,
+                          "func_variadic": false,
+                          "over": null,
+                          "location": 7
+                        }
+                      },
+                      "location": 7
+                    }
+                  }
+                ]
+              }
+            },
+            "fromClause": {
+              "List": {
+                "items": [
+                  {
+                    "RangeVar": {
+                      "catalogname": null,
+                      "schemaname": null,
+                      "relname": "employee",
+                      "inh": true,
+                      "relpersistence": 112,
+                      "alias": null,
+                      "location": 24
+                    }
+                  }
+                ]
+              }
+            },
+            "whereClause": null,
+            "groupClause": {
+              "List": {
+                "items": null
+              }
+            },
+            "havingClause": null,
+            "windowClause": {
+              "List": {
+                "items": null
+              }
+            },
+            "valuesLists": null,
+            "sortClause": {
+              "List": {
+                "items": null
+              }
+            },
+            "limitOffset": null,
+            "limitCount": null,
+            "lockingClause": {
+              "List": {
+                "items": null
+              }
+            },
+            "withClause": null,
+            "op": 0,
+            "all": false,
+            "larg": null,
+            "rarg": null
+          }
+        },
+        "stmt_location": 0,
+        "stmt_len": 32
+      }
+    }
+  ]
+}
+{
+  "Query": "SELECT AVG(salary) FROM employee;",
+  "Output": [
+    {
+      "RawStmt": {
+        "stmt": {
+          "SelectStmt": {
+            "distinctClause": {
+              "List": {
+                "items": null
+              }
+            },
+            "intoClause": null,
+            "targetList": {
+              "List": {
+                "items": [
+                  {
+                    "ResTarget": {
+                      "name": null,
+                      "indirection": {
+                        "List": {
+                          "items": null
+                        }
+                      },
+                      "val": {
+                        "FuncCall": {
+                          "funcname": {
+                            "List": {
+                              "items": [
+                                {
+                                  "String": {
+                                    "str": "avg"
+                                  }
+                                }
+                              ]
+                            }
+                          },
+                          "args": {
+                            "List": {
+                              "items": [
+                                {
+                                  "ColumnRef": {
+                                    "fields": {
+                                      "List": {
+                                        "items": [
+                                          {
+                                            "String": {
+                                              "str": "salary"
+                                            }
+                                          }
+                                        ]
+                                      }
+                                    },
+                                    "location": 11
+                                  }
+                                }
+                              ]
+                            }
+                          },
+                          "agg_order": {
+                            "List": {
+                              "items": null
+                            }
+                          },
+                          "agg_filter": null,
+                          "agg_within_group": false,
+                          "agg_star": false,
+                          "agg_distinct": false,
+                          "func_variadic": false,
+                          "over": null,
+                          "location": 7
+                        }
+                      },
+                      "location": 7
+                    }
+                  }
+                ]
+              }
+            },
+            "fromClause": {
+              "List": {
+                "items": [
+                  {
+                    "RangeVar": {
+                      "catalogname": null,
+                      "schemaname": null,
+                      "relname": "employee",
+                      "inh": true,
+                      "relpersistence": 112,
+                      "alias": null,
+                      "location": 24
+                    }
+                  }
+                ]
+              }
+            },
+            "whereClause": null,
+            "groupClause": {
+              "List": {
+                "items": null
+              }
+            },
+            "havingClause": null,
+            "windowClause": {
+              "List": {
+                "items": null
+              }
+            },
+            "valuesLists": null,
+            "sortClause": {
+              "List": {
+                "items": null
+              }
+            },
+            "limitOffset": null,
+            "limitCount": null,
+            "lockingClause": {
+              "List": {
+                "items": null
+              }
+            },
+            "withClause": null,
+            "op": 0,
+            "all": false,
+            "larg": null,
+            "rarg": null
+          }
+        },
+        "stmt_location": 0,
+        "stmt_len": 32
+      }
+    }
+  ]
+}
+{
+  "Query": "SELECT MIN(salary) FROM employee;",
+  "Output": [
+    {
+      "RawStmt": {
+        "stmt": {
+          "SelectStmt": {
+            "distinctClause": {
+              "List": {
+                "items": null
+              }
+            },
+            "intoClause": null,
+            "targetList": {
+              "List": {
+                "items": [
+                  {
+                    "ResTarget": {
+                      "name": null,
+                      "indirection": {
+                        "List": {
+                          "items": null
+                        }
+                      },
+                      "val": {
+                        "FuncCall": {
+                          "funcname": {
+                            "List": {
+                              "items": [
+                                {
+                                  "String": {
+                                    "str": "min"
+                                  }
+                                }
+                              ]
+                            }
+                          },
+                          "args": {
+                            "List": {
+                              "items": [
+                                {
+                                  "ColumnRef": {
+                                    "fields": {
+                                      "List": {
+                                        "items": [
+                                          {
+                                            "String": {
+                                              "str": "salary"
+                                            }
+                                          }
+                                        ]
+                                      }
+                                    },
+                                    "location": 11
+                                  }
+                                }
+                              ]
+                            }
+                          },
+                          "agg_order": {
+                            "List": {
+                              "items": null
+                            }
+                          },
+                          "agg_filter": null,
+                          "agg_within_group": false,
+                          "agg_star": false,
+                          "agg_distinct": false,
+                          "func_variadic": false,
+                          "over": null,
+                          "location": 7
+                        }
+                      },
+                      "location": 7
+                    }
+                  }
+                ]
+              }
+            },
+            "fromClause": {
+              "List": {
+                "items": [
+                  {
+                    "RangeVar": {
+                      "catalogname": null,
+                      "schemaname": null,
+                      "relname": "employee",
+                      "inh": true,
+                      "relpersistence": 112,
+                      "alias": null,
+                      "location": 24
+                    }
+                  }
+                ]
+              }
+            },
+            "whereClause": null,
+            "groupClause": {
+              "List": {
+                "items": null
+              }
+            },
+            "havingClause": null,
+            "windowClause": {
+              "List": {
+                "items": null
+              }
+            },
+            "valuesLists": null,
+            "sortClause": {
+              "List": {
+                "items": null
+              }
+            },
+            "limitOffset": null,
+            "limitCount": null,
+            "lockingClause": {
+              "List": {
+                "items": null
+              }
+            },
+            "withClause": null,
+            "op": 0,
+            "all": false,
+            "larg": null,
+            "rarg": null
+          }
+        },
+        "stmt_location": 0,
+        "stmt_len": 32
+      }
+    }
+  ]
+}
+{
+  "Query": "SELECT MAX(salary) FROM employee;",
+  "Output": [
+    {
+      "RawStmt": {
+        "stmt": {
+          "SelectStmt": {
+            "distinctClause": {
+              "List": {
+                "items": null
+              }
+            },
+            "intoClause": null,
+            "targetList": {
+              "List": {
+                "items": [
+                  {
+                    "ResTarget": {
+                      "name": null,
+                      "indirection": {
+                        "List": {
+                          "items": null
+                        }
+                      },
+                      "val": {
+                        "FuncCall": {
+                          "funcname": {
+                            "List": {
+                              "items": [
+                                {
+                                  "String": {
+                                    "str": "max"
+                                  }
+                                }
+                              ]
+                            }
+                          },
+                          "args": {
+                            "List": {
+                              "items": [
+                                {
+                                  "ColumnRef": {
+                                    "fields": {
+                                      "List": {
+                                        "items": [
+                                          {
+                                            "String": {
+                                              "str": "salary"
+                                            }
+                                          }
+                                        ]
+                                      }
+                                    },
+                                    "location": 11
+                                  }
+                                }
+                              ]
+                            }
+                          },
+                          "agg_order": {
+                            "List": {
+                              "items": null
+                            }
+                          },
+                          "agg_filter": null,
+                          "agg_within_group": false,
+                          "agg_star": false,
+                          "agg_distinct": false,
+                          "func_variadic": false,
+                          "over": null,
+                          "location": 7
+                        }
+                      },
+                      "location": 7
+                    }
+                  }
+                ]
+              }
+            },
+            "fromClause": {
+              "List": {
+                "items": [
+                  {
+                    "RangeVar": {
+                      "catalogname": null,
+                      "schemaname": null,
+                      "relname": "employee",
+                      "inh": true,
+                      "relpersistence": 112,
+                      "alias": null,
+                      "location": 24
+                    }
+                  }
+                ]
+              }
+            },
+            "whereClause": null,
+            "groupClause": {
+              "List": {
+                "items": null
+              }
+            },
+            "havingClause": null,
+            "windowClause": {
+              "List": {
+                "items": null
+              }
+            },
+            "valuesLists": null,
+            "sortClause": {
+              "List": {
+                "items": null
+              }
+            },
+            "limitOffset": null,
+            "limitCount": null,
+            "lockingClause": {
+              "List": {
+                "items": null
+              }
+            },
+            "withClause": null,
+            "op": 0,
+            "all": false,
+            "larg": null,
+            "rarg": null
+          }
+        },
+        "stmt_location": 0,
+        "stmt_len": 32
+      }
+    }
+  ]
+}
+{
+  "Query": "SELECT * FROM orders INNER JOIN customer ON orders.cust_id = customer.cust_id;",
+  "Output": [
+    {
+      "RawStmt": {
+        "stmt": {
+          "SelectStmt": {
+            "distinctClause": {
+              "List": {
+                "items": null
+              }
+            },
+            "intoClause": null,
+            "targetList": {
+              "List": {
+                "items": [
+                  {
+                    "ResTarget": {
+                      "name": null,
+                      "indirection": {
+                        "List": {
+                          "items": null
+                        }
+                      },
+                      "val": {
+                        "ColumnRef": {
+                          "fields": {
+                            "List": {
+                              "items": [
+                                {
+                                  "A_Star": {}
+                                }
+                              ]
+                            }
+                          },
+                          "location": 7
+                        }
+                      },
+                      "location": 7
+                    }
+                  }
+                ]
+              }
+            },
+            "fromClause": {
+              "List": {
+                "items": [
+                  {
+                    "JoinExpr": {
+                      "jointype": 0,
+                      "isNatural": false,
+                      "larg": {
+                        "RangeVar": {
+                          "catalogname": null,
+                          "schemaname": null,
+                          "relname": "orders",
+                          "inh": true,
+                          "relpersistence": 112,
+                          "alias": null,
+                          "location": 14
+                        }
+                      },
+                      "rarg": {
+                        "RangeVar": {
+                          "catalogname": null,
+                          "schemaname": null,
+                          "relname": "customer",
+                          "inh": true,
+                          "relpersistence": 112,
+                          "alias": null,
+                          "location": 32
+                        }
+                      },
+                      "usingClause": {
+                        "List": {
+                          "items": null
+                        }
+                      },
+                      "quals": {
+                        "A_Expr": {
+                          "kind": 0,
+                          "name": {
+                            "List": {
+                              "items": [
+                                {
+                                  "String": {
+                                    "str": "="
+                                  }
+                                }
+                              ]
+                            }
+                          },
+                          "lexpr": {
+                            "ColumnRef": {
+                              "fields": {
+                                "List": {
+                                  "items": [
+                                    {
+                                      "String": {
+                                        "str": "orders"
+                                      }
+                                    },
+                                    {
+                                      "String": {
+                                        "str": "cust_id"
+                                      }
+                                    }
+                                  ]
+                                }
+                              },
+                              "location": 44
+                            }
+                          },
+                          "rexpr": {
+                            "ColumnRef": {
+                              "fields": {
+                                "List": {
+                                  "items": [
+                                    {
+                                      "String": {
+                                        "str": "customer"
+                                      }
+                                    },
+                                    {
+                                      "String": {
+                                        "str": "cust_id"
+                                      }
+                                    }
+                                  ]
+                                }
+                              },
+                              "location": 61
+                            }
+                          },
+                          "location": 59
+                        }
+                      },
+                      "alias": null,
+                      "rtindex": 0
+                    }
+                  }
+                ]
+              }
+            },
+            "whereClause": null,
+            "groupClause": {
+              "List": {
+                "items": null
+              }
+            },
+            "havingClause": null,
+            "windowClause": {
+              "List": {
+                "items": null
+              }
+            },
+            "valuesLists": null,
+            "sortClause": {
+              "List": {
+                "items": null
+              }
+            },
+            "limitOffset": null,
+            "limitCount": null,
+            "lockingClause": {
+              "List": {
+                "items": null
+              }
+            },
+            "withClause": null,
+            "op": 0,
+            "all": false,
+            "larg": null,
+            "rarg": null
+          }
+        },
+        "stmt_location": 0,
+        "stmt_len": 77
+      }
+    }
+  ]
+}
+{
+  "Query": "SELECT * FROM orders LEFT JOIN customer ON orders.cust_id = customer.cust_id;",
+  "Output": [
+    {
+      "RawStmt": {
+        "stmt": {
+          "SelectStmt": {
+            "distinctClause": {
+              "List": {
+                "items": null
+              }
+            },
+            "intoClause": null,
+            "targetList": {
+              "List": {
+                "items": [
+                  {
+                    "ResTarget": {
+                      "name": null,
+                      "indirection": {
+                        "List": {
+                          "items": null
+                        }
+                      },
+                      "val": {
+                        "ColumnRef": {
+                          "fields": {
+                            "List": {
+                              "items": [
+                                {
+                                  "A_Star": {}
+                                }
+                              ]
+                            }
+                          },
+                          "location": 7
+                        }
+                      },
+                      "location": 7
+                    }
+                  }
+                ]
+              }
+            },
+            "fromClause": {
+              "List": {
+                "items": [
+                  {
+                    "JoinExpr": {
+                      "jointype": 1,
+                      "isNatural": false,
+                      "larg": {
+                        "RangeVar": {
+                          "catalogname": null,
+                          "schemaname": null,
+                          "relname": "orders",
+                          "inh": true,
+                          "relpersistence": 112,
+                          "alias": null,
+                          "location": 14
+                        }
+                      },
+                      "rarg": {
+                        "RangeVar": {
+                          "catalogname": null,
+                          "schemaname": null,
+                          "relname": "customer",
+                          "inh": true,
+                          "relpersistence": 112,
+                          "alias": null,
+                          "location": 31
+                        }
+                      },
+                      "usingClause": {
+                        "List": {
+                          "items": null
+                        }
+                      },
+                      "quals": {
+                        "A_Expr": {
+                          "kind": 0,
+                          "name": {
+                            "List": {
+                              "items": [
+                                {
+                                  "String": {
+                                    "str": "="
+                                  }
+                                }
+                              ]
+                            }
+                          },
+                          "lexpr": {
+                            "ColumnRef": {
+                              "fields": {
+                                "List": {
+                                  "items": [
+                                    {
+                                      "String": {
+                                        "str": "orders"
+                                      }
+                                    },
+                                    {
+                                      "String": {
+                                        "str": "cust_id"
+                                      }
+                                    }
+                                  ]
+                                }
+                              },
+                              "location": 43
+                            }
+                          },
+                          "rexpr": {
+                            "ColumnRef": {
+                              "fields": {
+                                "List": {
+                                  "items": [
+                                    {
+                                      "String": {
+                                        "str": "customer"
+                                      }
+                                    },
+                                    {
+                                      "String": {
+                                        "str": "cust_id"
+                                      }
+                                    }
+                                  ]
+                                }
+                              },
+                              "location": 60
+                            }
+                          },
+                          "location": 58
+                        }
+                      },
+                      "alias": null,
+                      "rtindex": 0
+                    }
+                  }
+                ]
+              }
+            },
+            "whereClause": null,
+            "groupClause": {
+              "List": {
+                "items": null
+              }
+            },
+            "havingClause": null,
+            "windowClause": {
+              "List": {
+                "items": null
+              }
+            },
+            "valuesLists": null,
+            "sortClause": {
+              "List": {
+                "items": null
+              }
+            },
+            "limitOffset": null,
+            "limitCount": null,
+            "lockingClause": {
+              "List": {
+                "items": null
+              }
+            },
+            "withClause": null,
+            "op": 0,
+            "all": false,
+            "larg": null,
+            "rarg": null
+          }
+        },
+        "stmt_location": 0,
+        "stmt_len": 76
+      }
+    }
+  ]
+}
+{
+  "Query": "SELECT * FROM orders RIGHT JOIN customer ON orders.cust_id = customer.cust_id;",
+  "Output": [
+    {
+      "RawStmt": {
+        "stmt": {
+          "SelectStmt": {
+            "distinctClause": {
+              "List": {
+                "items": null
+              }
+            },
+            "intoClause": null,
+            "targetList": {
+              "List": {
+                "items": [
+                  {
+                    "ResTarget": {
+                      "name": null,
+                      "indirection": {
+                        "List": {
+                          "items": null
+                        }
+                      },
+                      "val": {
+                        "ColumnRef": {
+                          "fields": {
+                            "List": {
+                              "items": [
+                                {
+                                  "A_Star": {}
+                                }
+                              ]
+                            }
+                          },
+                          "location": 7
+                        }
+                      },
+                      "location": 7
+                    }
+                  }
+                ]
+              }
+            },
+            "fromClause": {
+              "List": {
+                "items": [
+                  {
+                    "JoinExpr": {
+                      "jointype": 3,
+                      "isNatural": false,
+                      "larg": {
+                        "RangeVar": {
+                          "catalogname": null,
+                          "schemaname": null,
+                          "relname": "orders",
+                          "inh": true,
+                          "relpersistence": 112,
+                          "alias": null,
+                          "location": 14
+                        }
+                      },
+                      "rarg": {
+                        "RangeVar": {
+                          "catalogname": null,
+                          "schemaname": null,
+                          "relname": "customer",
+                          "inh": true,
+                          "relpersistence": 112,
+                          "alias": null,
+                          "location": 32
+                        }
+                      },
+                      "usingClause": {
+                        "List": {
+                          "items": null
+                        }
+                      },
+                      "quals": {
+                        "A_Expr": {
+                          "kind": 0,
+                          "name": {
+                            "List": {
+                              "items": [
+                                {
+                                  "String": {
+                                    "str": "="
+                                  }
+                                }
+                              ]
+                            }
+                          },
+                          "lexpr": {
+                            "ColumnRef": {
+                              "fields": {
+                                "List": {
+                                  "items": [
+                                    {
+                                      "String": {
+                                        "str": "orders"
+                                      }
+                                    },
+                                    {
+                                      "String": {
+                                        "str": "cust_id"
+                                      }
+                                    }
+                                  ]
+                                }
+                              },
+                              "location": 44
+                            }
+                          },
+                          "rexpr": {
+                            "ColumnRef": {
+                              "fields": {
+                                "List": {
+                                  "items": [
+                                    {
+                                      "String": {
+                                        "str": "customer"
+                                      }
+                                    },
+                                    {
+                                      "String": {
+                                        "str": "cust_id"
+                                      }
+                                    }
+                                  ]
+                                }
+                              },
+                              "location": 61
+                            }
+                          },
+                          "location": 59
+                        }
+                      },
+                      "alias": null,
+                      "rtindex": 0
+                    }
+                  }
+                ]
+              }
+            },
+            "whereClause": null,
+            "groupClause": {
+              "List": {
+                "items": null
+              }
+            },
+            "havingClause": null,
+            "windowClause": {
+              "List": {
+                "items": null
+              }
+            },
+            "valuesLists": null,
+            "sortClause": {
+              "List": {
+                "items": null
+              }
+            },
+            "limitOffset": null,
+            "limitCount": null,
+            "lockingClause": {
+              "List": {
+                "items": null
+              }
+            },
+            "withClause": null,
+            "op": 0,
+            "all": false,
+            "larg": null,
+            "rarg": null
+          }
+        },
+        "stmt_location": 0,
+        "stmt_len": 77
+      }
+    }
+  ]
+}
+{
+  "Query": "SELECT * FROM orders FULL OUTER JOIN customer ON orders.cust_id = customer.cust_id;",
+  "Output": [
+    {
+      "RawStmt": {
+        "stmt": {
+          "SelectStmt": {
+            "distinctClause": {
+              "List": {
+                "items": null
+              }
+            },
+            "intoClause": null,
+            "targetList": {
+              "List": {
+                "items": [
+                  {
+                    "ResTarget": {
+                      "name": null,
+                      "indirection": {
+                        "List": {
+                          "items": null
+                        }
+                      },
+                      "val": {
+                        "ColumnRef": {
+                          "fields": {
+                            "List": {
+                              "items": [
+                                {
+                                  "A_Star": {}
+                                }
+                              ]
+                            }
+                          },
+                          "location": 7
+                        }
+                      },
+                      "location": 7
+                    }
+                  }
+                ]
+              }
+            },
+            "fromClause": {
+              "List": {
+                "items": [
+                  {
+                    "JoinExpr": {
+                      "jointype": 2,
+                      "isNatural": false,
+                      "larg": {
+                        "RangeVar": {
+                          "catalogname": null,
+                          "schemaname": null,
+                          "relname": "orders",
+                          "inh": true,
+                          "relpersistence": 112,
+                          "alias": null,
+                          "location": 14
+                        }
+                      },
+                      "rarg": {
+                        "RangeVar": {
+                          "catalogname": null,
+                          "schemaname": null,
+                          "relname": "customer",
+                          "inh": true,
+                          "relpersistence": 112,
+                          "alias": null,
+                          "location": 37
+                        }
+                      },
+                      "usingClause": {
+                        "List": {
+                          "items": null
+                        }
+                      },
+                      "quals": {
+                        "A_Expr": {
+                          "kind": 0,
+                          "name": {
+                            "List": {
+                              "items": [
+                                {
+                                  "String": {
+                                    "str": "="
+                                  }
+                                }
+                              ]
+                            }
+                          },
+                          "lexpr": {
+                            "ColumnRef": {
+                              "fields": {
+                                "List": {
+                                  "items": [
+                                    {
+                                      "String": {
+                                        "str": "orders"
+                                      }
+                                    },
+                                    {
+                                      "String": {
+                                        "str": "cust_id"
+                                      }
+                                    }
+                                  ]
+                                }
+                              },
+                              "location": 49
+                            }
+                          },
+                          "rexpr": {
+                            "ColumnRef": {
+                              "fields": {
+                                "List": {
+                                  "items": [
+                                    {
+                                      "String": {
+                                        "str": "customer"
+                                      }
+                                    },
+                                    {
+                                      "String": {
+                                        "str": "cust_id"
+                                      }
+                                    }
+                                  ]
+                                }
+                              },
+                              "location": 66
+                            }
+                          },
+                          "location": 64
+                        }
+                      },
+                      "alias": null,
+                      "rtindex": 0
+                    }
+                  }
+                ]
+              }
+            },
+            "whereClause": null,
+            "groupClause": {
+              "List": {
+                "items": null
+              }
+            },
+            "havingClause": null,
+            "windowClause": {
+              "List": {
+                "items": null
+              }
+            },
+            "valuesLists": null,
+            "sortClause": {
+              "List": {
+                "items": null
+              }
+            },
+            "limitOffset": null,
+            "limitCount": null,
+            "lockingClause": {
+              "List": {
+                "items": null
+              }
+            },
+            "withClause": null,
+            "op": 0,
+            "all": false,
+            "larg": null,
+            "rarg": null
+          }
+        },
+        "stmt_location": 0,
+        "stmt_len": 82
+      }
+    }
+  ]
+}
+{
+  "Query": "SELECT Name, SUM(Value) AS \"SUM(VALUE)\", SUM(Value) / totals.total AS \"% of Total\" FROM table1, (SELECT Name, SUM(Value) AS total FROM table1 GROUP BY Name) AS totals WHERE table1.Name = totals.Name AND Year BETWEEN 2000 AND 2001 GROUP BY Name;",
+  "Output": [
+    {
+      "RawStmt": {
+        "stmt": {
+          "SelectStmt": {
+            "distinctClause": {
+              "List": {
+                "items": null
+              }
+            },
+            "intoClause": null,
+            "targetList": {
+              "List": {
+                "items": [
+                  {
+                    "ResTarget": {
+                      "name": null,
+                      "indirection": {
+                        "List": {
+                          "items": null
+                        }
+                      },
+                      "val": {
+                        "ColumnRef": {
+                          "fields": {
+                            "List": {
+                              "items": [
+                                {
+                                  "String": {
+                                    "str": "name"
+                                  }
+                                }
+                              ]
+                            }
+                          },
+                          "location": 7
+                        }
+                      },
+                      "location": 7
+                    }
+                  },
+                  {
+                    "ResTarget": {
+                      "name": "SUM(VALUE)",
+                      "indirection": {
+                        "List": {
+                          "items": null
+                        }
+                      },
+                      "val": {
+                        "FuncCall": {
+                          "funcname": {
+                            "List": {
+                              "items": [
+                                {
+                                  "String": {
+                                    "str": "sum"
+                                  }
+                                }
+                              ]
+                            }
+                          },
+                          "args": {
+                            "List": {
+                              "items": [
+                                {
+                                  "ColumnRef": {
+                                    "fields": {
+                                      "List": {
+                                        "items": [
+                                          {
+                                            "String": {
+                                              "str": "value"
+                                            }
+                                          }
+                                        ]
+                                      }
+                                    },
+                                    "location": 17
+                                  }
+                                }
+                              ]
+                            }
+                          },
+                          "agg_order": {
+                            "List": {
+                              "items": null
+                            }
+                          },
+                          "agg_filter": null,
+                          "agg_within_group": false,
+                          "agg_star": false,
+                          "agg_distinct": false,
+                          "func_variadic": false,
+                          "over": null,
+                          "location": 13
+                        }
+                      },
+                      "location": 13
+                    }
+                  },
+                  {
+                    "ResTarget": {
+                      "name": "% of Total",
+                      "indirection": {
+                        "List": {
+                          "items": null
+                        }
+                      },
+                      "val": {
+                        "A_Expr": {
+                          "kind": 0,
+                          "name": {
+                            "List": {
+                              "items": [
+                                {
+                                  "String": {
+                                    "str": "/"
+                                  }
+                                }
+                              ]
+                            }
+                          },
+                          "lexpr": {
+                            "FuncCall": {
+                              "funcname": {
+                                "List": {
+                                  "items": [
+                                    {
+                                      "String": {
+                                        "str": "sum"
+                                      }
+                                    }
+                                  ]
+                                }
+                              },
+                              "args": {
+                                "List": {
+                                  "items": [
+                                    {
+                                      "ColumnRef": {
+                                        "fields": {
+                                          "List": {
+                                            "items": [
+                                              {
+                                                "String": {
+                                                  "str": "value"
+                                                }
+                                              }
+                                            ]
+                                          }
+                                        },
+                                        "location": 45
+                                      }
+                                    }
+                                  ]
+                                }
+                              },
+                              "agg_order": {
+                                "List": {
+                                  "items": null
+                                }
+                              },
+                              "agg_filter": null,
+                              "agg_within_group": false,
+                              "agg_star": false,
+                              "agg_distinct": false,
+                              "func_variadic": false,
+                              "over": null,
+                              "location": 41
+                            }
+                          },
+                          "rexpr": {
+                            "ColumnRef": {
+                              "fields": {
+                                "List": {
+                                  "items": [
+                                    {
+                                      "String": {
+                                        "str": "totals"
+                                      }
+                                    },
+                                    {
+                                      "String": {
+                                        "str": "total"
+                                      }
+                                    }
+                                  ]
+                                }
+                              },
+                              "location": 54
+                            }
+                          },
+                          "location": 52
+                        }
+                      },
+                      "location": 41
+                    }
+                  }
+                ]
+              }
+            },
+            "fromClause": {
+              "List": {
+                "items": [
+                  {
+                    "RangeVar": {
+                      "catalogname": null,
+                      "schemaname": null,
+                      "relname": "table1",
+                      "inh": true,
+                      "relpersistence": 112,
+                      "alias": null,
+                      "location": 88
+                    }
+                  },
+                  {
+                    "RangeSubselect": {
+                      "lateral": false,
+                      "subquery": {
+                        "SelectStmt": {
+                          "distinctClause": {
+                            "List": {
+                              "items": null
+                            }
+                          },
+                          "intoClause": null,
+                          "targetList": {
+                            "List": {
+                              "items": [
+                                {
+                                  "ResTarget": {
+                                    "name": null,
+                                    "indirection": {
+                                      "List": {
+                                        "items": null
+                                      }
+                                    },
+                                    "val": {
+                                      "ColumnRef": {
+                                        "fields": {
+                                          "List": {
+                                            "items": [
+                                              {
+                                                "String": {
+                                                  "str": "name"
+                                                }
+                                              }
+                                            ]
+                                          }
+                                        },
+                                        "location": 104
+                                      }
+                                    },
+                                    "location": 104
+                                  }
+                                },
+                                {
+                                  "ResTarget": {
+                                    "name": "total",
+                                    "indirection": {
+                                      "List": {
+                                        "items": null
+                                      }
+                                    },
+                                    "val": {
+                                      "FuncCall": {
+                                        "funcname": {
+                                          "List": {
+                                            "items": [
+                                              {
+                                                "String": {
+                                                  "str": "sum"
+                                                }
+                                              }
+                                            ]
+                                          }
+                                        },
+                                        "args": {
+                                          "List": {
+                                            "items": [
+                                              {
+                                                "ColumnRef": {
+                                                  "fields": {
+                                                    "List": {
+                                                      "items": [
+                                                        {
+                                                          "String": {
+                                                            "str": "value"
+                                                          }
+                                                        }
+                                                      ]
+                                                    }
+                                                  },
+                                                  "location": 114
+                                                }
+                                              }
+                                            ]
+                                          }
+                                        },
+                                        "agg_order": {
+                                          "List": {
+                                            "items": null
+                                          }
+                                        },
+                                        "agg_filter": null,
+                                        "agg_within_group": false,
+                                        "agg_star": false,
+                                        "agg_distinct": false,
+                                        "func_variadic": false,
+                                        "over": null,
+                                        "location": 110
+                                      }
+                                    },
+                                    "location": 110
+                                  }
+                                }
+                              ]
+                            }
+                          },
+                          "fromClause": {
+                            "List": {
+                              "items": [
+                                {
+                                  "RangeVar": {
+                                    "catalogname": null,
+                                    "schemaname": null,
+                                    "relname": "table1",
+                                    "inh": true,
+                                    "relpersistence": 112,
+                                    "alias": null,
+                                    "location": 135
+                                  }
+                                }
+                              ]
+                            }
+                          },
+                          "whereClause": null,
+                          "groupClause": {
+                            "List": {
+                              "items": [
+                                {
+                                  "ColumnRef": {
+                                    "fields": {
+                                      "List": {
+                                        "items": [
+                                          {
+                                            "String": {
+                                              "str": "name"
+                                            }
+                                          }
+                                        ]
+                                      }
+                                    },
+                                    "location": 151
+                                  }
+                                }
+                              ]
+                            }
+                          },
+                          "havingClause": null,
+                          "windowClause": {
+                            "List": {
+                              "items": null
+                            }
+                          },
+                          "valuesLists": null,
+                          "sortClause": {
+                            "List": {
+                              "items": null
+                            }
+                          },
+                          "limitOffset": null,
+                          "limitCount": null,
+                          "lockingClause": {
+                            "List": {
+                              "items": null
+                            }
+                          },
+                          "withClause": null,
+                          "op": 0,
+                          "all": false,
+                          "larg": null,
+                          "rarg": null
+                        }
+                      },
+                      "alias": {
+                        "Alias": {
+                          "aliasname": "totals",
+                          "colnames": {
+                            "List": {
+                              "items": null
+                            }
+                          }
+                        }
+                      }
+                    }
+                  }
+                ]
+              }
+            },
+            "whereClause": {
+              "BoolExpr": {
+                "xpr": null,
+                "boolop": 0,
+                "args": {
+                  "List": {
+                    "items": [
+                      {
+                        "A_Expr": {
+                          "kind": 0,
+                          "name": {
+                            "List": {
+                              "items": [
+                                {
+                                  "String": {
+                                    "str": "="
+                                  }
+                                }
+                              ]
+                            }
+                          },
+                          "lexpr": {
+                            "ColumnRef": {
+                              "fields": {
+                                "List": {
+                                  "items": [
+                                    {
+                                      "String": {
+                                        "str": "table1"
+                                      }
+                                    },
+                                    {
+                                      "String": {
+                                        "str": "name"
+                                      }
+                                    }
+                                  ]
+                                }
+                              },
+                              "location": 173
+                            }
+                          },
+                          "rexpr": {
+                            "ColumnRef": {
+                              "fields": {
+                                "List": {
+                                  "items": [
+                                    {
+                                      "String": {
+                                        "str": "totals"
+                                      }
+                                    },
+                                    {
+                                      "String": {
+                                        "str": "name"
+                                      }
+                                    }
+                                  ]
+                                }
+                              },
+                              "location": 187
+                            }
+                          },
+                          "location": 185
+                        }
+                      },
+                      {
+                        "A_Expr": {
+                          "kind": 11,
+                          "name": {
+                            "List": {
+                              "items": [
+                                {
+                                  "String": {
+                                    "str": "BETWEEN"
+                                  }
+                                }
+                              ]
+                            }
+                          },
+                          "lexpr": {
+                            "ColumnRef": {
+                              "fields": {
+                                "List": {
+                                  "items": [
+                                    {
+                                      "String": {
+                                        "str": "year"
+                                      }
+                                    }
+                                  ]
+                                }
+                              },
+                              "location": 203
+                            }
+                          },
+                          "rexpr": {
+                            "List": {
+                              "items": [
+                                {
+                                  "A_Const": {
+                                    "val": {
+                                      "Integer": {
+                                        "ival": 2000
+                                      }
+                                    },
+                                    "location": 216
+                                  }
+                                },
+                                {
+                                  "A_Const": {
+                                    "val": {
+                                      "Integer": {
+                                        "ival": 2001
+                                      }
+                                    },
+                                    "location": 225
+                                  }
+                                }
+                              ]
+                            }
+                          },
+                          "location": 208
+                        }
+                      }
+                    ]
+                  }
+                },
+                "location": 199
+              }
+            },
+            "groupClause": {
+              "List": {
+                "items": [
+                  {
+                    "ColumnRef": {
+                      "fields": {
+                        "List": {
+                          "items": [
+                            {
+                              "String": {
+                                "str": "name"
+                              }
+                            }
+                          ]
+                        }
+                      },
+                      "location": 239
+                    }
+                  }
+                ]
+              }
+            },
+            "havingClause": null,
+            "windowClause": {
+              "List": {
+                "items": null
+              }
+            },
+            "valuesLists": null,
+            "sortClause": {
+              "List": {
+                "items": null
+              }
+            },
+            "limitOffset": null,
+            "limitCount": null,
+            "lockingClause": {
+              "List": {
+                "items": null
+              }
+            },
+            "withClause": null,
+            "op": 0,
+            "all": false,
+            "larg": null,
+            "rarg": null
+          }
+        },
+        "stmt_location": 0,
+        "stmt_len": 243
+      }
+    }
+  ]
+}
+{
+  "Query": "INSERT INTO /* controller='index',db_driver='django.db.backends.postgresql', framework='django%3A2.2.1',route='%5Epolls/%24', traceparent='00-5bd66ef5095369c7b0d1f8f4bd33716a-c532cb4098ac3dd2-01', tracestate='congo%3Dt61rcWkgMzE%2Crojo%3D00f067aa0ba902b7' */ polls_question (question_text, pub_date) VALUES ('What is this?', '2019-05-28T18:54:50.767481+00:00')",
+  "Output": [
+    {
+      "RawStmt": {
+        "stmt": {
+          "InsertStmt": {
+            "relation": {
+              "RangeVar": {
+                "catalogname": null,
+                "schemaname": null,
+                "relname": "polls_question",
+                "inh": true,
+                "relpersistence": 112,
+                "alias": null,
+                "location": 259
+              }
+            },
+            "cols": {
+              "List": {
+                "items": [
+                  {
+                    "ResTarget": {
+                      "name": "question_text",
+                      "indirection": {
+                        "List": {
+                          "items": null
+                        }
+                      },
+                      "val": null,
+                      "location": 275
+                    }
+                  },
+                  {
+                    "ResTarget": {
+                      "name": "pub_date",
+                      "indirection": {
+                        "List": {
+                          "items": null
+                        }
+                      },
+                      "val": null,
+                      "location": 290
+                    }
+                  }
+                ]
+              }
+            },
+            "selectStmt": {
+              "SelectStmt": {
+                "distinctClause": {
+                  "List": {
+                    "items": null
+                  }
+                },
+                "intoClause": null,
+                "targetList": {
+                  "List": {
+                    "items": null
+                  }
+                },
+                "fromClause": {
+                  "List": {
+                    "items": null
+                  }
+                },
+                "whereClause": null,
+                "groupClause": {
+                  "List": {
+                    "items": null
+                  }
+                },
+                "havingClause": null,
+                "windowClause": {
+                  "List": {
+                    "items": null
+                  }
+                },
+                "valuesLists": [
+                  [
+                    {
+                      "A_Const": {
+                        "val": {
+                          "String": {
+                            "str": "What is this?"
+                          }
+                        },
+                        "location": 308
+                      }
+                    },
+                    {
+                      "A_Const": {
+                        "val": {
+                          "String": {
+                            "str": "2019-05-28T18:54:50.767481+00:00"
+                          }
+                        },
+                        "location": 325
+                      }
+                    }
+                  ]
+                ],
+                "sortClause": {
+                  "List": {
+                    "items": null
+                  }
+                },
+                "limitOffset": null,
+                "limitCount": null,
+                "lockingClause": {
+                  "List": {
+                    "items": null
+                  }
+                },
+                "withClause": null,
+                "op": 0,
+                "all": false,
+                "larg": null,
+                "rarg": null
+              }
+            },
+            "onConflictClause": null,
+            "returningList": {
+              "List": {
+                "items": null
+              }
+            },
+            "withClause": null,
+            "override": 0
+          }
+        },
+        "stmt_location": 0,
+        "stmt_len": 0
+      }
+    }
+  ]
+}
+{
+  "Query": "INSERT INTO users (firstname, lastname) VALUES ('Joe', 'Cool') RETURNING id;",
+  "Output": [
+    {
+      "RawStmt": {
+        "stmt": {
+          "InsertStmt": {
+            "relation": {
+              "RangeVar": {
+                "catalogname": null,
+                "schemaname": null,
+                "relname": "users",
+                "inh": true,
+                "relpersistence": 112,
+                "alias": null,
+                "location": 12
+              }
+            },
+            "cols": {
+              "List": {
+                "items": [
+                  {
+                    "ResTarget": {
+                      "name": "firstname",
+                      "indirection": {
+                        "List": {
+                          "items": null
+                        }
+                      },
+                      "val": null,
+                      "location": 19
+                    }
+                  },
+                  {
+                    "ResTarget": {
+                      "name": "lastname",
+                      "indirection": {
+                        "List": {
+                          "items": null
+                        }
+                      },
+                      "val": null,
+                      "location": 30
+                    }
+                  }
+                ]
+              }
+            },
+            "selectStmt": {
+              "SelectStmt": {
+                "distinctClause": {
+                  "List": {
+                    "items": null
+                  }
+                },
+                "intoClause": null,
+                "targetList": {
+                  "List": {
+                    "items": null
+                  }
+                },
+                "fromClause": {
+                  "List": {
+                    "items": null
+                  }
+                },
+                "whereClause": null,
+                "groupClause": {
+                  "List": {
+                    "items": null
+                  }
+                },
+                "havingClause": null,
+                "windowClause": {
+                  "List": {
+                    "items": null
+                  }
+                },
+                "valuesLists": [
+                  [
+                    {
+                      "A_Const": {
+                        "val": {
+                          "String": {
+                            "str": "Joe"
+                          }
+                        },
+                        "location": 48
+                      }
+                    },
+                    {
+                      "A_Const": {
+                        "val": {
+                          "String": {
+                            "str": "Cool"
+                          }
+                        },
+                        "location": 55
+                      }
+                    }
+                  ]
+                ],
+                "sortClause": {
+                  "List": {
+                    "items": null
+                  }
+                },
+                "limitOffset": null,
+                "limitCount": null,
+                "lockingClause": {
+                  "List": {
+                    "items": null
+                  }
+                },
+                "withClause": null,
+                "op": 0,
+                "all": false,
+                "larg": null,
+                "rarg": null
+              }
+            },
+            "onConflictClause": null,
+            "returningList": {
+              "List": {
+                "items": [
+                  {
+                    "ResTarget": {
+                      "name": null,
+                      "indirection": {
+                        "List": {
+                          "items": null
+                        }
+                      },
+                      "val": {
+                        "ColumnRef": {
+                          "fields": {
+                            "List": {
+                              "items": [
+                                {
+                                  "String": {
+                                    "str": "id"
+                                  }
+                                }
+                              ]
+                            }
+                          },
+                          "location": 73
+                        }
+                      },
+                      "location": 73
+                    }
+                  }
+                ]
+              }
+            },
+            "withClause": null,
+            "override": 0
+          }
+        },
+        "stmt_location": 0,
+        "stmt_len": 75
+      }
+    }
+  ]
+}

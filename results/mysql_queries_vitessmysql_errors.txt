@@ -1,0 +1,11 @@
+Total: 40
+Success: 38
+Errors: 2
+Input file: queries/mysql_queries.txt
+Parser: vitessmysql
+Comment: 
+
+Original query: GRANT ALL PRIVILEGES ON *.* TO 'tolkien'@'%';, error: syntax error at position 6 near 'GRANT'
+
+Original query: REVOKE privileges ON object FROM user;, error: syntax error at position 7 near 'REVOKE'
+

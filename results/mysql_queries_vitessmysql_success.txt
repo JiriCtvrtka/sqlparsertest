@@ -1,0 +1,349 @@
+Total: 40
+Success: 38
+Errors: 2
+Input file: queries/mysql_queries.txt
+Parser: vitessmysql
+Comment: 
+
+{
+  "Query": "SELECT fname, lname, pcode FROM cust WHERE id = 674;",
+  "NormalizedQuery": "{\"Cache\":null,\"Distinct\":false,\"StraightJoinHint\":false,\"SQLCalcFoundRows\":false,\"From\":[{\"Expr\":{\"Name\":\"cust\",\"Qualifier\":\"\"},\"Partitions\":null,\"As\":\"\",\"Hints\":null,\"Columns\":null}],\"Comments\":null,\"SelectExprs\":[{\"Expr\":{\"Metadata\":null,\"Name\":\"fname\",\"Qualifier\":{\"Name\":\"\",\"Qualifier\":\"\"}},\"As\":\"\"},{\"Expr\":{\"Metadata\":null,\"Name\":\"lname\",\"Qualifier\":{\"Name\":\"\",\"Qualifier\":\"\"}},\"As\":\"\"},{\"Expr\":{\"Metadata\":null,\"Name\":\"pcode\",\"Qualifier\":{\"Name\":\"\",\"Qualifier\":\"\"}},\"As\":\"\"}],\"Where\":{\"Type\":0,\"Expr\":{\"Operator\":0,\"Left\":{\"Metadata\":null,\"Name\":\"id\",\"Qualifier\":{\"Name\":\"\",\"Qualifier\":\"\"}},\"Right\":\"1\",\"Escape\":null}},\"With\":null,\"GroupBy\":null,\"Having\":null,\"Windows\":null,\"OrderBy\":null,\"Limit\":null,\"Lock\":0,\"Into\":null}",
+  "BindVars": "{\"1\":{}}",
+  "Literals": "null",
+  "Tables": "[\"cust\"]",
+  "Comments": "\"\"",
+  "Parsed": "\"select fname, lname, pcode from cust where id = :1\""
+}
+{
+  "Query": "SELECT * FROM tbl;",
+  "NormalizedQuery": "{\"Cache\":null,\"Distinct\":false,\"StraightJoinHint\":false,\"SQLCalcFoundRows\":false,\"From\":[{\"Expr\":{\"Name\":\"tbl\",\"Qualifier\":\"\"},\"Partitions\":null,\"As\":\"\",\"Hints\":null,\"Columns\":null}],\"Comments\":null,\"SelectExprs\":[{\"TableName\":{\"Name\":\"\",\"Qualifier\":\"\"}}],\"Where\":null,\"With\":null,\"GroupBy\":null,\"Having\":null,\"Windows\":null,\"OrderBy\":null,\"Limit\":null,\"Lock\":0,\"Into\":null}",
+  "BindVars": "{}",
+  "Literals": "null",
+  "Tables": "[\"tbl\",\"\"]",
+  "Comments": "\"\"",
+  "Parsed": "\"select * from tbl\""
+}
+{
+  "Query": "CREATE TABLE tutorials_tbl(tutorial_id INT NOT NULL AUTO_INCREMENT, tutorial_title VARCHAR(100) NOT NULL, tutorial_author VARCHAR(40) NOT NULL, submission_date DATE, PRIMARY KEY ( tutorial_id ));",
+  "NormalizedQuery": "{\"Temp\":false,\"Table\":{\"Name\":\"tutorials_tbl\",\"Qualifier\":\"\"},\"IfNotExists\":false,\"TableSpec\":{\"Columns\":[{\"Name\":\"tutorial_id\",\"Type\":{\"Type\":\"INT\",\"Options\":{\"Null\":false,\"Autoincrement\":true,\"Default\":null,\"OnUpdate\":null,\"As\":null,\"Comment\":null,\"Storage\":0,\"Collate\":\"\",\"Reference\":null,\"KeyOpt\":0,\"Invisible\":null,\"Format\":0,\"EngineAttribute\":null,\"SecondaryEngineAttribute\":null,\"SRID\":null},\"Length\":null,\"Unsigned\":false,\"Zerofill\":false,\"Scale\":null,\"Charset\":{\"Name\":\"\",\"Binary\":false},\"EnumValues\":null}},{\"Name\":\"tutorial_title\",\"Type\":{\"Type\":\"VARCHAR\",\"Options\":{\"Null\":false,\"Autoincrement\":false,\"Default\":null,\"OnUpdate\":null,\"As\":null,\"Comment\":null,\"Storage\":0,\"Collate\":\"\",\"Reference\":null,\"KeyOpt\":0,\"Invisible\":null,\"Format\":0,\"EngineAttribute\":null,\"SecondaryEngineAttribute\":null,\"SRID\":null},\"Length\":{\"Type\":1,\"Val\":\"100\"},\"Unsigned\":false,\"Zerofill\":false,\"Scale\":null,\"Charset\":{\"Name\":\"\",\"Binary\":false},\"EnumValues\":null}},{\"Name\":\"tutorial_author\",\"Type\":{\"Type\":\"VARCHAR\",\"Options\":{\"Null\":false,\"Autoincrement\":false,\"Default\":null,\"OnUpdate\":null,\"As\":null,\"Comment\":null,\"Storage\":0,\"Collate\":\"\",\"Reference\":null,\"KeyOpt\":0,\"Invisible\":null,\"Format\":0,\"EngineAttribute\":null,\"SecondaryEngineAttribute\":null,\"SRID\":null},\"Length\":{\"Type\":1,\"Val\":\"40\"},\"Unsigned\":false,\"Zerofill\":false,\"Scale\":null,\"Charset\":{\"Name\":\"\",\"Binary\":false},\"EnumValues\":null}},{\"Name\":\"submission_date\",\"Type\":{\"Type\":\"DATE\",\"Options\":{\"Null\":null,\"Autoincrement\":false,\"Default\":null,\"OnUpdate\":null,\"As\":null,\"Comment\":null,\"Storage\":0,\"Collate\":\"\",\"Reference\":null,\"KeyOpt\":0,\"Invisible\":null,\"Format\":0,\"EngineAttribute\":null,\"SecondaryEngineAttribute\":null,\"SRID\":null},\"Length\":null,\"Unsigned\":false,\"Zerofill\":false,\"Scale\":null,\"Charset\":{\"Name\":\"\",\"Binary\":false},\"EnumValues\":null}}],\"Indexes\":[{\"Info\":{\"Type\":\"PRIMARY KEY\",\"Name\":\"PRIMARY\",\"ConstraintName\":\"\",\"Primary\":true,\"Spatial\":false,\"Fulltext\":false,\"Unique\":true},\"Columns\":[{\"Column\":\"tutorial_id\",\"Length\":null,\"Expression\":null,\"Direction\":0}],\"Options\":null}],\"Constraints\":null,\"Options\":null,\"PartitionOption\":null},\"OptLike\":null,\"Comments\":null,\"FullyParsed\":true}",
+  "BindVars": "{}",
+  "Literals": "null",
+  "Tables": "[\"tutorials_tbl\"]",
+  "Comments": "\"\"",
+  "Parsed": "\"create table tutorials_tbl (\\n\\ttutorial_id INT not null auto_increment,\\n\\ttutorial_title VARCHAR(100) not null,\\n\\ttutorial_author VARCHAR(40) not null,\\n\\tsubmission_date DATE,\\n\\tPRIMARY KEY (tutorial_id)\\n)\""
+}
+{
+  "Query": "ALTER TABLE contacts ADD last_name varchar(40) NOT NULL AFTER contact_id;",
+  "NormalizedQuery": "{\"Table\":{\"Name\":\"contacts\",\"Qualifier\":\"\"},\"AlterOptions\":[{\"Columns\":[{\"Name\":\"last_name\",\"Type\":{\"Type\":\"varchar\",\"Options\":{\"Null\":false,\"Autoincrement\":false,\"Default\":null,\"OnUpdate\":null,\"As\":null,\"Comment\":null,\"Storage\":0,\"Collate\":\"\",\"Reference\":null,\"KeyOpt\":0,\"Invisible\":null,\"Format\":0,\"EngineAttribute\":null,\"SecondaryEngineAttribute\":null,\"SRID\":null},\"Length\":{\"Type\":1,\"Val\":\"40\"},\"Unsigned\":false,\"Zerofill\":false,\"Scale\":null,\"Charset\":{\"Name\":\"\",\"Binary\":false},\"EnumValues\":null}}],\"First\":false,\"After\":{\"Metadata\":null,\"Name\":\"contact_id\",\"Qualifier\":{\"Name\":\"\",\"Qualifier\":\"\"}}}],\"PartitionSpec\":null,\"PartitionOption\":null,\"Comments\":null,\"FullyParsed\":true}",
+  "BindVars": "{}",
+  "Literals": "null",
+  "Tables": "[\"contacts\"]",
+  "Comments": "\"\"",
+  "Parsed": "\"alter table contacts add column last_name varchar(40) not null after contact_id\""
+}
+{
+  "Query": "ALTER TABLE employees RENAME COLUMN id TO employ_id;",
+  "NormalizedQuery": "{\"Table\":{\"Name\":\"employees\",\"Qualifier\":\"\"},\"AlterOptions\":null,\"PartitionSpec\":null,\"PartitionOption\":null,\"Comments\":null,\"FullyParsed\":false}",
+  "BindVars": "{}",
+  "Literals": "null",
+  "Tables": "[\"employees\"]",
+  "Comments": "\"\"",
+  "Parsed": "\"alter table employees\""
+}
+{
+  "Query": "DROP TABLE IF EXISTS table_name;",
+  "NormalizedQuery": "{\"Temp\":false,\"FromTables\":[{\"Name\":\"table_name\",\"Qualifier\":\"\"}],\"IfExists\":true,\"Comments\":null}",
+  "BindVars": "{}",
+  "Literals": "null",
+  "Tables": "[\"table_name\"]",
+  "Comments": "\"\"",
+  "Parsed": "\"drop table if exists table_name\""
+}
+{
+  "Query": "TRUNCATE TABLE employee;",
+  "NormalizedQuery": "{\"Table\":{\"Name\":\"employee\",\"Qualifier\":\"\"}}",
+  "BindVars": "{}",
+  "Literals": "null",
+  "Tables": "[\"employee\"]",
+  "Comments": "\"\"",
+  "Parsed": "\"truncate table employee\""
+}
+{
+  "Query": "INSERT into employee Values(101,'abcd');",
+  "NormalizedQuery": "{\"Action\":0,\"Comments\":null,\"Ignore\":false,\"Table\":{\"Name\":\"employee\",\"Qualifier\":\"\"},\"Partitions\":null,\"Columns\":null,\"Rows\":[[\"1\",\"2\"]],\"OnDup\":null}",
+  "BindVars": "{\"1\":{},\"2\":{}}",
+  "Literals": "null",
+  "Tables": "[\"employee\"]",
+  "Comments": "\"\"",
+  "Parsed": "\"insert into employee values (:1, :2)\""
+}
+{
+  "Query": "DROP TABLE employee;",
+  "NormalizedQuery": "{\"Temp\":false,\"FromTables\":[{\"Name\":\"employee\",\"Qualifier\":\"\"}],\"IfExists\":false,\"Comments\":null}",
+  "BindVars": "{}",
+  "Literals": "null",
+  "Tables": "[\"employee\"]",
+  "Comments": "\"\"",
+  "Parsed": "\"drop table employee\""
+}
+{
+  "Query": "UPDATE employee SET col1 = new_col WHERE condition;",
+  "NormalizedQuery": "{\"With\":null,\"Comments\":null,\"Ignore\":false,\"TableExprs\":[{\"Expr\":{\"Name\":\"employee\",\"Qualifier\":\"\"},\"Partitions\":null,\"As\":\"\",\"Hints\":null,\"Columns\":null}],\"Exprs\":[{\"Name\":{\"Metadata\":null,\"Name\":\"col1\",\"Qualifier\":{\"Name\":\"\",\"Qualifier\":\"\"}},\"Expr\":{\"Metadata\":null,\"Name\":\"new_col\",\"Qualifier\":{\"Name\":\"\",\"Qualifier\":\"\"}}}],\"Where\":{\"Type\":0,\"Expr\":{\"Metadata\":null,\"Name\":\"condition\",\"Qualifier\":{\"Name\":\"\",\"Qualifier\":\"\"}}},\"OrderBy\":null,\"Limit\":null}",
+  "BindVars": "{}",
+  "Literals": "null",
+  "Tables": "[\"employee\"]",
+  "Comments": "\"\"",
+  "Parsed": "\"update employee set col1 = new_col where `condition`\""
+}
+{
+  "Query": "FLUSH PRIVILEGES;",
+  "NormalizedQuery": "{\"IsLocal\":false,\"FlushOptions\":[\"PRIVILEGES\"],\"TableNames\":null,\"WithLock\":false,\"ForExport\":false}",
+  "BindVars": "{}",
+  "Literals": "null",
+  "Tables": "null",
+  "Comments": "\"\"",
+  "Parsed": "\"flush PRIVILEGES\""
+}
+{
+  "Query": "ROLLBACK;",
+  "NormalizedQuery": "{}",
+  "BindVars": "{}",
+  "Literals": "null",
+  "Tables": "null",
+  "Comments": "\"\"",
+  "Parsed": "\"rollback\""
+}
+{
+  "Query": "COMMIT;",
+  "NormalizedQuery": "{}",
+  "BindVars": "{}",
+  "Literals": "null",
+  "Tables": "null",
+  "Comments": "\"\"",
+  "Parsed": "\"commit\""
+}
+{
+  "Query": "SELECT DISTINCT col_name FROM tbl;",
+  "NormalizedQuery": "{\"Cache\":null,\"Distinct\":true,\"StraightJoinHint\":false,\"SQLCalcFoundRows\":false,\"From\":[{\"Expr\":{\"Name\":\"tbl\",\"Qualifier\":\"\"},\"Partitions\":null,\"As\":\"\",\"Hints\":null,\"Columns\":null}],\"Comments\":null,\"SelectExprs\":[{\"Expr\":{\"Metadata\":null,\"Name\":\"col_name\",\"Qualifier\":{\"Name\":\"\",\"Qualifier\":\"\"}},\"As\":\"\"}],\"Where\":null,\"With\":null,\"GroupBy\":null,\"Having\":null,\"Windows\":null,\"OrderBy\":null,\"Limit\":null,\"Lock\":0,\"Into\":null}",
+  "BindVars": "{}",
+  "Literals": "null",
+  "Tables": "[\"tbl\"]",
+  "Comments": "\"\"",
+  "Parsed": "\"select distinct col_name from tbl\""
+}
+{
+  "Query": "SELECT employee_id FROM employee WHERE name = 'stella';",
+  "NormalizedQuery": "{\"Cache\":null,\"Distinct\":false,\"StraightJoinHint\":false,\"SQLCalcFoundRows\":false,\"From\":[{\"Expr\":{\"Name\":\"employee\",\"Qualifier\":\"\"},\"Partitions\":null,\"As\":\"\",\"Hints\":null,\"Columns\":null}],\"Comments\":null,\"SelectExprs\":[{\"Expr\":{\"Metadata\":null,\"Name\":\"employee_id\",\"Qualifier\":{\"Name\":\"\",\"Qualifier\":\"\"}},\"As\":\"\"}],\"Where\":{\"Type\":0,\"Expr\":{\"Operator\":0,\"Left\":{\"Metadata\":null,\"Name\":\"name\",\"Qualifier\":{\"Name\":\"\",\"Qualifier\":\"\"}},\"Right\":\"1\",\"Escape\":null}},\"With\":null,\"GroupBy\":null,\"Having\":null,\"Windows\":null,\"OrderBy\":null,\"Limit\":null,\"Lock\":0,\"Into\":null}",
+  "BindVars": "{\"1\":{}}",
+  "Literals": "null",
+  "Tables": "[\"employee\"]",
+  "Comments": "\"\"",
+  "Parsed": "\"select employee_id from employee where `name` = :1\""
+}
+{
+  "Query": "SELECT COUNT(*) FROM employee;",
+  "NormalizedQuery": "{\"Cache\":null,\"Distinct\":false,\"StraightJoinHint\":false,\"SQLCalcFoundRows\":false,\"From\":[{\"Expr\":{\"Name\":\"employee\",\"Qualifier\":\"\"},\"Partitions\":null,\"As\":\"\",\"Hints\":null,\"Columns\":null}],\"Comments\":null,\"SelectExprs\":[{\"Expr\":{\"Qualifier\":\"\",\"Name\":\"COUNT\",\"Distinct\":false,\"Exprs\":[{\"TableName\":{\"Name\":\"\",\"Qualifier\":\"\"}}]},\"As\":\"\"}],\"Where\":null,\"With\":null,\"GroupBy\":null,\"Having\":null,\"Windows\":null,\"OrderBy\":null,\"Limit\":null,\"Lock\":0,\"Into\":null}",
+  "BindVars": "{}",
+  "Literals": "null",
+  "Tables": "[\"employee\",\"\"]",
+  "Comments": "\"\"",
+  "Parsed": "\"select COUNT(*) from employee\""
+}
+{
+  "Query": "SELECT first_name FROM student ORDER BY marks desc;",
+  "NormalizedQuery": "{\"Cache\":null,\"Distinct\":false,\"StraightJoinHint\":false,\"SQLCalcFoundRows\":false,\"From\":[{\"Expr\":{\"Name\":\"student\",\"Qualifier\":\"\"},\"Partitions\":null,\"As\":\"\",\"Hints\":null,\"Columns\":null}],\"Comments\":null,\"SelectExprs\":[{\"Expr\":{\"Metadata\":null,\"Name\":\"first_name\",\"Qualifier\":{\"Name\":\"\",\"Qualifier\":\"\"}},\"As\":\"\"}],\"Where\":null,\"With\":null,\"GroupBy\":null,\"Having\":null,\"Windows\":null,\"OrderBy\":[{\"Expr\":{\"Metadata\":null,\"Name\":\"marks\",\"Qualifier\":{\"Name\":\"\",\"Qualifier\":\"\"}},\"Direction\":1}],\"Limit\":null,\"Lock\":0,\"Into\":null}",
+  "BindVars": "{}",
+  "Literals": "null",
+  "Tables": "[\"student\"]",
+  "Comments": "\"\"",
+  "Parsed": "\"select first_name from student order by marks desc\""
+}
+{
+  "Query": "SELECT first_name FROM student ORDER BY marks desc LIMIT 5;",
+  "NormalizedQuery": "{\"Cache\":null,\"Distinct\":false,\"StraightJoinHint\":false,\"SQLCalcFoundRows\":false,\"From\":[{\"Expr\":{\"Name\":\"student\",\"Qualifier\":\"\"},\"Partitions\":null,\"As\":\"\",\"Hints\":null,\"Columns\":null}],\"Comments\":null,\"SelectExprs\":[{\"Expr\":{\"Metadata\":null,\"Name\":\"first_name\",\"Qualifier\":{\"Name\":\"\",\"Qualifier\":\"\"}},\"As\":\"\"}],\"Where\":null,\"With\":null,\"GroupBy\":null,\"Having\":null,\"Windows\":null,\"OrderBy\":[{\"Expr\":{\"Metadata\":null,\"Name\":\"marks\",\"Qualifier\":{\"Name\":\"\",\"Qualifier\":\"\"}},\"Direction\":1}],\"Limit\":{\"Offset\":null,\"Rowcount\":\"1\"},\"Lock\":0,\"Into\":null}",
+  "BindVars": "{\"1\":{}}",
+  "Literals": "null",
+  "Tables": "[\"student\"]",
+  "Comments": "\"\"",
+  "Parsed": "\"select first_name from student order by marks desc limit :1\""
+}
+{
+  "Query": "SELECT employee_id FROM employee WHERE name = 'stella' AND city = 'Bangalore';",
+  "NormalizedQuery": "{\"Cache\":null,\"Distinct\":false,\"StraightJoinHint\":false,\"SQLCalcFoundRows\":false,\"From\":[{\"Expr\":{\"Name\":\"employee\",\"Qualifier\":\"\"},\"Partitions\":null,\"As\":\"\",\"Hints\":null,\"Columns\":null}],\"Comments\":null,\"SelectExprs\":[{\"Expr\":{\"Metadata\":null,\"Name\":\"employee_id\",\"Qualifier\":{\"Name\":\"\",\"Qualifier\":\"\"}},\"As\":\"\"}],\"Where\":{\"Type\":0,\"Expr\":{\"Left\":{\"Operator\":0,\"Left\":{\"Metadata\":null,\"Name\":\"name\",\"Qualifier\":{\"Name\":\"\",\"Qualifier\":\"\"}},\"Right\":\"1\",\"Escape\":null},\"Right\":{\"Operator\":0,\"Left\":{\"Metadata\":null,\"Name\":\"city\",\"Qualifier\":{\"Name\":\"\",\"Qualifier\":\"\"}},\"Right\":\"2\",\"Escape\":null}}},\"With\":null,\"GroupBy\":null,\"Having\":null,\"Windows\":null,\"OrderBy\":null,\"Limit\":null,\"Lock\":0,\"Into\":null}",
+  "BindVars": "{\"1\":{},\"2\":{}}",
+  "Literals": "null",
+  "Tables": "[\"employee\"]",
+  "Comments": "\"\"",
+  "Parsed": "\"select employee_id from employee where `name` = :1 and city = :2\""
+}
+{
+  "Query": "SELECT employee_id FROM employee WHERE department = 'IT' OR city = 'Bangalore';",
+  "NormalizedQuery": "{\"Cache\":null,\"Distinct\":false,\"StraightJoinHint\":false,\"SQLCalcFoundRows\":false,\"From\":[{\"Expr\":{\"Name\":\"employee\",\"Qualifier\":\"\"},\"Partitions\":null,\"As\":\"\",\"Hints\":null,\"Columns\":null}],\"Comments\":null,\"SelectExprs\":[{\"Expr\":{\"Metadata\":null,\"Name\":\"employee_id\",\"Qualifier\":{\"Name\":\"\",\"Qualifier\":\"\"}},\"As\":\"\"}],\"Where\":{\"Type\":0,\"Expr\":{\"Left\":{\"Operator\":0,\"Left\":{\"Metadata\":null,\"Name\":\"department\",\"Qualifier\":{\"Name\":\"\",\"Qualifier\":\"\"}},\"Right\":\"1\",\"Escape\":null},\"Right\":{\"Operator\":0,\"Left\":{\"Metadata\":null,\"Name\":\"city\",\"Qualifier\":{\"Name\":\"\",\"Qualifier\":\"\"}},\"Right\":\"2\",\"Escape\":null}}},\"With\":null,\"GroupBy\":null,\"Having\":null,\"Windows\":null,\"OrderBy\":null,\"Limit\":null,\"Lock\":0,\"Into\":null}",
+  "BindVars": "{\"1\":{},\"2\":{}}",
+  "Literals": "null",
+  "Tables": "[\"employee\"]",
+  "Comments": "\"\"",
+  "Parsed": "\"select employee_id from employee where department = :1 or city = :2\""
+}
+{
+  "Query": "SELECT Name FROM students WHERE Physics BETWEEN 75 AND 95;",
+  "NormalizedQuery": "{\"Cache\":null,\"Distinct\":false,\"StraightJoinHint\":false,\"SQLCalcFoundRows\":false,\"From\":[{\"Expr\":{\"Name\":\"students\",\"Qualifier\":\"\"},\"Partitions\":null,\"As\":\"\",\"Hints\":null,\"Columns\":null}],\"Comments\":null,\"SelectExprs\":[{\"Expr\":{\"Metadata\":null,\"Name\":\"Name\",\"Qualifier\":{\"Name\":\"\",\"Qualifier\":\"\"}},\"As\":\"\"}],\"Where\":{\"Type\":0,\"Expr\":{\"IsBetween\":true,\"Left\":{\"Metadata\":null,\"Name\":\"Physics\",\"Qualifier\":{\"Name\":\"\",\"Qualifier\":\"\"}},\"From\":\"1\",\"To\":\"2\"}},\"With\":null,\"GroupBy\":null,\"Having\":null,\"Windows\":null,\"OrderBy\":null,\"Limit\":null,\"Lock\":0,\"Into\":null}",
+  "BindVars": "{\"1\":{},\"2\":{}}",
+  "Literals": "null",
+  "Tables": "[\"students\"]",
+  "Comments": "\"\"",
+  "Parsed": "\"select `Name` from students where Physics between :1 and :2\""
+}
+{
+  "Query": "SELECT emp_id FROM employee WHERE emp_id BETWEEN 1 AND 10;",
+  "NormalizedQuery": "{\"Cache\":null,\"Distinct\":false,\"StraightJoinHint\":false,\"SQLCalcFoundRows\":false,\"From\":[{\"Expr\":{\"Name\":\"employee\",\"Qualifier\":\"\"},\"Partitions\":null,\"As\":\"\",\"Hints\":null,\"Columns\":null}],\"Comments\":null,\"SelectExprs\":[{\"Expr\":{\"Metadata\":null,\"Name\":\"emp_id\",\"Qualifier\":{\"Name\":\"\",\"Qualifier\":\"\"}},\"As\":\"\"}],\"Where\":{\"Type\":0,\"Expr\":{\"IsBetween\":true,\"Left\":{\"Metadata\":null,\"Name\":\"emp_id\",\"Qualifier\":{\"Name\":\"\",\"Qualifier\":\"\"}},\"From\":\"1\",\"To\":\"2\"}},\"With\":null,\"GroupBy\":null,\"Having\":null,\"Windows\":null,\"OrderBy\":null,\"Limit\":null,\"Lock\":0,\"Into\":null}",
+  "BindVars": "{\"1\":{},\"2\":{}}",
+  "Literals": "null",
+  "Tables": "[\"employee\"]",
+  "Comments": "\"\"",
+  "Parsed": "\"select emp_id from employee where emp_id between :1 and :2\""
+}
+{
+  "Query": "SELECT * FROM employee WHERE join_date BETWEEN '2007-01-01' AND '2008-01-01';",
+  "NormalizedQuery": "{\"Cache\":null,\"Distinct\":false,\"StraightJoinHint\":false,\"SQLCalcFoundRows\":false,\"From\":[{\"Expr\":{\"Name\":\"employee\",\"Qualifier\":\"\"},\"Partitions\":null,\"As\":\"\",\"Hints\":null,\"Columns\":null}],\"Comments\":null,\"SelectExprs\":[{\"TableName\":{\"Name\":\"\",\"Qualifier\":\"\"}}],\"Where\":{\"Type\":0,\"Expr\":{\"IsBetween\":true,\"Left\":{\"Metadata\":null,\"Name\":\"join_date\",\"Qualifier\":{\"Name\":\"\",\"Qualifier\":\"\"}},\"From\":\"1\",\"To\":\"2\"}},\"With\":null,\"GroupBy\":null,\"Having\":null,\"Windows\":null,\"OrderBy\":null,\"Limit\":null,\"Lock\":0,\"Into\":null}",
+  "BindVars": "{\"1\":{},\"2\":{}}",
+  "Literals": "null",
+  "Tables": "[\"employee\",\"\"]",
+  "Comments": "\"\"",
+  "Parsed": "\"select * from employee where join_date between :1 and :2\""
+}
+{
+  "Query": "SELECT * FROM employee WHERE employee_id IN (1001,1004,1008,1012);",
+  "NormalizedQuery": "{\"Cache\":null,\"Distinct\":false,\"StraightJoinHint\":false,\"SQLCalcFoundRows\":false,\"From\":[{\"Expr\":{\"Name\":\"employee\",\"Qualifier\":\"\"},\"Partitions\":null,\"As\":\"\",\"Hints\":null,\"Columns\":null}],\"Comments\":null,\"SelectExprs\":[{\"TableName\":{\"Name\":\"\",\"Qualifier\":\"\"}}],\"Where\":{\"Type\":0,\"Expr\":{\"Operator\":7,\"Left\":{\"Metadata\":null,\"Name\":\"employee_id\",\"Qualifier\":{\"Name\":\"\",\"Qualifier\":\"\"}},\"Right\":\"1\",\"Escape\":null}},\"With\":null,\"GroupBy\":null,\"Having\":null,\"Windows\":null,\"OrderBy\":null,\"Limit\":null,\"Lock\":0,\"Into\":null}",
+  "BindVars": "{\"1\":{}}",
+  "Literals": "null",
+  "Tables": "[\"employee\",\"\"]",
+  "Comments": "\"\"",
+  "Parsed": "\"select * from employee where employee_id in ::1\""
+}
+{
+  "Query": "SELECT first_name FROM tbl WHERE first_name LIKE 'A%';",
+  "NormalizedQuery": "{\"Cache\":null,\"Distinct\":false,\"StraightJoinHint\":false,\"SQLCalcFoundRows\":false,\"From\":[{\"Expr\":{\"Name\":\"tbl\",\"Qualifier\":\"\"},\"Partitions\":null,\"As\":\"\",\"Hints\":null,\"Columns\":null}],\"Comments\":null,\"SelectExprs\":[{\"Expr\":{\"Metadata\":null,\"Name\":\"first_name\",\"Qualifier\":{\"Name\":\"\",\"Qualifier\":\"\"}},\"As\":\"\"}],\"Where\":{\"Type\":0,\"Expr\":{\"Operator\":9,\"Left\":{\"Metadata\":null,\"Name\":\"first_name\",\"Qualifier\":{\"Name\":\"\",\"Qualifier\":\"\"}},\"Right\":\"1\",\"Escape\":null}},\"With\":null,\"GroupBy\":null,\"Having\":null,\"Windows\":null,\"OrderBy\":null,\"Limit\":null,\"Lock\":0,\"Into\":null}",
+  "BindVars": "{\"1\":{}}",
+  "Literals": "null",
+  "Tables": "[\"tbl\"]",
+  "Comments": "\"\"",
+  "Parsed": "\"select first_name from tbl where first_name like :1\""
+}
+{
+  "Query": "SELECT SUBSTRING(customer_name,1,5) FROM customer_table;",
+  "NormalizedQuery": "{\"Cache\":null,\"Distinct\":false,\"StraightJoinHint\":false,\"SQLCalcFoundRows\":false,\"From\":[{\"Expr\":{\"Name\":\"customer_table\",\"Qualifier\":\"\"},\"Partitions\":null,\"As\":\"\",\"Hints\":null,\"Columns\":null}],\"Comments\":null,\"SelectExprs\":[{\"Expr\":{\"Name\":{\"Metadata\":null,\"Name\":\"customer_name\",\"Qualifier\":{\"Name\":\"\",\"Qualifier\":\"\"}},\"From\":\"1\",\"To\":\"2\"},\"As\":\"\"}],\"Where\":null,\"With\":null,\"GroupBy\":null,\"Having\":null,\"Windows\":null,\"OrderBy\":null,\"Limit\":null,\"Lock\":0,\"Into\":null}",
+  "BindVars": "{\"1\":{},\"2\":{}}",
+  "Literals": "null",
+  "Tables": "[\"customer_table\"]",
+  "Comments": "\"\"",
+  "Parsed": "\"select substr(customer_name, :1, :2) from customer_table\""
+}
+{
+  "Query": "SELECT INSTR('independence', 'pen');",
+  "NormalizedQuery": "{\"Cache\":null,\"Distinct\":false,\"StraightJoinHint\":false,\"SQLCalcFoundRows\":false,\"From\":[{\"Expr\":{\"Name\":\"dual\",\"Qualifier\":\"\"},\"Partitions\":null,\"As\":\"\",\"Hints\":null,\"Columns\":null}],\"Comments\":null,\"SelectExprs\":[{\"Expr\":{\"Qualifier\":\"\",\"Name\":\"INSTR\",\"Distinct\":false,\"Exprs\":[{\"Expr\":\"1\",\"As\":\"\"},{\"Expr\":\"2\",\"As\":\"\"}]},\"As\":\"\"}],\"Where\":null,\"With\":null,\"GroupBy\":null,\"Having\":null,\"Windows\":null,\"OrderBy\":null,\"Limit\":null,\"Lock\":0,\"Into\":null}",
+  "BindVars": "{\"1\":{},\"2\":{}}",
+  "Literals": "null",
+  "Tables": "[\"dual\"]",
+  "Comments": "\"\"",
+  "Parsed": "\"select INSTR(:1, :2) from dual\""
+}
+{
+  "Query": "SELECT employee_id FROM employee GROUP BY department HAVING salary \u003e 100000;",
+  "NormalizedQuery": "{\"Cache\":null,\"Distinct\":false,\"StraightJoinHint\":false,\"SQLCalcFoundRows\":false,\"From\":[{\"Expr\":{\"Name\":\"employee\",\"Qualifier\":\"\"},\"Partitions\":null,\"As\":\"\",\"Hints\":null,\"Columns\":null}],\"Comments\":null,\"SelectExprs\":[{\"Expr\":{\"Metadata\":null,\"Name\":\"employee_id\",\"Qualifier\":{\"Name\":\"\",\"Qualifier\":\"\"}},\"As\":\"\"}],\"Where\":null,\"With\":null,\"GroupBy\":[{\"Metadata\":null,\"Name\":\"department\",\"Qualifier\":{\"Name\":\"\",\"Qualifier\":\"\"}}],\"Having\":{\"Type\":1,\"Expr\":{\"Operator\":2,\"Left\":{\"Metadata\":null,\"Name\":\"salary\",\"Qualifier\":{\"Name\":\"\",\"Qualifier\":\"\"}},\"Right\":\"1\",\"Escape\":null}},\"Windows\":null,\"OrderBy\":null,\"Limit\":null,\"Lock\":0,\"Into\":null}",
+  "BindVars": "{\"1\":{}}",
+  "Literals": "null",
+  "Tables": "[\"employee\"]",
+  "Comments": "\"\"",
+  "Parsed": "\"select employee_id from employee group by department having salary \\u003e :1\""
+}
+{
+  "Query": "SELECT SUM(salary) FROM employee;",
+  "NormalizedQuery": "{\"Cache\":null,\"Distinct\":false,\"StraightJoinHint\":false,\"SQLCalcFoundRows\":false,\"From\":[{\"Expr\":{\"Name\":\"employee\",\"Qualifier\":\"\"},\"Partitions\":null,\"As\":\"\",\"Hints\":null,\"Columns\":null}],\"Comments\":null,\"SelectExprs\":[{\"Expr\":{\"Qualifier\":\"\",\"Name\":\"SUM\",\"Distinct\":false,\"Exprs\":[{\"Expr\":{\"Metadata\":null,\"Name\":\"salary\",\"Qualifier\":{\"Name\":\"\",\"Qualifier\":\"\"}},\"As\":\"\"}]},\"As\":\"\"}],\"Where\":null,\"With\":null,\"GroupBy\":null,\"Having\":null,\"Windows\":null,\"OrderBy\":null,\"Limit\":null,\"Lock\":0,\"Into\":null}",
+  "BindVars": "{}",
+  "Literals": "null",
+  "Tables": "[\"employee\"]",
+  "Comments": "\"\"",
+  "Parsed": "\"select SUM(salary) from employee\""
+}
+{
+  "Query": "SELECT AVG(salary) FROM employee;",
+  "NormalizedQuery": "{\"Cache\":null,\"Distinct\":false,\"StraightJoinHint\":false,\"SQLCalcFoundRows\":false,\"From\":[{\"Expr\":{\"Name\":\"employee\",\"Qualifier\":\"\"},\"Partitions\":null,\"As\":\"\",\"Hints\":null,\"Columns\":null}],\"Comments\":null,\"SelectExprs\":[{\"Expr\":{\"Qualifier\":\"\",\"Name\":\"AVG\",\"Distinct\":false,\"Exprs\":[{\"Expr\":{\"Metadata\":null,\"Name\":\"salary\",\"Qualifier\":{\"Name\":\"\",\"Qualifier\":\"\"}},\"As\":\"\"}]},\"As\":\"\"}],\"Where\":null,\"With\":null,\"GroupBy\":null,\"Having\":null,\"Windows\":null,\"OrderBy\":null,\"Limit\":null,\"Lock\":0,\"Into\":null}",
+  "BindVars": "{}",
+  "Literals": "null",
+  "Tables": "[\"employee\"]",
+  "Comments": "\"\"",
+  "Parsed": "\"select AVG(salary) from employee\""
+}
+{
+  "Query": "SELECT MIN(salary) FROM employee;",
+  "NormalizedQuery": "{\"Cache\":null,\"Distinct\":false,\"StraightJoinHint\":false,\"SQLCalcFoundRows\":false,\"From\":[{\"Expr\":{\"Name\":\"employee\",\"Qualifier\":\"\"},\"Partitions\":null,\"As\":\"\",\"Hints\":null,\"Columns\":null}],\"Comments\":null,\"SelectExprs\":[{\"Expr\":{\"Qualifier\":\"\",\"Name\":\"MIN\",\"Distinct\":false,\"Exprs\":[{\"Expr\":{\"Metadata\":null,\"Name\":\"salary\",\"Qualifier\":{\"Name\":\"\",\"Qualifier\":\"\"}},\"As\":\"\"}]},\"As\":\"\"}],\"Where\":null,\"With\":null,\"GroupBy\":null,\"Having\":null,\"Windows\":null,\"OrderBy\":null,\"Limit\":null,\"Lock\":0,\"Into\":null}",
+  "BindVars": "{}",
+  "Literals": "null",
+  "Tables": "[\"employee\"]",
+  "Comments": "\"\"",
+  "Parsed": "\"select MIN(salary) from employee\""
+}
+{
+  "Query": "SELECT MAX(salary) FROM employee;",
+  "NormalizedQuery": "{\"Cache\":null,\"Distinct\":false,\"StraightJoinHint\":false,\"SQLCalcFoundRows\":false,\"From\":[{\"Expr\":{\"Name\":\"employee\",\"Qualifier\":\"\"},\"Partitions\":null,\"As\":\"\",\"Hints\":null,\"Columns\":null}],\"Comments\":null,\"SelectExprs\":[{\"Expr\":{\"Qualifier\":\"\",\"Name\":\"MAX\",\"Distinct\":false,\"Exprs\":[{\"Expr\":{\"Metadata\":null,\"Name\":\"salary\",\"Qualifier\":{\"Name\":\"\",\"Qualifier\":\"\"}},\"As\":\"\"}]},\"As\":\"\"}],\"Where\":null,\"With\":null,\"GroupBy\":null,\"Having\":null,\"Windows\":null,\"OrderBy\":null,\"Limit\":null,\"Lock\":0,\"Into\":null}",
+  "BindVars": "{}",
+  "Literals": "null",
+  "Tables": "[\"employee\"]",
+  "Comments": "\"\"",
+  "Parsed": "\"select MAX(salary) from employee\""
+}
+{
+  "Query": "SELECT * FROM library INNER JOIN customer ON library.cust_id = customer.cust_id;",
+  "NormalizedQuery": "{\"Cache\":null,\"Distinct\":false,\"StraightJoinHint\":false,\"SQLCalcFoundRows\":false,\"From\":[{\"LeftExpr\":{\"Expr\":{\"Name\":\"library\",\"Qualifier\":\"\"},\"Partitions\":null,\"As\":\"\",\"Hints\":null,\"Columns\":null},\"Join\":0,\"RightExpr\":{\"Expr\":{\"Name\":\"customer\",\"Qualifier\":\"\"},\"Partitions\":null,\"As\":\"\",\"Hints\":null,\"Columns\":null},\"Condition\":{\"On\":{\"Operator\":0,\"Left\":{\"Metadata\":null,\"Name\":\"cust_id\",\"Qualifier\":{\"Name\":\"library\",\"Qualifier\":\"\"}},\"Right\":{\"Metadata\":null,\"Name\":\"cust_id\",\"Qualifier\":{\"Name\":\"customer\",\"Qualifier\":\"\"}},\"Escape\":null},\"Using\":null}}],\"Comments\":null,\"SelectExprs\":[{\"TableName\":{\"Name\":\"\",\"Qualifier\":\"\"}}],\"Where\":null,\"With\":null,\"GroupBy\":null,\"Having\":null,\"Windows\":null,\"OrderBy\":null,\"Limit\":null,\"Lock\":0,\"Into\":null}",
+  "BindVars": "{}",
+  "Literals": "null",
+  "Tables": "[\"library\",\"customer\",\"\"]",
+  "Comments": "\"\"",
+  "Parsed": "\"select * from library join customer on library.cust_id = customer.cust_id\""
+}
+{
+  "Query": "SELECT * FROM library LEFT JOIN customer ON library.cust_id = customer.cust_id;",
+  "NormalizedQuery": "{\"Cache\":null,\"Distinct\":false,\"StraightJoinHint\":false,\"SQLCalcFoundRows\":false,\"From\":[{\"LeftExpr\":{\"Expr\":{\"Name\":\"library\",\"Qualifier\":\"\"},\"Partitions\":null,\"As\":\"\",\"Hints\":null,\"Columns\":null},\"Join\":2,\"RightExpr\":{\"Expr\":{\"Name\":\"customer\",\"Qualifier\":\"\"},\"Partitions\":null,\"As\":\"\",\"Hints\":null,\"Columns\":null},\"Condition\":{\"On\":{\"Operator\":0,\"Left\":{\"Metadata\":null,\"Name\":\"cust_id\",\"Qualifier\":{\"Name\":\"library\",\"Qualifier\":\"\"}},\"Right\":{\"Metadata\":null,\"Name\":\"cust_id\",\"Qualifier\":{\"Name\":\"customer\",\"Qualifier\":\"\"}},\"Escape\":null},\"Using\":null}}],\"Comments\":null,\"SelectExprs\":[{\"TableName\":{\"Name\":\"\",\"Qualifier\":\"\"}}],\"Where\":null,\"With\":null,\"GroupBy\":null,\"Having\":null,\"Windows\":null,\"OrderBy\":null,\"Limit\":null,\"Lock\":0,\"Into\":null}",
+  "BindVars": "{}",
+  "Literals": "null",
+  "Tables": "[\"library\",\"customer\",\"\"]",
+  "Comments": "\"\"",
+  "Parsed": "\"select * from library left join customer on library.cust_id = customer.cust_id\""
+}
+{
+  "Query": "SELECT * FROM library RIGHT JOIN customer ON library.cust_id = customer.cust_id;",
+  "NormalizedQuery": "{\"Cache\":null,\"Distinct\":false,\"StraightJoinHint\":false,\"SQLCalcFoundRows\":false,\"From\":[{\"LeftExpr\":{\"Expr\":{\"Name\":\"library\",\"Qualifier\":\"\"},\"Partitions\":null,\"As\":\"\",\"Hints\":null,\"Columns\":null},\"Join\":3,\"RightExpr\":{\"Expr\":{\"Name\":\"customer\",\"Qualifier\":\"\"},\"Partitions\":null,\"As\":\"\",\"Hints\":null,\"Columns\":null},\"Condition\":{\"On\":{\"Operator\":0,\"Left\":{\"Metadata\":null,\"Name\":\"cust_id\",\"Qualifier\":{\"Name\":\"library\",\"Qualifier\":\"\"}},\"Right\":{\"Metadata\":null,\"Name\":\"cust_id\",\"Qualifier\":{\"Name\":\"customer\",\"Qualifier\":\"\"}},\"Escape\":null},\"Using\":null}}],\"Comments\":null,\"SelectExprs\":[{\"TableName\":{\"Name\":\"\",\"Qualifier\":\"\"}}],\"Where\":null,\"With\":null,\"GroupBy\":null,\"Having\":null,\"Windows\":null,\"OrderBy\":null,\"Limit\":null,\"Lock\":0,\"Into\":null}",
+  "BindVars": "{}",
+  "Literals": "null",
+  "Tables": "[\"library\",\"customer\",\"\"]",
+  "Comments": "\"\"",
+  "Parsed": "\"select * from library right join customer on library.cust_id = customer.cust_id\""
+}
+{
+  "Query": "SELECT * FROM t1 LEFT JOIN t2 ON t1.id = t2.id UNION SELECT * FROM t1 RIGHT JOIN t2 ON t1.id = t2.id",
+  "NormalizedQuery": "{\"Left\":{\"Cache\":null,\"Distinct\":false,\"StraightJoinHint\":false,\"SQLCalcFoundRows\":false,\"From\":[{\"LeftExpr\":{\"Expr\":{\"Name\":\"t1\",\"Qualifier\":\"\"},\"Partitions\":null,\"As\":\"\",\"Hints\":null,\"Columns\":null},\"Join\":2,\"RightExpr\":{\"Expr\":{\"Name\":\"t2\",\"Qualifier\":\"\"},\"Partitions\":null,\"As\":\"\",\"Hints\":null,\"Columns\":null},\"Condition\":{\"On\":{\"Operator\":0,\"Left\":{\"Metadata\":null,\"Name\":\"id\",\"Qualifier\":{\"Name\":\"t1\",\"Qualifier\":\"\"}},\"Right\":{\"Metadata\":null,\"Name\":\"id\",\"Qualifier\":{\"Name\":\"t2\",\"Qualifier\":\"\"}},\"Escape\":null},\"Using\":null}}],\"Comments\":null,\"SelectExprs\":[{\"TableName\":{\"Name\":\"\",\"Qualifier\":\"\"}}],\"Where\":null,\"With\":null,\"GroupBy\":null,\"Having\":null,\"Windows\":null,\"OrderBy\":null,\"Limit\":null,\"Lock\":0,\"Into\":null},\"Right\":{\"Cache\":null,\"Distinct\":false,\"StraightJoinHint\":false,\"SQLCalcFoundRows\":false,\"From\":[{\"LeftExpr\":{\"Expr\":{\"Name\":\"t1\",\"Qualifier\":\"\"},\"Partitions\":null,\"As\":\"\",\"Hints\":null,\"Columns\":null},\"Join\":3,\"RightExpr\":{\"Expr\":{\"Name\":\"t2\",\"Qualifier\":\"\"},\"Partitions\":null,\"As\":\"\",\"Hints\":null,\"Columns\":null},\"Condition\":{\"On\":{\"Operator\":0,\"Left\":{\"Metadata\":null,\"Name\":\"id\",\"Qualifier\":{\"Name\":\"t1\",\"Qualifier\":\"\"}},\"Right\":{\"Metadata\":null,\"Name\":\"id\",\"Qualifier\":{\"Name\":\"t2\",\"Qualifier\":\"\"}},\"Escape\":null},\"Using\":null}}],\"Comments\":null,\"SelectExprs\":[{\"TableName\":{\"Name\":\"\",\"Qualifier\":\"\"}}],\"Where\":null,\"With\":null,\"GroupBy\":null,\"Having\":null,\"Windows\":null,\"OrderBy\":null,\"Limit\":null,\"Lock\":0,\"Into\":null},\"Distinct\":true,\"OrderBy\":null,\"With\":null,\"Limit\":null,\"Lock\":0,\"Into\":null}",
+  "BindVars": "{}",
+  "Literals": "null",
+  "Tables": "[\"t1\",\"t2\",\"\",\"t1\",\"t2\",\"\"]",
+  "Comments": "\"\"",
+  "Parsed": "\"select * from t1 left join t2 on t1.id = t2.id union select * from t1 right join t2 on t1.id = t2.id\""
+}
+{
+  "Query": "SELECT Name, SUM(Value) AS \"SUM(VALUE)\", SUM(Value) / totals.total AS \"% of Total\" FROM table1, (SELECT Name, SUM(Value) AS total FROM table1 GROUP BY Name) AS totals WHERE table1.Name = totals.Name AND Year BETWEEN 2000 AND 2001 GROUP BY Name;",
+  "NormalizedQuery": "{\"Cache\":null,\"Distinct\":false,\"StraightJoinHint\":false,\"SQLCalcFoundRows\":false,\"From\":[{\"Expr\":{\"Name\":\"table1\",\"Qualifier\":\"\"},\"Partitions\":null,\"As\":\"\",\"Hints\":null,\"Columns\":null},{\"Expr\":{\"Lateral\":false,\"Select\":{\"Cache\":null,\"Distinct\":false,\"StraightJoinHint\":false,\"SQLCalcFoundRows\":false,\"From\":[{\"Expr\":{\"Name\":\"table1\",\"Qualifier\":\"\"},\"Partitions\":null,\"As\":\"\",\"Hints\":null,\"Columns\":null}],\"Comments\":null,\"SelectExprs\":[{\"Expr\":{\"Metadata\":null,\"Name\":\"Name\",\"Qualifier\":{\"Name\":\"\",\"Qualifier\":\"\"}},\"As\":\"\"},{\"Expr\":{\"Qualifier\":\"\",\"Name\":\"SUM\",\"Distinct\":false,\"Exprs\":[{\"Expr\":{\"Metadata\":null,\"Name\":\"Value\",\"Qualifier\":{\"Name\":\"\",\"Qualifier\":\"\"}},\"As\":\"\"}]},\"As\":\"total\"}],\"Where\":null,\"With\":null,\"GroupBy\":[{\"Metadata\":null,\"Name\":\"Name\",\"Qualifier\":{\"Name\":\"\",\"Qualifier\":\"\"}}],\"Having\":null,\"Windows\":null,\"OrderBy\":null,\"Limit\":null,\"Lock\":0,\"Into\":null}},\"Partitions\":null,\"As\":\"totals\",\"Hints\":null,\"Columns\":null}],\"Comments\":null,\"SelectExprs\":[{\"Expr\":{\"Metadata\":null,\"Name\":\"Name\",\"Qualifier\":{\"Name\":\"\",\"Qualifier\":\"\"}},\"As\":\"\"},{\"Expr\":{\"Qualifier\":\"\",\"Name\":\"SUM\",\"Distinct\":false,\"Exprs\":[{\"Expr\":{\"Metadata\":null,\"Name\":\"Value\",\"Qualifier\":{\"Name\":\"\",\"Qualifier\":\"\"}},\"As\":\"\"}]},\"As\":\"SUM(VALUE)\"},{\"Expr\":{\"Operator\":6,\"Left\":{\"Qualifier\":\"\",\"Name\":\"SUM\",\"Distinct\":false,\"Exprs\":[{\"Expr\":{\"Metadata\":null,\"Name\":\"Value\",\"Qualifier\":{\"Name\":\"\",\"Qualifier\":\"\"}},\"As\":\"\"}]},\"Right\":{\"Metadata\":null,\"Name\":\"total\",\"Qualifier\":{\"Name\":\"totals\",\"Qualifier\":\"\"}}},\"As\":\"% of Total\"}],\"Where\":{\"Type\":0,\"Expr\":{\"Left\":{\"Operator\":0,\"Left\":{\"Metadata\":null,\"Name\":\"Name\",\"Qualifier\":{\"Name\":\"table1\",\"Qualifier\":\"\"}},\"Right\":{\"Metadata\":null,\"Name\":\"Name\",\"Qualifier\":{\"Name\":\"totals\",\"Qualifier\":\"\"}},\"Escape\":null},\"Right\":{\"IsBetween\":true,\"Left\":{\"Metadata\":null,\"Name\":\"Year\",\"Qualifier\":{\"Name\":\"\",\"Qualifier\":\"\"}},\"From\":\"1\",\"To\":\"2\"}}},\"With\":null,\"GroupBy\":[{\"Metadata\":null,\"Name\":\"Name\",\"Qualifier\":{\"Name\":\"\",\"Qualifier\":\"\"}}],\"Having\":null,\"Windows\":null,\"OrderBy\":null,\"Limit\":null,\"Lock\":0,\"Into\":null}",
+  "BindVars": "{\"1\":{},\"2\":{}}",
+  "Literals": "null",
+  "Tables": "[\"table1\",\"table1\"]",
+  "Comments": "\"\"",
+  "Parsed": "\"select `Name`, SUM(Value) as `SUM(VALUE)`, SUM(Value) / totals.total as `% of Total` from table1, (select `Name`, SUM(Value) as total from table1 group by `Name`) as totals where table1.`Name` = totals.`Name` and `Year` between :1 and :2 group by `Name`\""
+}
+{
+  "Query": "INSERT INTO polls_question (question_text, pub_date) VALUES ('What is this?', '2019-05-28T18:54:50.767481+00:00')",
+  "NormalizedQuery": "{\"Action\":0,\"Comments\":null,\"Ignore\":false,\"Table\":{\"Name\":\"polls_question\",\"Qualifier\":\"\"},\"Partitions\":null,\"Columns\":[\"question_text\",\"pub_date\"],\"Rows\":[[\"1\",\"2\"]],\"OnDup\":null}",
+  "BindVars": "{\"1\":{},\"2\":{}}",
+  "Literals": "null",
+  "Tables": "[\"polls_question\"]",
+  "Comments": "\"\"",
+  "Parsed": "\"insert into polls_question(question_text, pub_date) values (:1, :2)\""
+}

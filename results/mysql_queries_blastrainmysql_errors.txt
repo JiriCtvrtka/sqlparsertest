@@ -1,0 +1,19 @@
+Total: 40
+Success: 34
+Errors: 6
+Input file: queries/mysql_queries.txt
+Parser: blastrainmysql
+Comment: 
+
+Original query: ALTER TABLE employees RENAME COLUMN id TO employ_id;, error: syntax error at position 39 near 'id'
+
+Original query: GRANT ALL PRIVILEGES ON *.* TO 'tolkien'@'%';, error: syntax error at position 6 near 'grant'
+
+Original query: REVOKE privileges ON object FROM user;, error: syntax error at position 7 near 'revoke'
+
+Original query: FLUSH PRIVILEGES;, error: syntax error at position 6 near 'FLUSH'
+
+Original query: ROLLBACK;, error: syntax error at position 9 near 'ROLLBACK'
+
+Original query: COMMIT;, error: syntax error at position 7 near 'COMMIT'
+

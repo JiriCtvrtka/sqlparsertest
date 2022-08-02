@@ -1,3 +1,4 @@
+SELECT * FROM tbl;
 CREATE TABLE tutorials_tbl(tutorial_id INT NOT NULL AUTO_INCREMENT, tutorial_title VARCHAR(100) NOT NULL, tutorial_author VARCHAR(40) NOT NULL, submission_date DATE, PRIMARY KEY ( tutorial_id ));
 ALTER TABLE contacts ADD last_name varchar(40) NOT NULL AFTER contact_id;
 ALTER TABLE employees RENAME COLUMN id TO employ_id;
@@ -11,7 +12,6 @@ REVOKE privileges ON object FROM user;
 FLUSH PRIVILEGES;
 ROLLBACK;
 COMMIT;
-SELECT * FROM tbl;
 SELECT DISTINCT col_name FROM tbl;
 SELECT employee_id FROM employee WHERE name = 'stella';
 SELECT COUNT(*) FROM employee;

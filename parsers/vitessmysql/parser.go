@@ -2,6 +2,7 @@ package vitessmysql
 
 import (
 	"encoding/json"
+	"fmt"
 
 	"vitess.io/vitess/go/vt/proto/query"
 	"vitess.io/vitess/go/vt/sqlparser"
@@ -15,6 +16,7 @@ type output struct {
 	Tables          string
 	Comments        string
 	Parsed          string
+	Values          string
 }
 
 func Parse(q string) (string, error) {
@@ -55,6 +57,11 @@ func Parse(q string) (string, error) {
 		return "", err
 	}
 
+	valuesJSON, err := json.Marshal(getAll(normalizedQuery))
+	if err != nil {
+		return "", err
+	}
+
 	comment, _ := sqlparser.ExtractMysqlComment(q)
 	commentsJSON, err := json.Marshal(comment)
 	if err != nil {
@@ -69,6 +76,7 @@ func Parse(q string) (string, error) {
 		Tables:          string(tablesJSON),
 		Comments:        string(commentsJSON),
 		Parsed:          string(parsedQueryJSON),
+		Values:          string(valuesJSON),
 	}
 
 	res, err := json.MarshalIndent(o, "", "  ")
@@ -79,7 +87,7 @@ func Parse(q string) (string, error) {
 	return string(res), nil
 }
 
-// GetLiterals returns a map of the bind vars referenced in the statement.
+// getLiterals returns a map of the bind vars referenced in the statement.
 func getLiterals(stmt sqlparser.Statement) []string {
 	var bindvars []string
 	_ = sqlparser.Walk(func(node sqlparser.SQLNode) (kontinue bool, err error) {
@@ -93,10 +101,11 @@ func getLiterals(stmt sqlparser.Statement) []string {
 		}
 		return true, nil
 	}, stmt)
+
 	return bindvars
 }
 
-// GetTables returns a map of the bind vars referenced in the statement.
+// getTables returns a map of the bind vars referenced in the statement.
 func getTables(stmt sqlparser.Statement) []string {
 	var results []string
 	_ = sqlparser.Walk(func(node sqlparser.SQLNode) (kontinue bool, err error) {
@@ -111,5 +120,20 @@ func getTables(stmt sqlparser.Statement) []string {
 		}
 		return true, nil
 	}, stmt)
+
+	return results
+}
+
+func getAll(stmt sqlparser.Statement) map[string]string {
+	results := make(map[string]string)
+	_ = sqlparser.Walk(func(node sqlparser.SQLNode) (kontinue bool, err error) {
+
+		switch n := node.(type) {
+		default:
+			results[fmt.Sprintf("%T", n)] = fmt.Sprintf("%+v", n)
+		}
+		return true, nil
+	}, stmt)
+
 	return results
 }

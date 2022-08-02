@@ -12,7 +12,8 @@ Comment:
   "Literals": "null",
   "Tables": "[\"cust\"]",
   "Comments": "\"\"",
-  "Parsed": "\"select fname, lname, pcode from cust where id = :1\""
+  "Parsed": "\"select fname, lname, pcode from cust where id = :1\"",
+  "Values": "{\"*sqlparser.AliasedExpr\":\"\\u0026{Expr:0xc000130cc0 As:}\",\"*sqlparser.AliasedTableExpr\":\"\\u0026{Expr:{Name:cust Qualifier:} Partitions:[] As: Hints:[] Columns:[]}\",\"*sqlparser.ColName\":\"\\u0026{Metadata:\\u003cnil\\u003e Name:id Qualifier:{Name: Qualifier:}}\",\"*sqlparser.ComparisonExpr\":\"\\u0026{Operator:0 Left:0xc000130d20 Right:1 Escape:\\u003cnil\\u003e}\",\"*sqlparser.Select\":\"\\u0026{Cache:\\u003cnil\\u003e Distinct:false StraightJoinHint:false SQLCalcFoundRows:false From:[0xc0003c0380] Comments:\\u003cnil\\u003e SelectExprs:[0xc0003a1180 0xc0003a11c0 0xc0003a1200] Where:0xc0001271b8 With:\\u003cnil\\u003e GroupBy:[] Having:\\u003cnil\\u003e Windows:[] OrderBy:[] Limit:\\u003cnil\\u003e Lock:0 Into:\\u003cnil\\u003e}\",\"*sqlparser.Where\":\"\\u0026{Type:0 Expr:0xc0003a1280}\",\"sqlparser.Argument\":\"1\",\"sqlparser.ColIdent\":\"id\",\"sqlparser.SelectExprs\":\"[0xc0003a1180 0xc0003a11c0 0xc0003a1200]\",\"sqlparser.TableIdent\":\"\",\"sqlparser.TableName\":\"{Name: Qualifier:}\"}"
 }
 {
   "Query": "SELECT * FROM tbl; # sharp comment",
@@ -21,7 +22,8 @@ Comment:
   "Literals": "null",
   "Tables": "[\"tbl\",\"\"]",
   "Comments": "\"\"",
-  "Parsed": "\"select * from tbl\""
+  "Parsed": "\"select * from tbl\"",
+  "Values": "{\"*sqlparser.AliasedTableExpr\":\"\\u0026{Expr:{Name:tbl Qualifier:} Partitions:[] As: Hints:[] Columns:[]}\",\"*sqlparser.Select\":\"\\u0026{Cache:\\u003cnil\\u003e Distinct:false StraightJoinHint:false SQLCalcFoundRows:false From:[0xc0003c0460] Comments:\\u003cnil\\u003e SelectExprs:[0xc000157a20] Where:\\u003cnil\\u003e With:\\u003cnil\\u003e GroupBy:[] Having:\\u003cnil\\u003e Windows:[] OrderBy:[] Limit:\\u003cnil\\u003e Lock:0 Into:\\u003cnil\\u003e}\",\"*sqlparser.StarExpr\":\"\\u0026{TableName:{Name: Qualifier:}}\",\"sqlparser.SelectExprs\":\"[0xc000157a20]\",\"sqlparser.TableIdent\":\"\",\"sqlparser.TableName\":\"{Name: Qualifier:}\"}"
 }
 {
   "Query": "CREATE /* comment */ TABLE tutorials_tbl(tutorial_id INT NOT NULL AUTO_INCREMENT, tutorial_title VARCHAR(100) NOT NULL, tutorial_author VARCHAR(40) NOT NULL, submission_date DATE, PRIMARY KEY ( tutorial_id ));",
@@ -30,7 +32,8 @@ Comment:
   "Literals": "null",
   "Tables": "[\"tutorials_tbl\"]",
   "Comments": "\"\"",
-  "Parsed": "\"create /* comment */ table tutorials_tbl (\\n\\ttutorial_id INT not null auto_increment,\\n\\ttutorial_title VARCHAR(100) not null,\\n\\ttutorial_author VARCHAR(40) not null,\\n\\tsubmission_date DATE,\\n\\tPRIMARY KEY (tutorial_id)\\n)\""
+  "Parsed": "\"create /* comment */ table tutorials_tbl (\\n\\ttutorial_id INT not null auto_increment,\\n\\ttutorial_title VARCHAR(100) not null,\\n\\ttutorial_author VARCHAR(40) not null,\\n\\tsubmission_date DATE,\\n\\tPRIMARY KEY (tutorial_id)\\n)\"",
+  "Values": "{\"*sqlparser.ColumnDefinition\":\"\\u0026{Name:submission_date Type:{Type:DATE Options:0xc0003ba5a0 Length:\\u003cnil\\u003e Unsigned:false Zerofill:false Scale:\\u003cnil\\u003e Charset:{Name: Binary:false} EnumValues:[]}}\",\"*sqlparser.CreateTable\":\"\\u0026{Temp:false Table:{Name:tutorials_tbl Qualifier:} IfNotExists:false TableSpec:0xc0003c0540 OptLike:\\u003cnil\\u003e Comments:0xc000157c60 FullyParsed:true}\",\"*sqlparser.IndexDefinition\":\"\\u0026{Info:0xc0003c05b0 Columns:[0xc00039a870] Options:[]}\",\"*sqlparser.IndexInfo\":\"\\u0026{Type:PRIMARY KEY Name:PRIMARY ConstraintName: Primary:true Spatial:false Fulltext:false Unique:true}\",\"*sqlparser.ParsedComments\":\"\\u0026{comments:[/* comment */] _directives:map[]}\",\"*sqlparser.TableSpec\":\"\\u0026{Columns:[0xc0003f8240 0xc0003f82d0 0xc0003f8360 0xc0003f83f0] Indexes:[0xc0003a1780] Constraints:[] Options:[] PartitionOption:\\u003cnil\\u003e}\",\"sqlparser.ColIdent\":\"\",\"sqlparser.TableIdent\":\"\",\"sqlparser.TableName\":\"{Name:tutorials_tbl Qualifier:}\",\"sqlparser.TableOptions\":\"[]\"}"
 }
 {
   "Query": "ALTER TABLE contacts ADD last_name varchar(40) NOT NULL AFTER contact_id;",
@@ -39,7 +42,8 @@ Comment:
   "Literals": "null",
   "Tables": "[\"contacts\"]",
   "Comments": "\"\"",
-  "Parsed": "\"alter table contacts add column last_name varchar(40) not null after contact_id\""
+  "Parsed": "\"alter table contacts add column last_name varchar(40) not null after contact_id\"",
+  "Values": "{\"*sqlparser.AddColumns\":\"\\u0026{Columns:[0xc000438000] First:false After:0xc000131140}\",\"*sqlparser.AlterTable\":\"\\u0026{Table:{Name:contacts Qualifier:} AlterOptions:[0xc000409680] PartitionSpec:\\u003cnil\\u003e PartitionOption:\\u003cnil\\u003e Comments:\\u003cnil\\u003e FullyParsed:true}\",\"*sqlparser.ColName\":\"\\u0026{Metadata:\\u003cnil\\u003e Name:contact_id Qualifier:{Name: Qualifier:}}\",\"*sqlparser.ColumnDefinition\":\"\\u0026{Name:last_name Type:{Type:varchar Options:0xc0003ba640 Length:0xc0003fed68 Unsigned:false Zerofill:false Scale:\\u003cnil\\u003e Charset:{Name: Binary:false} EnumValues:[]}}\",\"sqlparser.ColIdent\":\"contact_id\",\"sqlparser.TableIdent\":\"\",\"sqlparser.TableName\":\"{Name: Qualifier:}\"}"
 }
 {
   "Query": "ALTER TABLE employees RENAME COLUMN id TO employ_id;",
@@ -48,7 +52,8 @@ Comment:
   "Literals": "null",
   "Tables": "[\"employees\"]",
   "Comments": "\"\"",
-  "Parsed": "\"alter table employees\""
+  "Parsed": "\"alter table employees\"",
+  "Values": "{\"*sqlparser.AlterTable\":\"\\u0026{Table:{Name:employees Qualifier:} AlterOptions:[] PartitionSpec:\\u003cnil\\u003e PartitionOption:\\u003cnil\\u003e Comments:\\u003cnil\\u003e FullyParsed:false}\",\"sqlparser.TableIdent\":\"\",\"sqlparser.TableName\":\"{Name:employees Qualifier:}\"}"
 }
 {
   "Query": "DROP TABLE IF EXISTS table_name;",
@@ -57,7 +62,8 @@ Comment:
   "Literals": "null",
   "Tables": "[\"table_name\"]",
   "Comments": "\"\"",
-  "Parsed": "\"drop table if exists table_name\""
+  "Parsed": "\"drop table if exists table_name\"",
+  "Values": "{\"*sqlparser.DropTable\":\"\\u0026{Temp:false FromTables:[{Name:table_name Qualifier:}] IfExists:true Comments:\\u003cnil\\u003e}\",\"sqlparser.TableIdent\":\"\",\"sqlparser.TableName\":\"{Name:table_name Qualifier:}\",\"sqlparser.TableNames\":\"[{Name:table_name Qualifier:}]\"}"
 }
 {
   "Query": "TRUNCATE TABLE employee;",
@@ -66,7 +72,8 @@ Comment:
   "Literals": "null",
   "Tables": "[\"employee\"]",
   "Comments": "\"\"",
-  "Parsed": "\"truncate table employee\""
+  "Parsed": "\"truncate table employee\"",
+  "Values": "{\"*sqlparser.TruncateTable\":\"\\u0026{Table:{Name:employee Qualifier:}}\",\"sqlparser.TableIdent\":\"\",\"sqlparser.TableName\":\"{Name:employee Qualifier:}\"}"
 }
 {
   "Query": "INSERT into employee Values(101,'abcd');",
@@ -75,7 +82,8 @@ Comment:
   "Literals": "null",
   "Tables": "[\"employee\"]",
   "Comments": "\"\"",
-  "Parsed": "\"insert into employee values (:1, :2)\""
+  "Parsed": "\"insert into employee values (:1, :2)\"",
+  "Values": "{\"*sqlparser.Insert\":\"\\u0026{Action:0 Comments:\\u003cnil\\u003e Ignore:false Table:{Name:employee Qualifier:} Partitions:[] Columns:[] Rows:[[1 2]] OnDup:[]}\",\"sqlparser.Argument\":\"2\",\"sqlparser.TableIdent\":\"\",\"sqlparser.TableName\":\"{Name:employee Qualifier:}\",\"sqlparser.ValTuple\":\"[1 2]\",\"sqlparser.Values\":\"[[1 2]]\"}"
 }
 {
   "Query": "DROP TABLE employee;",
@@ -84,7 +92,8 @@ Comment:
   "Literals": "null",
   "Tables": "[\"employee\"]",
   "Comments": "\"\"",
-  "Parsed": "\"drop table employee\""
+  "Parsed": "\"drop table employee\"",
+  "Values": "{\"*sqlparser.DropTable\":\"\\u0026{Temp:false FromTables:[{Name:employee Qualifier:}] IfExists:false Comments:\\u003cnil\\u003e}\",\"sqlparser.TableIdent\":\"\",\"sqlparser.TableName\":\"{Name:employee Qualifier:}\",\"sqlparser.TableNames\":\"[{Name:employee Qualifier:}]\"}"
 }
 {
   "Query": "UPDATE employee SET col1 = new_col WHERE condition;",
@@ -93,7 +102,8 @@ Comment:
   "Literals": "null",
   "Tables": "[\"employee\"]",
   "Comments": "\"\"",
-  "Parsed": "\"update employee set col1 = new_col where `condition`\""
+  "Parsed": "\"update employee set col1 = new_col where `condition`\"",
+  "Values": "{\"*sqlparser.AliasedTableExpr\":\"\\u0026{Expr:{Name:employee Qualifier:} Partitions:[] As: Hints:[] Columns:[]}\",\"*sqlparser.ColName\":\"\\u0026{Metadata:\\u003cnil\\u003e Name:condition Qualifier:{Name: Qualifier:}}\",\"*sqlparser.Update\":\"\\u0026{With:\\u003cnil\\u003e Comments:\\u003cnil\\u003e Ignore:false TableExprs:[0xc0003c07e0] Exprs:[0xc0003ff710] Where:0xc0003ff740 OrderBy:[] Limit:\\u003cnil\\u003e}\",\"*sqlparser.UpdateExpr\":\"\\u0026{Name:0xc000131440 Expr:0xc0001314a0}\",\"*sqlparser.Where\":\"\\u0026{Type:0 Expr:0xc000131500}\",\"sqlparser.ColIdent\":\"condition\",\"sqlparser.TableExprs\":\"[0xc0003c07e0]\",\"sqlparser.TableIdent\":\"\",\"sqlparser.TableName\":\"{Name: Qualifier:}\",\"sqlparser.UpdateExprs\":\"[0xc0003ff710]\"}"
 }
 {
   "Query": "FLUSH PRIVILEGES;",
@@ -102,7 +112,8 @@ Comment:
   "Literals": "null",
   "Tables": "null",
   "Comments": "\"\"",
-  "Parsed": "\"flush PRIVILEGES\""
+  "Parsed": "\"flush PRIVILEGES\"",
+  "Values": "{\"*sqlparser.Flush\":\"\\u0026{IsLocal:false FlushOptions:[PRIVILEGES] TableNames:[] WithLock:false ForExport:false}\"}"
 }
 {
   "Query": "ROLLBACK;",
@@ -111,7 +122,8 @@ Comment:
   "Literals": "null",
   "Tables": "null",
   "Comments": "\"\"",
-  "Parsed": "\"rollback\""
+  "Parsed": "\"rollback\"",
+  "Values": "{\"*sqlparser.Rollback\":\"\\u0026{}\"}"
 }
 {
   "Query": "COMMIT;",
@@ -120,7 +132,8 @@ Comment:
   "Literals": "null",
   "Tables": "null",
   "Comments": "\"\"",
-  "Parsed": "\"commit\""
+  "Parsed": "\"commit\"",
+  "Values": "{\"*sqlparser.Commit\":\"\\u0026{}\"}"
 }
 {
   "Query": "SELECT DISTINCT col_name FROM tbl;",
@@ -129,7 +142,8 @@ Comment:
   "Literals": "null",
   "Tables": "[\"tbl\"]",
   "Comments": "\"\"",
-  "Parsed": "\"select distinct col_name from tbl\""
+  "Parsed": "\"select distinct col_name from tbl\"",
+  "Values": "{\"*sqlparser.AliasedExpr\":\"\\u0026{Expr:0xc000131680 As:}\",\"*sqlparser.AliasedTableExpr\":\"\\u0026{Expr:{Name:tbl Qualifier:} Partitions:[] As: Hints:[] Columns:[]}\",\"*sqlparser.ColName\":\"\\u0026{Metadata:\\u003cnil\\u003e Name:col_name Qualifier:{Name: Qualifier:}}\",\"*sqlparser.Select\":\"\\u0026{Cache:\\u003cnil\\u003e Distinct:true StraightJoinHint:false SQLCalcFoundRows:false From:[0xc0003c09a0] Comments:\\u003cnil\\u003e SelectExprs:[0xc000452300] Where:\\u003cnil\\u003e With:\\u003cnil\\u003e GroupBy:[] Having:\\u003cnil\\u003e Windows:[] OrderBy:[] Limit:\\u003cnil\\u003e Lock:0 Into:\\u003cnil\\u003e}\",\"sqlparser.ColIdent\":\"\",\"sqlparser.SelectExprs\":\"[0xc000452300]\",\"sqlparser.TableIdent\":\"\",\"sqlparser.TableName\":\"{Name: Qualifier:}\"}"
 }
 {
   "Query": "SELECT employee_id FROM employee WHERE name = 'stella';",
@@ -138,7 +152,8 @@ Comment:
   "Literals": "null",
   "Tables": "[\"employee\"]",
   "Comments": "\"\"",
-  "Parsed": "\"select employee_id from employee where `name` = :1\""
+  "Parsed": "\"select employee_id from employee where `name` = :1\"",
+  "Values": "{\"*sqlparser.AliasedExpr\":\"\\u0026{Expr:0xc000131740 As:}\",\"*sqlparser.AliasedTableExpr\":\"\\u0026{Expr:{Name:employee Qualifier:} Partitions:[] As: Hints:[] Columns:[]}\",\"*sqlparser.ColName\":\"\\u0026{Metadata:\\u003cnil\\u003e Name:name Qualifier:{Name: Qualifier:}}\",\"*sqlparser.ComparisonExpr\":\"\\u0026{Operator:0 Left:0xc0001317a0 Right:1 Escape:\\u003cnil\\u003e}\",\"*sqlparser.Select\":\"\\u0026{Cache:\\u003cnil\\u003e Distinct:false StraightJoinHint:false SQLCalcFoundRows:false From:[0xc0003c0a80] Comments:\\u003cnil\\u003e SelectExprs:[0xc000452480] Where:0xc0003ffe30 With:\\u003cnil\\u003e GroupBy:[] Having:\\u003cnil\\u003e Windows:[] OrderBy:[] Limit:\\u003cnil\\u003e Lock:0 Into:\\u003cnil\\u003e}\",\"*sqlparser.Where\":\"\\u0026{Type:0 Expr:0xc0004524c0}\",\"sqlparser.Argument\":\"1\",\"sqlparser.ColIdent\":\"name\",\"sqlparser.SelectExprs\":\"[0xc000452480]\",\"sqlparser.TableIdent\":\"\",\"sqlparser.TableName\":\"{Name: Qualifier:}\"}"
 }
 {
   "Query": "SELECT COUNT(*) FROM employee;",
@@ -147,7 +162,8 @@ Comment:
   "Literals": "null",
   "Tables": "[\"employee\",\"\"]",
   "Comments": "\"\"",
-  "Parsed": "\"select COUNT(*) from employee\""
+  "Parsed": "\"select COUNT(*) from employee\"",
+  "Values": "{\"*sqlparser.AliasedExpr\":\"\\u0026{Expr:0xc000131920 As:}\",\"*sqlparser.AliasedTableExpr\":\"\\u0026{Expr:{Name:employee Qualifier:} Partitions:[] As: Hints:[] Columns:[]}\",\"*sqlparser.FuncExpr\":\"\\u0026{Qualifier: Name:COUNT Distinct:false Exprs:[0xc00041ec20]}\",\"*sqlparser.Select\":\"\\u0026{Cache:\\u003cnil\\u003e Distinct:false StraightJoinHint:false SQLCalcFoundRows:false From:[0xc0003c0b60] Comments:\\u003cnil\\u003e SelectExprs:[0xc0004526c0] Where:\\u003cnil\\u003e With:\\u003cnil\\u003e GroupBy:[] Having:\\u003cnil\\u003e Windows:[] OrderBy:[] Limit:\\u003cnil\\u003e Lock:0 Into:\\u003cnil\\u003e}\",\"*sqlparser.StarExpr\":\"\\u0026{TableName:{Name: Qualifier:}}\",\"sqlparser.ColIdent\":\"\",\"sqlparser.SelectExprs\":\"[0xc00041ec20]\",\"sqlparser.TableIdent\":\"\",\"sqlparser.TableName\":\"{Name: Qualifier:}\"}"
 }
 {
   "Query": "SELECT first_name FROM student ORDER BY marks desc;",
@@ -156,7 +172,8 @@ Comment:
   "Literals": "null",
   "Tables": "[\"student\"]",
   "Comments": "\"\"",
-  "Parsed": "\"select first_name from student order by marks desc\""
+  "Parsed": "\"select first_name from student order by marks desc\"",
+  "Values": "{\"*sqlparser.AliasedExpr\":\"\\u0026{Expr:0xc0001319e0 As:}\",\"*sqlparser.AliasedTableExpr\":\"\\u0026{Expr:{Name:student Qualifier:} Partitions:[] As: Hints:[] Columns:[]}\",\"*sqlparser.ColName\":\"\\u0026{Metadata:\\u003cnil\\u003e Name:marks Qualifier:{Name: Qualifier:}}\",\"*sqlparser.Order\":\"\\u0026{Expr:0xc000131a40 Direction:1}\",\"*sqlparser.Select\":\"\\u0026{Cache:\\u003cnil\\u003e Distinct:false StraightJoinHint:false SQLCalcFoundRows:false From:[0xc0003c0c40] Comments:\\u003cnil\\u003e SelectExprs:[0xc000452840] Where:\\u003cnil\\u003e With:\\u003cnil\\u003e GroupBy:[] Having:\\u003cnil\\u003e Windows:[] OrderBy:[0xc000462390] Limit:\\u003cnil\\u003e Lock:0 Into:\\u003cnil\\u003e}\",\"sqlparser.ColIdent\":\"marks\",\"sqlparser.OrderBy\":\"[0xc000462390]\",\"sqlparser.SelectExprs\":\"[0xc000452840]\",\"sqlparser.TableIdent\":\"\",\"sqlparser.TableName\":\"{Name: Qualifier:}\"}"
 }
 {
   "Query": "SELECT first_name FROM student ORDER BY marks desc LIMIT 5;",
@@ -165,7 +182,8 @@ Comment:
   "Literals": "null",
   "Tables": "[\"student\"]",
   "Comments": "\"\"",
-  "Parsed": "\"select first_name from student order by marks desc limit :1\""
+  "Parsed": "\"select first_name from student order by marks desc limit :1\"",
+  "Values": "{\"*sqlparser.AliasedExpr\":\"\\u0026{Expr:0xc000131b60 As:}\",\"*sqlparser.AliasedTableExpr\":\"\\u0026{Expr:{Name:student Qualifier:} Partitions:[] As: Hints:[] Columns:[]}\",\"*sqlparser.ColName\":\"\\u0026{Metadata:\\u003cnil\\u003e Name:marks Qualifier:{Name: Qualifier:}}\",\"*sqlparser.Limit\":\"\\u0026{Offset:\\u003cnil\\u003e Rowcount:1}\",\"*sqlparser.Order\":\"\\u0026{Expr:0xc000131bc0 Direction:1}\",\"*sqlparser.Select\":\"\\u0026{Cache:\\u003cnil\\u003e Distinct:false StraightJoinHint:false SQLCalcFoundRows:false From:[0xc0003c0d20] Comments:\\u003cnil\\u003e SelectExprs:[0xc0004529c0] Where:\\u003cnil\\u003e With:\\u003cnil\\u003e GroupBy:[] Having:\\u003cnil\\u003e Windows:[] OrderBy:[0xc000462678] Limit:0xc00041efc0 Lock:0 Into:\\u003cnil\\u003e}\",\"sqlparser.Argument\":\"1\",\"sqlparser.ColIdent\":\"marks\",\"sqlparser.OrderBy\":\"[0xc000462678]\",\"sqlparser.SelectExprs\":\"[0xc0004529c0]\",\"sqlparser.TableIdent\":\"\",\"sqlparser.TableName\":\"{Name: Qualifier:}\"}"
 }
 {
   "Query": "SELECT employee_id FROM employee WHERE name = 'stella' AND city = 'Bangalore';",
@@ -174,7 +192,8 @@ Comment:
   "Literals": "null",
   "Tables": "[\"employee\"]",
   "Comments": "\"\"",
-  "Parsed": "\"select employee_id from employee where `name` = :1 and city = :2\""
+  "Parsed": "\"select employee_id from employee where `name` = :1 and city = :2\"",
+  "Values": "{\"*sqlparser.AliasedExpr\":\"\\u0026{Expr:0xc000131d40 As:}\",\"*sqlparser.AliasedTableExpr\":\"\\u0026{Expr:{Name:employee Qualifier:} Partitions:[] As: Hints:[] Columns:[]}\",\"*sqlparser.AndExpr\":\"\\u0026{Left:0xc000452bc0 Right:0xc000452c00}\",\"*sqlparser.ColName\":\"\\u0026{Metadata:\\u003cnil\\u003e Name:city Qualifier:{Name: Qualifier:}}\",\"*sqlparser.ComparisonExpr\":\"\\u0026{Operator:0 Left:0xc000131e00 Right:2 Escape:\\u003cnil\\u003e}\",\"*sqlparser.Select\":\"\\u0026{Cache:\\u003cnil\\u003e Distinct:false StraightJoinHint:false SQLCalcFoundRows:false From:[0xc0003c0e00] Comments:\\u003cnil\\u003e SelectExprs:[0xc000452b80] Where:0xc0004629a8 With:\\u003cnil\\u003e GroupBy:[] Having:\\u003cnil\\u003e Windows:[] OrderBy:[] Limit:\\u003cnil\\u003e Lock:0 Into:\\u003cnil\\u003e}\",\"*sqlparser.Where\":\"\\u0026{Type:0 Expr:0xc00041f160}\",\"sqlparser.Argument\":\"2\",\"sqlparser.ColIdent\":\"city\",\"sqlparser.SelectExprs\":\"[0xc000452b80]\",\"sqlparser.TableIdent\":\"\",\"sqlparser.TableName\":\"{Name: Qualifier:}\"}"
 }
 {
   "Query": "SELECT employee_id FROM employee WHERE department = 'IT' OR city = 'Bangalore';",
@@ -183,7 +202,8 @@ Comment:
   "Literals": "null",
   "Tables": "[\"employee\"]",
   "Comments": "\"\"",
-  "Parsed": "\"select employee_id from employee where department = :1 or city = :2\""
+  "Parsed": "\"select employee_id from employee where department = :1 or city = :2\"",
+  "Values": "{\"*sqlparser.AliasedExpr\":\"\\u0026{Expr:0xc00047c060 As:}\",\"*sqlparser.AliasedTableExpr\":\"\\u0026{Expr:{Name:employee Qualifier:} Partitions:[] As: Hints:[] Columns:[]}\",\"*sqlparser.ColName\":\"\\u0026{Metadata:\\u003cnil\\u003e Name:city Qualifier:{Name: Qualifier:}}\",\"*sqlparser.ComparisonExpr\":\"\\u0026{Operator:0 Left:0xc00047c120 Right:2 Escape:\\u003cnil\\u003e}\",\"*sqlparser.OrExpr\":\"\\u0026{Left:0xc000452e80 Right:0xc000452ec0}\",\"*sqlparser.Select\":\"\\u0026{Cache:\\u003cnil\\u003e Distinct:false StraightJoinHint:false SQLCalcFoundRows:false From:[0xc0003c0ee0] Comments:\\u003cnil\\u003e SelectExprs:[0xc000452e40] Where:0xc000462c60 With:\\u003cnil\\u003e GroupBy:[] Having:\\u003cnil\\u003e Windows:[] OrderBy:[] Limit:\\u003cnil\\u003e Lock:0 Into:\\u003cnil\\u003e}\",\"*sqlparser.Where\":\"\\u0026{Type:0 Expr:0xc00041f360}\",\"sqlparser.Argument\":\"2\",\"sqlparser.ColIdent\":\"city\",\"sqlparser.SelectExprs\":\"[0xc000452e40]\",\"sqlparser.TableIdent\":\"\",\"sqlparser.TableName\":\"{Name: Qualifier:}\"}"
 }
 {
   "Query": "SELECT Name FROM students WHERE Physics BETWEEN 75 AND 95;",
@@ -192,7 +212,8 @@ Comment:
   "Literals": "null",
   "Tables": "[\"students\"]",
   "Comments": "\"\"",
-  "Parsed": "\"select `Name` from students where Physics between :1 and :2\""
+  "Parsed": "\"select `Name` from students where Physics between :1 and :2\"",
+  "Values": "{\"*sqlparser.AliasedExpr\":\"\\u0026{Expr:0xc00047c360 As:}\",\"*sqlparser.AliasedTableExpr\":\"\\u0026{Expr:{Name:students Qualifier:} Partitions:[] As: Hints:[] Columns:[]}\",\"*sqlparser.BetweenExpr\":\"\\u0026{IsBetween:true Left:0xc00047c3c0 From:1 To:2}\",\"*sqlparser.ColName\":\"\\u0026{Metadata:\\u003cnil\\u003e Name:Physics Qualifier:{Name: Qualifier:}}\",\"*sqlparser.Select\":\"\\u0026{Cache:\\u003cnil\\u003e Distinct:false StraightJoinHint:false SQLCalcFoundRows:false From:[0xc0003c0fc0] Comments:\\u003cnil\\u003e SelectExprs:[0xc000453100] Where:0xc000462f18 With:\\u003cnil\\u003e GroupBy:[] Having:\\u003cnil\\u003e Windows:[] OrderBy:[] Limit:\\u003cnil\\u003e Lock:0 Into:\\u003cnil\\u003e}\",\"*sqlparser.Where\":\"\\u0026{Type:0 Expr:0xc000453140}\",\"sqlparser.Argument\":\"2\",\"sqlparser.ColIdent\":\"Physics\",\"sqlparser.SelectExprs\":\"[0xc000453100]\",\"sqlparser.TableIdent\":\"\",\"sqlparser.TableName\":\"{Name: Qualifier:}\"}"
 }
 {
   "Query": "SELECT emp_id FROM employee WHERE emp_id BETWEEN 1 AND 10;",
@@ -201,7 +222,8 @@ Comment:
   "Literals": "null",
   "Tables": "[\"employee\"]",
   "Comments": "\"\"",
-  "Parsed": "\"select emp_id from employee where emp_id between :1 and :2\""
+  "Parsed": "\"select emp_id from employee where emp_id between :1 and :2\"",
+  "Values": "{\"*sqlparser.AliasedExpr\":\"\\u0026{Expr:0xc00047c5a0 As:}\",\"*sqlparser.AliasedTableExpr\":\"\\u0026{Expr:{Name:employee Qualifier:} Partitions:[] As: Hints:[] Columns:[]}\",\"*sqlparser.BetweenExpr\":\"\\u0026{IsBetween:true Left:0xc00047c600 From:1 To:2}\",\"*sqlparser.ColName\":\"\\u0026{Metadata:\\u003cnil\\u003e Name:emp_id Qualifier:{Name: Qualifier:}}\",\"*sqlparser.Select\":\"\\u0026{Cache:\\u003cnil\\u003e Distinct:false StraightJoinHint:false SQLCalcFoundRows:false From:[0xc0003c10a0] Comments:\\u003cnil\\u003e SelectExprs:[0xc000453340] Where:0xc0004631d0 With:\\u003cnil\\u003e GroupBy:[] Having:\\u003cnil\\u003e Windows:[] OrderBy:[] Limit:\\u003cnil\\u003e Lock:0 Into:\\u003cnil\\u003e}\",\"*sqlparser.Where\":\"\\u0026{Type:0 Expr:0xc000453380}\",\"sqlparser.Argument\":\"2\",\"sqlparser.ColIdent\":\"emp_id\",\"sqlparser.SelectExprs\":\"[0xc000453340]\",\"sqlparser.TableIdent\":\"\",\"sqlparser.TableName\":\"{Name: Qualifier:}\"}"
 }
 {
   "Query": "SELECT * FROM employee WHERE join_date BETWEEN '2007-01-01' AND '2008-01-01';",
@@ -210,7 +232,8 @@ Comment:
   "Literals": "null",
   "Tables": "[\"employee\",\"\"]",
   "Comments": "\"\"",
-  "Parsed": "\"select * from employee where join_date between :1 and :2\""
+  "Parsed": "\"select * from employee where join_date between :1 and :2\"",
+  "Values": "{\"*sqlparser.AliasedTableExpr\":\"\\u0026{Expr:{Name:employee Qualifier:} Partitions:[] As: Hints:[] Columns:[]}\",\"*sqlparser.BetweenExpr\":\"\\u0026{IsBetween:true Left:0xc00047c7e0 From:1 To:2}\",\"*sqlparser.ColName\":\"\\u0026{Metadata:\\u003cnil\\u003e Name:join_date Qualifier:{Name: Qualifier:}}\",\"*sqlparser.Select\":\"\\u0026{Cache:\\u003cnil\\u003e Distinct:false StraightJoinHint:false SQLCalcFoundRows:false From:[0xc0003c1180] Comments:\\u003cnil\\u003e SelectExprs:[0xc00041f820] Where:0xc000463428 With:\\u003cnil\\u003e GroupBy:[] Having:\\u003cnil\\u003e Windows:[] OrderBy:[] Limit:\\u003cnil\\u003e Lock:0 Into:\\u003cnil\\u003e}\",\"*sqlparser.StarExpr\":\"\\u0026{TableName:{Name: Qualifier:}}\",\"*sqlparser.Where\":\"\\u0026{Type:0 Expr:0xc000453580}\",\"sqlparser.Argument\":\"2\",\"sqlparser.ColIdent\":\"join_date\",\"sqlparser.SelectExprs\":\"[0xc00041f820]\",\"sqlparser.TableIdent\":\"\",\"sqlparser.TableName\":\"{Name: Qualifier:}\"}"
 }
 {
   "Query": "SELECT * FROM employee WHERE employee_id IN (1001,1004,1008,1012);",
@@ -219,7 +242,8 @@ Comment:
   "Literals": "null",
   "Tables": "[\"employee\",\"\"]",
   "Comments": "\"\"",
-  "Parsed": "\"select * from employee where employee_id in ::1\""
+  "Parsed": "\"select * from employee where employee_id in ::1\"",
+  "Values": "{\"*sqlparser.AliasedTableExpr\":\"\\u0026{Expr:{Name:employee Qualifier:} Partitions:[] As: Hints:[] Columns:[]}\",\"*sqlparser.ColName\":\"\\u0026{Metadata:\\u003cnil\\u003e Name:employee_id Qualifier:{Name: Qualifier:}}\",\"*sqlparser.ComparisonExpr\":\"\\u0026{Operator:7 Left:0xc00047c960 Right:1 Escape:\\u003cnil\\u003e}\",\"*sqlparser.Select\":\"\\u0026{Cache:\\u003cnil\\u003e Distinct:false StraightJoinHint:false SQLCalcFoundRows:false From:[0xc0003c1260] Comments:\\u003cnil\\u003e SelectExprs:[0xc00041fa60] Where:0xc0004636f8 With:\\u003cnil\\u003e GroupBy:[] Having:\\u003cnil\\u003e Windows:[] OrderBy:[] Limit:\\u003cnil\\u003e Lock:0 Into:\\u003cnil\\u003e}\",\"*sqlparser.StarExpr\":\"\\u0026{TableName:{Name: Qualifier:}}\",\"*sqlparser.Where\":\"\\u0026{Type:0 Expr:0xc000453780}\",\"sqlparser.ColIdent\":\"employee_id\",\"sqlparser.ListArg\":\"1\",\"sqlparser.SelectExprs\":\"[0xc00041fa60]\",\"sqlparser.TableIdent\":\"\",\"sqlparser.TableName\":\"{Name: Qualifier:}\"}"
 }
 {
   "Query": "SELECT first_name FROM tbl WHERE first_name LIKE 'A%';",
@@ -228,7 +252,8 @@ Comment:
   "Literals": "null",
   "Tables": "[\"tbl\"]",
   "Comments": "\"\"",
-  "Parsed": "\"select first_name from tbl where first_name like :1\""
+  "Parsed": "\"select first_name from tbl where first_name like :1\"",
+  "Values": "{\"*sqlparser.AliasedExpr\":\"\\u0026{Expr:0xc00047cc00 As:}\",\"*sqlparser.AliasedTableExpr\":\"\\u0026{Expr:{Name:tbl Qualifier:} Partitions:[] As: Hints:[] Columns:[]}\",\"*sqlparser.ColName\":\"\\u0026{Metadata:\\u003cnil\\u003e Name:first_name Qualifier:{Name: Qualifier:}}\",\"*sqlparser.ComparisonExpr\":\"\\u0026{Operator:9 Left:0xc00047cc60 Right:1 Escape:\\u003cnil\\u003e}\",\"*sqlparser.Select\":\"\\u0026{Cache:\\u003cnil\\u003e Distinct:false StraightJoinHint:false SQLCalcFoundRows:false From:[0xc0003c1340] Comments:\\u003cnil\\u003e SelectExprs:[0xc000453940] Where:0xc000463950 With:\\u003cnil\\u003e GroupBy:[] Having:\\u003cnil\\u003e Windows:[] OrderBy:[] Limit:\\u003cnil\\u003e Lock:0 Into:\\u003cnil\\u003e}\",\"*sqlparser.Where\":\"\\u0026{Type:0 Expr:0xc000453980}\",\"sqlparser.Argument\":\"1\",\"sqlparser.ColIdent\":\"first_name\",\"sqlparser.SelectExprs\":\"[0xc000453940]\",\"sqlparser.TableIdent\":\"\",\"sqlparser.TableName\":\"{Name: Qualifier:}\"}"
 }
 {
   "Query": "SELECT SUBSTRING(customer_name,1,5) FROM customer_table;",
@@ -237,7 +262,8 @@ Comment:
   "Literals": "null",
   "Tables": "[\"customer_table\"]",
   "Comments": "\"\"",
-  "Parsed": "\"select substr(customer_name, :1, :2) from customer_table\""
+  "Parsed": "\"select substr(customer_name, :1, :2) from customer_table\"",
+  "Values": "{\"*sqlparser.AliasedExpr\":\"\\u0026{Expr:0xc000469c50 As:}\",\"*sqlparser.AliasedTableExpr\":\"\\u0026{Expr:{Name:customer_table Qualifier:} Partitions:[] As: Hints:[] Columns:[]}\",\"*sqlparser.ColName\":\"\\u0026{Metadata:\\u003cnil\\u003e Name:customer_name Qualifier:{Name: Qualifier:}}\",\"*sqlparser.Select\":\"\\u0026{Cache:\\u003cnil\\u003e Distinct:false StraightJoinHint:false SQLCalcFoundRows:false From:[0xc0003c1420] Comments:\\u003cnil\\u003e SelectExprs:[0xc000453b80] Where:\\u003cnil\\u003e With:\\u003cnil\\u003e GroupBy:[] Having:\\u003cnil\\u003e Windows:[] OrderBy:[] Limit:\\u003cnil\\u003e Lock:0 Into:\\u003cnil\\u003e}\",\"*sqlparser.SubstrExpr\":\"\\u0026{Name:0xc00047cde0 From:1 To:2}\",\"sqlparser.Argument\":\"2\",\"sqlparser.ColIdent\":\"\",\"sqlparser.SelectExprs\":\"[0xc000453b80]\",\"sqlparser.TableIdent\":\"\",\"sqlparser.TableName\":\"{Name: Qualifier:}\"}"
 }
 {
   "Query": "SELECT INSTR('independence', 'pen');",
@@ -246,7 +272,8 @@ Comment:
   "Literals": "null",
   "Tables": "[\"dual\"]",
   "Comments": "\"\"",
-  "Parsed": "\"select INSTR(:1, :2) from dual\""
+  "Parsed": "\"select INSTR(:1, :2) from dual\"",
+  "Values": "{\"*sqlparser.AliasedExpr\":\"\\u0026{Expr:2 As:}\",\"*sqlparser.AliasedTableExpr\":\"\\u0026{Expr:{Name:dual Qualifier:} Partitions:[] As: Hints:[] Columns:[]}\",\"*sqlparser.FuncExpr\":\"\\u0026{Qualifier: Name:INSTR Distinct:false Exprs:[0xc000453d40 0xc000453d80]}\",\"*sqlparser.Select\":\"\\u0026{Cache:\\u003cnil\\u003e Distinct:false StraightJoinHint:false SQLCalcFoundRows:false From:[0xc0003c1500] Comments:\\u003cnil\\u003e SelectExprs:[0xc000453dc0] Where:\\u003cnil\\u003e With:\\u003cnil\\u003e GroupBy:[] Having:\\u003cnil\\u003e Windows:[] OrderBy:[] Limit:\\u003cnil\\u003e Lock:0 Into:\\u003cnil\\u003e}\",\"sqlparser.Argument\":\"2\",\"sqlparser.ColIdent\":\"\",\"sqlparser.SelectExprs\":\"[0xc000453d40 0xc000453d80]\",\"sqlparser.TableIdent\":\"\",\"sqlparser.TableName\":\"{Name:dual Qualifier:}\"}"
 }
 {
   "Query": "SELECT employee_id FROM employee GROUP BY department HAVING salary \u003e 100000;",
@@ -255,7 +282,8 @@ Comment:
   "Literals": "null",
   "Tables": "[\"employee\"]",
   "Comments": "\"\"",
-  "Parsed": "\"select employee_id from employee group by department having salary \\u003e :1\""
+  "Parsed": "\"select employee_id from employee group by department having salary \\u003e :1\"",
+  "Values": "{\"*sqlparser.AliasedExpr\":\"\\u0026{Expr:0xc00047d0e0 As:}\",\"*sqlparser.AliasedTableExpr\":\"\\u0026{Expr:{Name:employee Qualifier:} Partitions:[] As: Hints:[] Columns:[]}\",\"*sqlparser.ColName\":\"\\u0026{Metadata:\\u003cnil\\u003e Name:salary Qualifier:{Name: Qualifier:}}\",\"*sqlparser.ComparisonExpr\":\"\\u0026{Operator:2 Left:0xc00047d1a0 Right:1 Escape:\\u003cnil\\u003e}\",\"*sqlparser.Select\":\"\\u0026{Cache:\\u003cnil\\u003e Distinct:false StraightJoinHint:false SQLCalcFoundRows:false From:[0xc0003c15e0] Comments:\\u003cnil\\u003e SelectExprs:[0xc0004ac000] Where:\\u003cnil\\u003e With:\\u003cnil\\u003e GroupBy:[0xc00047d140] Having:0xc0004a4138 Windows:[] OrderBy:[] Limit:\\u003cnil\\u003e Lock:0 Into:\\u003cnil\\u003e}\",\"*sqlparser.Where\":\"\\u0026{Type:1 Expr:0xc0004ac040}\",\"sqlparser.Argument\":\"1\",\"sqlparser.ColIdent\":\"salary\",\"sqlparser.GroupBy\":\"[0xc00047d140]\",\"sqlparser.SelectExprs\":\"[0xc0004ac000]\",\"sqlparser.TableIdent\":\"\",\"sqlparser.TableName\":\"{Name: Qualifier:}\"}"
 }
 {
   "Query": "SELECT SUM(salary) FROM employee;",
@@ -264,7 +292,8 @@ Comment:
   "Literals": "null",
   "Tables": "[\"employee\"]",
   "Comments": "\"\"",
-  "Parsed": "\"select SUM(salary) from employee\""
+  "Parsed": "\"select SUM(salary) from employee\"",
+  "Values": "{\"*sqlparser.AliasedExpr\":\"\\u0026{Expr:0xc00047d380 As:}\",\"*sqlparser.AliasedTableExpr\":\"\\u0026{Expr:{Name:employee Qualifier:} Partitions:[] As: Hints:[] Columns:[]}\",\"*sqlparser.ColName\":\"\\u0026{Metadata:\\u003cnil\\u003e Name:salary Qualifier:{Name: Qualifier:}}\",\"*sqlparser.FuncExpr\":\"\\u0026{Qualifier: Name:SUM Distinct:false Exprs:[0xc0004ac240]}\",\"*sqlparser.Select\":\"\\u0026{Cache:\\u003cnil\\u003e Distinct:false StraightJoinHint:false SQLCalcFoundRows:false From:[0xc0003c16c0] Comments:\\u003cnil\\u003e SelectExprs:[0xc0004ac280] Where:\\u003cnil\\u003e With:\\u003cnil\\u003e GroupBy:[] Having:\\u003cnil\\u003e Windows:[] OrderBy:[] Limit:\\u003cnil\\u003e Lock:0 Into:\\u003cnil\\u003e}\",\"sqlparser.ColIdent\":\"\",\"sqlparser.SelectExprs\":\"[0xc0004ac240]\",\"sqlparser.TableIdent\":\"\",\"sqlparser.TableName\":\"{Name: Qualifier:}\"}"
 }
 {
   "Query": "SELECT AVG(salary) FROM employee;",
@@ -273,7 +302,8 @@ Comment:
   "Literals": "null",
   "Tables": "[\"employee\"]",
   "Comments": "\"\"",
-  "Parsed": "\"select AVG(salary) from employee\""
+  "Parsed": "\"select AVG(salary) from employee\"",
+  "Values": "{\"*sqlparser.AliasedExpr\":\"\\u0026{Expr:0xc00047d500 As:}\",\"*sqlparser.AliasedTableExpr\":\"\\u0026{Expr:{Name:employee Qualifier:} Partitions:[] As: Hints:[] Columns:[]}\",\"*sqlparser.ColName\":\"\\u0026{Metadata:\\u003cnil\\u003e Name:salary Qualifier:{Name: Qualifier:}}\",\"*sqlparser.FuncExpr\":\"\\u0026{Qualifier: Name:AVG Distinct:false Exprs:[0xc0004ac440]}\",\"*sqlparser.Select\":\"\\u0026{Cache:\\u003cnil\\u003e Distinct:false StraightJoinHint:false SQLCalcFoundRows:false From:[0xc0003c17a0] Comments:\\u003cnil\\u003e SelectExprs:[0xc0004ac480] Where:\\u003cnil\\u003e With:\\u003cnil\\u003e GroupBy:[] Having:\\u003cnil\\u003e Windows:[] OrderBy:[] Limit:\\u003cnil\\u003e Lock:0 Into:\\u003cnil\\u003e}\",\"sqlparser.ColIdent\":\"\",\"sqlparser.SelectExprs\":\"[0xc0004ac440]\",\"sqlparser.TableIdent\":\"\",\"sqlparser.TableName\":\"{Name: Qualifier:}\"}"
 }
 {
   "Query": "SELECT MIN(salary) FROM employee;",
@@ -282,7 +312,8 @@ Comment:
   "Literals": "null",
   "Tables": "[\"employee\"]",
   "Comments": "\"\"",
-  "Parsed": "\"select MIN(salary) from employee\""
+  "Parsed": "\"select MIN(salary) from employee\"",
+  "Values": "{\"*sqlparser.AliasedExpr\":\"\\u0026{Expr:0xc00047d680 As:}\",\"*sqlparser.AliasedTableExpr\":\"\\u0026{Expr:{Name:employee Qualifier:} Partitions:[] As: Hints:[] Columns:[]}\",\"*sqlparser.ColName\":\"\\u0026{Metadata:\\u003cnil\\u003e Name:salary Qualifier:{Name: Qualifier:}}\",\"*sqlparser.FuncExpr\":\"\\u0026{Qualifier: Name:MIN Distinct:false Exprs:[0xc0004ac640]}\",\"*sqlparser.Select\":\"\\u0026{Cache:\\u003cnil\\u003e Distinct:false StraightJoinHint:false SQLCalcFoundRows:false From:[0xc0003c1880] Comments:\\u003cnil\\u003e SelectExprs:[0xc0004ac680] Where:\\u003cnil\\u003e With:\\u003cnil\\u003e GroupBy:[] Having:\\u003cnil\\u003e Windows:[] OrderBy:[] Limit:\\u003cnil\\u003e Lock:0 Into:\\u003cnil\\u003e}\",\"sqlparser.ColIdent\":\"\",\"sqlparser.SelectExprs\":\"[0xc0004ac640]\",\"sqlparser.TableIdent\":\"\",\"sqlparser.TableName\":\"{Name: Qualifier:}\"}"
 }
 {
   "Query": "SELECT MAX(salary) FROM employee;",
@@ -291,7 +322,8 @@ Comment:
   "Literals": "null",
   "Tables": "[\"employee\"]",
   "Comments": "\"\"",
-  "Parsed": "\"select MAX(salary) from employee\""
+  "Parsed": "\"select MAX(salary) from employee\"",
+  "Values": "{\"*sqlparser.AliasedExpr\":\"\\u0026{Expr:0xc00047d800 As:}\",\"*sqlparser.AliasedTableExpr\":\"\\u0026{Expr:{Name:employee Qualifier:} Partitions:[] As: Hints:[] Columns:[]}\",\"*sqlparser.ColName\":\"\\u0026{Metadata:\\u003cnil\\u003e Name:salary Qualifier:{Name: Qualifier:}}\",\"*sqlparser.FuncExpr\":\"\\u0026{Qualifier: Name:MAX Distinct:false Exprs:[0xc0004ac840]}\",\"*sqlparser.Select\":\"\\u0026{Cache:\\u003cnil\\u003e Distinct:false StraightJoinHint:false SQLCalcFoundRows:false From:[0xc0003c1960] Comments:\\u003cnil\\u003e SelectExprs:[0xc0004ac880] Where:\\u003cnil\\u003e With:\\u003cnil\\u003e GroupBy:[] Having:\\u003cnil\\u003e Windows:[] OrderBy:[] Limit:\\u003cnil\\u003e Lock:0 Into:\\u003cnil\\u003e}\",\"sqlparser.ColIdent\":\"\",\"sqlparser.SelectExprs\":\"[0xc0004ac840]\",\"sqlparser.TableIdent\":\"\",\"sqlparser.TableName\":\"{Name: Qualifier:}\"}"
 }
 {
   "Query": "SELECT * FROM library INNER JOIN customer ON library.cust_id = customer.cust_id;",
@@ -300,7 +332,8 @@ Comment:
   "Literals": "null",
   "Tables": "[\"library\",\"customer\",\"\"]",
   "Comments": "\"\"",
-  "Parsed": "\"select * from library join customer on library.cust_id = customer.cust_id\""
+  "Parsed": "\"select * from library join customer on library.cust_id = customer.cust_id\"",
+  "Values": "{\"*sqlparser.AliasedTableExpr\":\"\\u0026{Expr:{Name:customer Qualifier:} Partitions:[] As: Hints:[] Columns:[]}\",\"*sqlparser.ColName\":\"\\u0026{Metadata:\\u003cnil\\u003e Name:cust_id Qualifier:{Name:customer Qualifier:}}\",\"*sqlparser.ComparisonExpr\":\"\\u0026{Operator:0 Left:0xc00047d980 Right:0xc00047d9e0 Escape:\\u003cnil\\u003e}\",\"*sqlparser.JoinCondition\":\"\\u0026{On:0xc0004aca40 Using:[]}\",\"*sqlparser.JoinTableExpr\":\"\\u0026{LeftExpr:0xc0003c1a40 Join:0 RightExpr:0xc0003c1ab0 Condition:0xc0004a1fb0}\",\"*sqlparser.Select\":\"\\u0026{Cache:\\u003cnil\\u003e Distinct:false StraightJoinHint:false SQLCalcFoundRows:false From:[0xc0004c2000] Comments:\\u003cnil\\u003e SelectExprs:[0xc0004a26a0] Where:\\u003cnil\\u003e With:\\u003cnil\\u003e GroupBy:[] Having:\\u003cnil\\u003e Windows:[] OrderBy:[] Limit:\\u003cnil\\u003e Lock:0 Into:\\u003cnil\\u003e}\",\"*sqlparser.StarExpr\":\"\\u0026{TableName:{Name: Qualifier:}}\",\"sqlparser.ColIdent\":\"cust_id\",\"sqlparser.SelectExprs\":\"[0xc0004a26a0]\",\"sqlparser.TableIdent\":\"\",\"sqlparser.TableName\":\"{Name: Qualifier:}\"}"
 }
 {
   "Query": "SELECT * FROM library LEFT JOIN customer ON library.cust_id = customer.cust_id;",
@@ -309,7 +342,8 @@ Comment:
   "Literals": "null",
   "Tables": "[\"library\",\"customer\",\"\"]",
   "Comments": "\"\"",
-  "Parsed": "\"select * from library left join customer on library.cust_id = customer.cust_id\""
+  "Parsed": "\"select * from library left join customer on library.cust_id = customer.cust_id\"",
+  "Values": "{\"*sqlparser.AliasedTableExpr\":\"\\u0026{Expr:{Name:customer Qualifier:} Partitions:[] As: Hints:[] Columns:[]}\",\"*sqlparser.ColName\":\"\\u0026{Metadata:\\u003cnil\\u003e Name:cust_id Qualifier:{Name:customer Qualifier:}}\",\"*sqlparser.ComparisonExpr\":\"\\u0026{Operator:0 Left:0xc00047db00 Right:0xc00047db60 Escape:\\u003cnil\\u003e}\",\"*sqlparser.JoinCondition\":\"\\u0026{On:0xc0004acc00 Using:[]}\",\"*sqlparser.JoinTableExpr\":\"\\u0026{LeftExpr:0xc0003c1c00 Join:2 RightExpr:0xc0003c1c70 Condition:0xc0004c2450}\",\"*sqlparser.Select\":\"\\u0026{Cache:\\u003cnil\\u003e Distinct:false StraightJoinHint:false SQLCalcFoundRows:false From:[0xc0004c2480] Comments:\\u003cnil\\u003e SelectExprs:[0xc0004a2a20] Where:\\u003cnil\\u003e With:\\u003cnil\\u003e GroupBy:[] Having:\\u003cnil\\u003e Windows:[] OrderBy:[] Limit:\\u003cnil\\u003e Lock:0 Into:\\u003cnil\\u003e}\",\"*sqlparser.StarExpr\":\"\\u0026{TableName:{Name: Qualifier:}}\",\"sqlparser.ColIdent\":\"cust_id\",\"sqlparser.SelectExprs\":\"[0xc0004a2a20]\",\"sqlparser.TableIdent\":\"\",\"sqlparser.TableName\":\"{Name: Qualifier:}\"}"
 }
 {
   "Query": "SELECT * FROM library RIGHT JOIN customer ON library.cust_id = customer.cust_id;",
@@ -318,7 +352,8 @@ Comment:
   "Literals": "null",
   "Tables": "[\"library\",\"customer\",\"\"]",
   "Comments": "\"\"",
-  "Parsed": "\"select * from library right join customer on library.cust_id = customer.cust_id\""
+  "Parsed": "\"select * from library right join customer on library.cust_id = customer.cust_id\"",
+  "Values": "{\"*sqlparser.AliasedTableExpr\":\"\\u0026{Expr:{Name:customer Qualifier:} Partitions:[] As: Hints:[] Columns:[]}\",\"*sqlparser.ColName\":\"\\u0026{Metadata:\\u003cnil\\u003e Name:cust_id Qualifier:{Name:customer Qualifier:}}\",\"*sqlparser.ComparisonExpr\":\"\\u0026{Operator:0 Left:0xc00047dc80 Right:0xc00047dce0 Escape:\\u003cnil\\u003e}\",\"*sqlparser.JoinCondition\":\"\\u0026{On:0xc0004acdc0 Using:[]}\",\"*sqlparser.JoinTableExpr\":\"\\u0026{LeftExpr:0xc0003c1dc0 Join:3 RightExpr:0xc0003c1e30 Condition:0xc0004c2750}\",\"*sqlparser.Select\":\"\\u0026{Cache:\\u003cnil\\u003e Distinct:false StraightJoinHint:false SQLCalcFoundRows:false From:[0xc0004c2780] Comments:\\u003cnil\\u003e SelectExprs:[0xc0004a2d60] Where:\\u003cnil\\u003e With:\\u003cnil\\u003e GroupBy:[] Having:\\u003cnil\\u003e Windows:[] OrderBy:[] Limit:\\u003cnil\\u003e Lock:0 Into:\\u003cnil\\u003e}\",\"*sqlparser.StarExpr\":\"\\u0026{TableName:{Name: Qualifier:}}\",\"sqlparser.ColIdent\":\"cust_id\",\"sqlparser.SelectExprs\":\"[0xc0004a2d60]\",\"sqlparser.TableIdent\":\"\",\"sqlparser.TableName\":\"{Name: Qualifier:}\"}"
 }
 {
   "Query": "SELECT * FROM t1 LEFT JOIN t2 ON t1.id = t2.id UNION SELECT * FROM t1 RIGHT JOIN t2 ON t1.id = t2.id",
@@ -327,7 +362,8 @@ Comment:
   "Literals": "null",
   "Tables": "[\"t1\",\"t2\",\"\",\"t1\",\"t2\",\"\"]",
   "Comments": "\"\"",
-  "Parsed": "\"select * from t1 left join t2 on t1.id = t2.id union select * from t1 right join t2 on t1.id = t2.id\""
+  "Parsed": "\"select * from t1 left join t2 on t1.id = t2.id union select * from t1 right join t2 on t1.id = t2.id\"",
+  "Values": "{\"*sqlparser.AliasedTableExpr\":\"\\u0026{Expr:{Name:t2 Qualifier:} Partitions:[] As: Hints:[] Columns:[]}\",\"*sqlparser.ColName\":\"\\u0026{Metadata:\\u003cnil\\u003e Name:id Qualifier:{Name:t2 Qualifier:}}\",\"*sqlparser.ComparisonExpr\":\"\\u0026{Operator:0 Left:0xc00047dec0 Right:0xc00047df20 Escape:\\u003cnil\\u003e}\",\"*sqlparser.JoinCondition\":\"\\u0026{On:0xc0004acfc0 Using:[]}\",\"*sqlparser.JoinTableExpr\":\"\\u0026{LeftExpr:0xc0004d2070 Join:3 RightExpr:0xc0004d20e0 Condition:0xc0004c2ab0}\",\"*sqlparser.Select\":\"\\u0026{Cache:\\u003cnil\\u003e Distinct:false StraightJoinHint:false SQLCalcFoundRows:false From:[0xc0004c2ae0] Comments:\\u003cnil\\u003e SelectExprs:[0xc0004a3100] Where:\\u003cnil\\u003e With:\\u003cnil\\u003e GroupBy:[] Having:\\u003cnil\\u003e Windows:[] OrderBy:[] Limit:\\u003cnil\\u003e Lock:0 Into:\\u003cnil\\u003e}\",\"*sqlparser.StarExpr\":\"\\u0026{TableName:{Name: Qualifier:}}\",\"*sqlparser.Union\":\"\\u0026{Left:0xc0004b4840 Right:0xc0004b4900 Distinct:true OrderBy:[] With:\\u003cnil\\u003e Limit:\\u003cnil\\u003e Lock:0 Into:\\u003cnil\\u003e}\",\"sqlparser.ColIdent\":\"id\",\"sqlparser.SelectExprs\":\"[0xc0004a3100]\",\"sqlparser.TableIdent\":\"\",\"sqlparser.TableName\":\"{Name: Qualifier:}\"}"
 }
 {
   "Query": "SELECT Name, SUM(Value) AS \"SUM(VALUE)\", SUM(Value) / totals.total AS \"% of Total\" FROM table1, (SELECT Name, SUM(Value) AS total FROM table1 GROUP BY Name) AS totals WHERE table1.Name = totals.Name AND Year BETWEEN 2000 AND 2001 GROUP BY Name;",
@@ -336,7 +372,8 @@ Comment:
   "Literals": "null",
   "Tables": "[\"table1\",\"table1\"]",
   "Comments": "\"\"",
-  "Parsed": "\"select `Name`, SUM(Value) as `SUM(VALUE)`, SUM(Value) / totals.total as `% of Total` from table1, (select `Name`, SUM(Value) as total from table1 group by `Name`) as totals where table1.`Name` = totals.`Name` and `Year` between :1 and :2 group by `Name`\""
+  "Parsed": "\"select `Name`, SUM(Value) as `SUM(VALUE)`, SUM(Value) / totals.total as `% of Total` from table1, (select `Name`, SUM(Value) as total from table1 group by `Name`) as totals where table1.`Name` = totals.`Name` and `Year` between :1 and :2 group by `Name`\"",
+  "Values": "{\"*sqlparser.AliasedExpr\":\"\\u0026{Expr:0xc0004e2300 As:}\",\"*sqlparser.AliasedTableExpr\":\"\\u0026{Expr:{Name:table1 Qualifier:} Partitions:[] As: Hints:[] Columns:[]}\",\"*sqlparser.AndExpr\":\"\\u0026{Left:0xc0004ad440 Right:0xc0004ad480}\",\"*sqlparser.BetweenExpr\":\"\\u0026{IsBetween:true Left:0xc0004e2660 From:1 To:2}\",\"*sqlparser.BinaryExpr\":\"\\u0026{Operator:6 Left:0xc0004e2360 Right:0xc0004e23c0}\",\"*sqlparser.ColName\":\"\\u0026{Metadata:\\u003cnil\\u003e Name:Name Qualifier:{Name: Qualifier:}}\",\"*sqlparser.ComparisonExpr\":\"\\u0026{Operator:0 Left:0xc0004e25a0 Right:0xc0004e2600 Escape:\\u003cnil\\u003e}\",\"*sqlparser.DerivedTable\":\"\\u0026{Lateral:false Select:0xc0004b4b40}\",\"*sqlparser.FuncExpr\":\"\\u0026{Qualifier: Name:SUM Distinct:false Exprs:[0xc0004ad2c0]}\",\"*sqlparser.Select\":\"\\u0026{Cache:\\u003cnil\\u003e Distinct:false StraightJoinHint:false SQLCalcFoundRows:false From:[0xc0004d2380] Comments:\\u003cnil\\u003e SelectExprs:[0xc0004ad380 0xc0004ad400] Where:\\u003cnil\\u003e With:\\u003cnil\\u003e GroupBy:[0xc0004e2540] Having:\\u003cnil\\u003e Windows:[] OrderBy:[] Limit:\\u003cnil\\u003e Lock:0 Into:\\u003cnil\\u003e}\",\"*sqlparser.Where\":\"\\u0026{Type:0 Expr:0xc0004a37a0}\",\"sqlparser.Argument\":\"2\",\"sqlparser.ColIdent\":\"Name\",\"sqlparser.GroupBy\":\"[0xc0004e26c0]\",\"sqlparser.SelectExprs\":\"[0xc0004ad2c0]\",\"sqlparser.TableIdent\":\"\",\"sqlparser.TableName\":\"{Name: Qualifier:}\"}"
 }
 {
   "Query": "INSERT INTO polls_question (question_text, pub_date) VALUES ('What is this?', '2019-05-28T18:54:50.767481+00:00')",
@@ -345,5 +382,6 @@ Comment:
   "Literals": "null",
   "Tables": "[\"polls_question\"]",
   "Comments": "\"\"",
-  "Parsed": "\"insert into polls_question(question_text, pub_date) values (:1, :2)\""
+  "Parsed": "\"insert into polls_question(question_text, pub_date) values (:1, :2)\"",
+  "Values": "{\"*sqlparser.Insert\":\"\\u0026{Action:0 Comments:\\u003cnil\\u003e Ignore:false Table:{Name:polls_question Qualifier:} Partitions:[] Columns:[question_text pub_date] Rows:[[1 2]] OnDup:[]}\",\"sqlparser.Argument\":\"2\",\"sqlparser.ColIdent\":\"pub_date\",\"sqlparser.Columns\":\"[question_text pub_date]\",\"sqlparser.TableIdent\":\"\",\"sqlparser.TableName\":\"{Name:polls_question Qualifier:}\",\"sqlparser.ValTuple\":\"[1 2]\",\"sqlparser.Values\":\"[[1 2]]\"}"
 }

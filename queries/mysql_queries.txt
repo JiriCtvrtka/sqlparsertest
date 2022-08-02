@@ -18,7 +18,7 @@ SELECT employee_id FROM employee WHERE name = 'stella';
 SELECT COUNT(*) FROM employee;
 SELECT first_name FROM student ORDER BY marks desc;
 SELECT first_name FROM student ORDER BY marks desc LIMIT 5;
-SELECT /employee_id FROM employee WHERE name = 'stella' AND city = 'Bangalore';
+SELECT employee_id FROM employee WHERE name = 'stella' AND city = 'Bangalore';
 SELECT employee_id FROM employee WHERE department = 'IT' OR city = 'Bangalore';
 SELECT Name FROM students WHERE Physics BETWEEN 75 AND 95;
 SELECT emp_id FROM employee WHERE emp_id BETWEEN 1 AND 10;

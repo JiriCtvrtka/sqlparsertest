@@ -3,11 +3,15 @@ package main
 import (
 	"fmt"
 	"os"
+	"path/filepath"
+	"strings"
 
 	"github.com/percona/sqlparsertest/parsers/blastrainmysql"
 	"github.com/percona/sqlparsertest/parsers/pgquery"
 	"github.com/percona/sqlparsertest/parsers/vitessmysql"
 )
+
+const resultsDir = "results"
 
 func main() {
 	if len(os.Args) == 1 {
@@ -53,15 +57,29 @@ func main() {
 		success = append(success, res)
 	}
 
+	totalCount := len(queries)
+	successCount := len(success)
+	errorsCount := len(errors)
 	title("final results")
-	fmt.Printf("Total queries: %d\n", len(queries))
-	fmt.Printf("Queries with error: %d\n", len(errors))
-	fmt.Printf("OK queries: %d\n", len(success))
+	fmt.Printf("Total queries: %d\n", totalCount)
+	fmt.Printf("OK queries: %d\n", successCount)
+	fmt.Printf("Queries with error: %d\n", errorsCount)
 	devider()
 
-	header := fmt.Sprintf("Collected with values: Input file: %s, Parser: %s, Comment: %s\n", cfg.InputFile, cfg.Parser, cfg.Comment)
+	workDir, err := os.Getwd()
+	if err != nil {
+		fmt.Printf("Fail: %s", err)
+		return
+	}
+
+	inputFile := strings.Split(filepath.Base(cfg.InputFile), ".")[0]
+	fileSuccess := filepath.Join(workDir, resultsDir, fmt.Sprintf("%s_%s_success.txt", inputFile, cfg.Parser))
+	fileErrors := filepath.Join(workDir, resultsDir, fmt.Sprintf("%s_%s_errors.txt", inputFile, cfg.Parser))
+	headerText := "Total: %d\nSuccess: %d\nErrors: %d\nInput file: %s\nParser: %s\nComment: %s\n"
+	header := fmt.Sprintf(headerText, totalCount, successCount, errorsCount, cfg.InputFile, cfg.Parser, cfg.Comment)
+
 	success = append([]string{header}, success...)
 	errors = append([]string{header}, errors...)
-	saveToFile("success.txt", success)
-	saveToFile("errors.txt", errors)
+	saveToFile(fileSuccess, success)
+	saveToFile(fileErrors, errors)
 }

@@ -1,6 +1,6 @@
-SELECT fname, lname, pcode FROM cust WHERE id = 674;
-SELECT * FROM tbl;
-CREATE TABLE tutorials_tbl(tutorial_id INT NOT NULL AUTO_INCREMENT, tutorial_title VARCHAR(100) NOT NULL, tutorial_author VARCHAR(40) NOT NULL, submission_date DATE, PRIMARY KEY ( tutorial_id ));
+SELECT fname, lname, pcode FROM cust WHERE id = 674; -- simple comment
+SELECT * FROM tbl; # sharp comment
+CREATE /* comment */ TABLE tutorials_tbl(tutorial_id INT NOT NULL AUTO_INCREMENT, tutorial_title VARCHAR(100) NOT NULL, tutorial_author VARCHAR(40) NOT NULL, submission_date DATE, PRIMARY KEY ( tutorial_id ));
 ALTER TABLE contacts ADD last_name varchar(40) NOT NULL AFTER contact_id;
 ALTER TABLE employees RENAME COLUMN id TO employ_id;
 DROP TABLE IF EXISTS table_name;
@@ -18,7 +18,7 @@ SELECT employee_id FROM employee WHERE name = 'stella';
 SELECT COUNT(*) FROM employee;
 SELECT first_name FROM student ORDER BY marks desc;
 SELECT first_name FROM student ORDER BY marks desc LIMIT 5;
-SELECT employee_id FROM employee WHERE name = 'stella' AND city = 'Bangalore';
+SELECT /employee_id FROM employee WHERE name = 'stella' AND city = 'Bangalore';
 SELECT employee_id FROM employee WHERE department = 'IT' OR city = 'Bangalore';
 SELECT Name FROM students WHERE Physics BETWEEN 75 AND 95;
 SELECT emp_id FROM employee WHERE emp_id BETWEEN 1 AND 10;

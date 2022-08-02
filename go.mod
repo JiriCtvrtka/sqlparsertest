@@ -2,7 +2,11 @@ module github.com/percona/sqlparsertest
 
 go 1.18
 
-require vitess.io/vitess v0.14.1
+require (
+	github.com/blastrain/vitess-sqlparser v0.0.0-20201030050434-a139afbb1aba
+	github.com/pganalyze/pg_query_go v1.0.3
+	vitess.io/vitess v0.14.1
+)
 
 require (
 	github.com/beorn7/perks v1.0.1 // indirect
@@ -11,10 +15,10 @@ require (
 	github.com/golang/protobuf v1.5.2 // indirect
 	github.com/grpc-ecosystem/go-grpc-middleware v1.1.0 // indirect
 	github.com/grpc-ecosystem/go-grpc-prometheus v1.2.0 // indirect
+	github.com/juju/errors v0.0.0-20170703010042-c7d06af17c68 // indirect
 	github.com/matttproud/golang_protobuf_extensions v1.0.2-0.20181231171920-c182affec369 // indirect
 	github.com/opentracing-contrib/go-grpc v0.0.0-20180928155321-4b5a12d3ff02 // indirect
 	github.com/opentracing/opentracing-go v1.1.0 // indirect
-	github.com/pganalyze/pg_query_go v1.0.3 // indirect
 	github.com/philhofer/fwd v1.0.0 // indirect
 	github.com/pkg/errors v0.9.1 // indirect
 	github.com/prometheus/client_golang v1.11.0 // indirect

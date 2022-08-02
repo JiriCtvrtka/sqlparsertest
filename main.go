@@ -4,6 +4,7 @@ import (
 	"fmt"
 	"os"
 
+	"github.com/percona/sqlparsertest/parsers/blastrainmysql"
 	"github.com/percona/sqlparsertest/parsers/pgquery"
 	"github.com/percona/sqlparsertest/parsers/vitessmysql"
 )
@@ -33,6 +34,8 @@ func main() {
 	switch cfg.Parser {
 	case "vitessmysql":
 		parse = vitessmysql.Parse
+	case "blastrainmysql":
+		parse = blastrainmysql.Parse
 	case "pgquery":
 		parse = pgquery.Parse
 	default:

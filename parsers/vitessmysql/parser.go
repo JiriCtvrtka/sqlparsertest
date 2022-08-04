@@ -25,6 +25,11 @@ func Parse(q string) (string, error) {
 		return "", err
 	}
 
+	literalsJSON, err := json.Marshal(getLiterals(normalizedQuery))
+	if err != nil {
+		return "", err
+	}
+
 	bv := make(map[string]*query.BindVariable)
 	err = sqlparser.Normalize(normalizedQuery, sqlparser.NewReservedVars("", bindVars), bv)
 	if err != nil {
@@ -43,11 +48,6 @@ func Parse(q string) (string, error) {
 	}
 
 	bindVarsJSON, err := json.Marshal(sqlparser.GetBindvars(normalizedQuery))
-	if err != nil {
-		return "", err
-	}
-
-	literalsJSON, err := json.Marshal(getLiterals(normalizedQuery))
 	if err != nil {
 		return "", err
 	}
